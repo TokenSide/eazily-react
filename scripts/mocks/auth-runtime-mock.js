@@ -8,6 +8,7 @@ export const authRuntime = {
     if (s === 'loading') return new Promise(() => {});
     if (s === 'expired') { const e = new Error('session gone'); e.code = 'session_not_found'; throw e; }
     if (s === 'customer') return BASE;
+    if (s === 'customer_no_profile') return { ...BASE, profile: null };
     if (s === 'wrong_role') return { ...BASE, applications: [{ id: 'app-prof', role: 'professional', status: 'approved', details: { name: 'Fixture Electricals' } }] };
     if (s === 'allowed_role') return { ...BASE, applications: [{ id: 'app-prof', role: 'professional', status: 'approved', details: { name: 'Fixture Electricals', city: 'Bhopal', category: 'Home & Property', services: ['Electrician'] } }] };
     if (s === 'admin') return { ...BASE, isAdmin: true, profile: { ...BASE.profile, role: 'admin' } };
