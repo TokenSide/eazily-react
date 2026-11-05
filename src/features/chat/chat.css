@@ -13,3 +13,10 @@
 .chat-bubble.you small{color:rgba(255,255,255,.75)}
 .chat-send{border-radius:50%;min-width:44px;width:44px;padding:0;display:grid;place-items:center;background:linear-gradient(135deg,#8B2CF6,#5B21B6)}
 .chat-more,.chat-retry-send{background:#F2EEFD;color:#7C3AED}
+.chat-list-header { padding:8px 4px 2px; }
+.chat-list-header h1 { font-size:26px; font-weight:800; letter-spacing:-0.5px; color:#17102E; margin:0; }
+.chat-list-header p { font-size:13px; color:#6E7183; margin:2px 0 0; }
+.chat-tabs { display:flex; gap:8px; padding:10px 4px 6px; }
+.chat-tab { min-height:40px; padding:6px 18px; border-radius:999px; border:0; background:#ECEAF5; color:#17102E; font-weight:700; font-size:14px; }
+.chat-tab.active { background:#7C3AED; color:#fff; }
+.chat-job-chip { display:inline-block; margin-left:6px; padding:1px 7px; border-radius:999px; background:#F2EEFD; color:#7C3AED; font-size:10px; font-weight:800; vertical-align:2px; }

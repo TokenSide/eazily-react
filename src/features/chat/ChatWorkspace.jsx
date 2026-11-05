@@ -1,6 +1,7 @@
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Icon from '../../components/Icon.jsx';
 import { EmptyState, Field } from '../../components/Ui.jsx';
+import Avatar from '../../components/ui/Avatar.jsx';
 import { useAccount } from '../../lib/account.js';
 import { useRealtime } from '../../lib/realtime.jsx';
 import { supabase } from '../../lib/supabase.js';
@@ -31,15 +32,22 @@ export function ChatBubble({ message }) {
   return <article className={`chat-bubble ${message.sender_kind}`}><p>{message.moderation_status === 'removed' ? 'Message removed' : message.body}</p>{message.attachment && <Attachment value={message.attachment} />}<small>{time(message.created_at)}{message.sender_kind === 'you' ? message.read ? ' · Read' : ' · Sent' : ''}</small></article>;
 }
 
+const CHAT_TABS = [['all', 'All'], ['customers', 'Customers'], ['support', 'Support']];
+const CHAT_TINTS = ['purple', 'blue', 'amber'];
+
 function ConversationList({ rows, selectedId, search, setSearch, onOpen, loading, error, onRetry, onMore }) {
-  const filtered = useMemo(() => rows.filter(row => `${row.other_name} ${row.context_label} ${row.reference || ''}`.toLowerCase().includes(search.toLowerCase())), [rows, search]);
+  const [tab, setTab] = useState('all');
+  const tabbed = useMemo(() => tab === 'all' ? rows : rows.filter(row => tab === 'support' ? row.conversation_type === 'support' : row.conversation_type !== 'support'), [rows, tab]);
+  const filtered = useMemo(() => tabbed.filter(row => `${row.other_name} ${row.context_label} ${row.reference || ''}`.toLowerCase().includes(search.toLowerCase())), [tabbed, search]);
   return <section className={`chat-list ${selectedId ? 'chat-list-hidden' : ''}`} aria-label="Conversations">
-    <label className="chat-search"><Icon name="search" size={18} /><input value={search} onChange={event => setSearch(event.target.value)} placeholder="Search conversations" /></label>
+    <header className="chat-list-header"><h1>Messages</h1><p>Customer & Team Chats</p></header>
+    <label className="chat-search"><Icon name="search" size={18} /><input value={search} onChange={event => setSearch(event.target.value)} placeholder="Search messages..." /></label>
+    <div className="chat-tabs" role="tablist">{CHAT_TABS.map(([key, label]) => <button key={key} role="tab" aria-selected={tab === key} className={`chat-tab ${tab === key ? 'active' : ''}`} onClick={() => setTab(key)}>{label}</button>)}</div>
     {loading && <div className="chat-skeleton" role="status"><i /><i /><i /></div>}
     {error && <div className="chat-error" role="alert"><p>{error}</p><button className="btn btn-outline" onClick={onRetry}>Retry</button></div>}
     {!loading && !error && !filtered.length && <EmptyState title="No conversations yet" text="Message a published provider or open messages from a booking." icon="message" />}
-    {filtered.map(row => <button className={`chat-list-item ${selectedId === row.id ? 'active' : ''}`} key={row.id} onClick={() => onOpen(row)}>
-      <span className="chat-avatar">{(row.other_name || 'E').charAt(0)}</span><span className="chat-list-copy"><b>{row.other_name}</b><small>{row.context_label}{row.reference ? ` · ${row.reference}` : ''}{row.status !== 'active' ? ` · ${row.status}` : ''}</small><span>{row.last_preview || 'Conversation started'}</span></span><span className="chat-list-meta"><time>{time(row.last_activity_at)}</time>{Number(row.unread_count) > 0 && <b>{row.unread_count}</b>}</span>
+    {filtered.map((row, index) => <button className={`chat-list-item ${selectedId === row.id ? 'active' : ''}`} key={row.id} onClick={() => onOpen(row)}>
+      <Avatar name={row.other_name} tint={CHAT_TINTS[index % 3]} size={48} /><span className="chat-list-copy"><b>{row.other_name}{row.reference && <span className="chat-job-chip">Job</span>}</b><small>{row.context_label}{row.reference ? ` · ${row.reference}` : ''}{row.status !== 'active' ? ` · ${row.status}` : ''}</small><span>{row.last_preview || 'Conversation started'}</span></span><span className="chat-list-meta"><time>{time(row.last_activity_at)}</time>{Number(row.unread_count) > 0 && <b>{row.unread_count}</b>}</span>
     </button>)}
     {rows.length >= 30 && <button className="chat-more" onClick={onMore}>Load older conversations</button>}
   </section>;
