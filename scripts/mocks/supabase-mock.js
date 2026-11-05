@@ -13,7 +13,9 @@ export const supabase = {
   from: table => chainable(table),
   rpc: name => (name === 'admin_dashboard_summary' && typeof window !== 'undefined' && window.__adminSummary !== undefined
     ? Promise.resolve({ data: window.__adminSummary, error: null })
-    : chainable()),
+    : name === 'get_order_quote'
+      ? Promise.resolve({ data: null, error: null })
+      : chainable()),
   storage: { from: () => chainable() },
   auth: { onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }) },
 };
