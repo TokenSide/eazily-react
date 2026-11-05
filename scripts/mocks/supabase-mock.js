@@ -11,7 +11,9 @@ const chainable = () => new Proxy(function () {}, {
 export const isSupabaseConfigured = true;
 export const supabase = {
   from: () => chainable(),
-  rpc: () => chainable(),
+  rpc: name => (name === 'admin_dashboard_summary' && typeof window !== 'undefined' && window.__adminSummary !== undefined
+    ? Promise.resolve({ data: window.__adminSummary, error: null })
+    : chainable()),
   storage: { from: () => chainable() },
   auth: { onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }) },
 };
