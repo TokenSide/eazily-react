@@ -27,6 +27,7 @@ const paths = {
   truck: ["M3 6h11v11H3z", "M14 10h4l3 3v4h-7z", "M7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z", "M18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"],
   drop: ["M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11Z"],
   chevronRight: ["m9 18 6-6-6-6"],
+  chevronDown: ["m18 9-6 6-6-6"],
   arrowLeft: ["m15 18-6-6 6-6", "M9 12h10"],
   close: ["M6 6l12 12", "M18 6 6 18"],
   check: ["m5 12 4 4L19 6"],

@@ -1,7 +1,11 @@
 /* Dedicated demo scope: no changes to actual-account screens. */
-.demo-workspace .demo-controls { display:grid; gap:12px; padding:16px; margin-bottom:16px; background:#fff; border:2px solid var(--role); border-radius:16px; }
-.demo-workspace .demo-controls strong { font-size:15px; line-height:1.5; color:var(--role); }
-.demo-workspace .demo-controls strong svg { vertical-align:middle; margin-right:6px; }
+.demo-workspace .demo-controls { margin-bottom:14px; background:#fff; border:2px solid var(--role); border-radius:14px; overflow:hidden; }
+.demo-workspace .demo-controls > summary { display:flex; align-items:center; gap:8px; min-height:44px; padding:9px 14px; color:var(--role); font-size:13.5px; font-weight:750; line-height:1.35; cursor:pointer; list-style:none; }
+.demo-workspace .demo-controls > summary::-webkit-details-marker { display:none; }
+.demo-workspace .demo-controls > summary span { flex:1; min-width:0; }
+.demo-workspace .demo-controls > summary .demo-chev { flex:none; transition:transform .15s ease; }
+.demo-workspace .demo-controls[open] > summary .demo-chev { transform:rotate(180deg); }
+.demo-workspace .demo-controls-body { display:grid; gap:12px; padding:2px 14px 14px; }
 .demo-workspace .demo-control-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
 .demo-workspace .demo-controls p,.demo-workspace .demo-content > .demo-stack p { margin:0; font-size:14px; line-height:1.6; }
 .demo-workspace .demo-stack { display:grid; gap:14px; min-width:0; }

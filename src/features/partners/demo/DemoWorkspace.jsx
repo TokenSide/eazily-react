@@ -43,12 +43,14 @@ function PartnerDemoWorkspace({ initialRole, onCustomer, onExit }) {
     <main className="screen partner-screen">
       <DashboardTopBar role={role} name={name} greeting="Welcome" notifications={ws.notifications.filter(n => !n.read_at).length} setRoute={go} setSheet={sheet} />
       <div className="seller-content">
-        <section className="demo-controls" aria-label="Demo controls">
-          <strong><Icon name="shield" size={18} />Demo Mode — sample data, no real bookings or payments.</strong>
+        <details className="demo-controls">
+          <summary><Icon name="shield" size={16} /><span>Demo Mode · sample data, no real bookings or payments</span><Icon name="chevronDown" size={16} className="demo-chev" /></summary>
+          <div className="demo-controls-body">
           <p>Fictional profiles, local actions. Exit any time to return to your actual account.</p>
           <label>Demo partner type<select ref={selector} value={role} onChange={e => { setRole(e.target.value); setView(e.target.value === 'consultant' ? 'assessment' : 'home'); setOrderId(''); setFilter('all'); dispatch({ type: 'dismiss' }); }}>{roles.map(r => <option key={r} value={r}>{labels[r]}</option>)}</select></label>
           <div className="demo-control-grid"><button className="demo-primary" onClick={() => send('lead')}><Icon name="plus" size={18} />Simulate New Lead</button><button onClick={() => { send('reset'); setView('home'); setOrderId(''); setFilter('all'); }}>Reset Demo Data</button><button onClick={onCustomer}>Customer preview</button><button onClick={onExit}>Exit Demo Mode</button><button onClick={() => go('guide')}>Demo guide & limits</button></div>
-        </section>
+          </div>
+        </details>
         {(state.notice || state.error) && <div className={`demo-feedback ${state.error ? 'demo-error' : ''}`} role={state.error ? 'alert' : 'status'}><p>{state.error || state.notice}</p><button aria-label="Dismiss demo notification" onClick={() => send('dismiss')}><Icon name="close" size={18} /></button></div>}
         <div ref={main} tabIndex={-1} className="demo-content">
           {view !== 'home' && view !== 'assessment' && <button className="demo-back" onClick={() => go('home')}>← Demo dashboard</button>}
