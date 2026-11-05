@@ -173,7 +173,7 @@ function ActualPartnerApp({ role, account, notify, onWorkspace, onAddRole, onEdi
 
 function PartnerProfile({ role, profile, application, approved, data, onEditRegistration, setRoute, setSheet, onWorkspace, onAddRole, logout }) {
   const name = profile.businessName || profile.creatorName || profile.name || 'Partner profile';
-  const accent = role === 'professional' ? '#059669' : role === 'influencer' ? '#7C3AED' : '#2563EB';
+  const accent = '#7C3AED';
   const initials = name.split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join('').toUpperCase() || 'E';
   const reviewItem = data.reviews.length ? [['Reviews', 'star', () => setSheet('Reviews')]] : [];
   const workItems = !approved ? [['Registration details', 'shield', onEditRegistration]] : role === 'professional'

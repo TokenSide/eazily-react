@@ -6,9 +6,9 @@ import { PARTNER_DEMO_ENABLED } from './demo/config.js';
 import './partner-dashboard.css';
 
 const presentation = {
-  professional: { title: 'Service dashboard', label: 'Service Partner', icon: 'workers', accent: '#059669', incoming: 'Service requests', ongoing: 'Ongoing jobs', workIcon: 'briefcase', primary: '+ Add Service / Service Jodein' },
+  professional: { title: 'Service dashboard', label: 'Service Partner', icon: 'workers', accent: '#7C3AED', incoming: 'Service requests', ongoing: 'Ongoing jobs', workIcon: 'briefcase', primary: '+ Add Service / Service Jodein' },
   influencer: { title: 'Creator dashboard', label: 'Influencer Partner', icon: 'megaphone', accent: '#7C3AED', incoming: 'Collaboration enquiries', ongoing: 'Accepted enquiries', workIcon: 'video', primary: 'Create Post' },
-  consultant: { title: 'Consultation dashboard', label: 'Consultation Partner', icon: 'briefcase', accent: '#2563EB', incoming: 'Consultation enquiries', ongoing: 'Accepted enquiries', workIcon: 'calendar', primary: 'Manage Availability' },
+  consultant: { title: 'Consultation dashboard', label: 'Consultation Partner', icon: 'briefcase', accent: '#7C3AED', incoming: 'Consultation enquiries', ongoing: 'Accepted enquiries', workIcon: 'calendar', primary: 'Manage Availability' },
 };
 
 export function DashboardTopBar({ role, name, greeting, notifications, setRoute, setSheet }) {
