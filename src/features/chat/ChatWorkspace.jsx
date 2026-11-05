@@ -32,17 +32,18 @@ export function ChatBubble({ message }) {
   return <article className={`chat-bubble ${message.sender_kind}`}><p>{message.moderation_status === 'removed' ? 'Message removed' : message.body}</p>{message.attachment && <Attachment value={message.attachment} />}<small>{time(message.created_at)}{message.sender_kind === 'you' ? message.read ? ' · Read' : ' · Sent' : ''}</small></article>;
 }
 
-const CHAT_TABS = [['all', 'All'], ['customers', 'Customers'], ['support', 'Support']];
+const chatTabs = role => [['all', 'All'], ['people', role ? 'Customers' : 'Partners'] , ['support', 'Support']];
 const CHAT_TINTS = ['purple', 'blue', 'amber'];
 
-function ConversationList({ rows, selectedId, search, setSearch, onOpen, loading, error, onRetry, onMore }) {
+export function ConversationList({ role = null, rows, selectedId, search, setSearch, onOpen, loading, error, onRetry, onMore }) {
   const [tab, setTab] = useState('all');
   const tabbed = useMemo(() => tab === 'all' ? rows : rows.filter(row => tab === 'support' ? row.conversation_type === 'support' : row.conversation_type !== 'support'), [rows, tab]);
+  const tabs = chatTabs(role);
   const filtered = useMemo(() => tabbed.filter(row => `${row.other_name} ${row.context_label} ${row.reference || ''}`.toLowerCase().includes(search.toLowerCase())), [tabbed, search]);
   return <section className={`chat-list ${selectedId ? 'chat-list-hidden' : ''}`} aria-label="Conversations">
     <header className="chat-list-header"><h1>Messages</h1><p>Customer & Team Chats</p></header>
     <label className="chat-search"><Icon name="search" size={18} /><input value={search} onChange={event => setSearch(event.target.value)} placeholder="Search messages..." /></label>
-    <div className="chat-tabs" role="tablist">{CHAT_TABS.map(([key, label]) => <button key={key} role="tab" aria-selected={tab === key} className={`chat-tab ${tab === key ? 'active' : ''}`} onClick={() => setTab(key)}>{label}</button>)}</div>
+    <div className="chat-tabs" role="tablist">{tabs.map(([key, label]) => <button key={key} role="tab" aria-selected={tab === key} className={`chat-tab ${tab === key ? 'active' : ''}`} onClick={() => setTab(key)}>{label}</button>)}</div>
     {loading && <div className="chat-skeleton" role="status"><i /><i /><i /></div>}
     {error && <div className="chat-error" role="alert"><p>{error}</p><button className="btn btn-outline" onClick={onRetry}>Retry</button></div>}
     {!loading && !error && !filtered.length && <EmptyState title="No conversations yet" text="Message a published provider or open messages from a booking." icon="message" />}
@@ -137,7 +138,7 @@ export default function ChatWorkspace({ role = null, initialConversationId = nul
   }, [initialConversationId, initialOrderId, role, notify, onConversationHandled]);
   const loadMore = async () => { try { const more = await listChatConversations(role, rows.at(-1)?.last_activity_at); setRows(current => [...current, ...more]); } catch (reason) { notify?.(reason.message); } };
   return <div className={`chat-workspace ${embedded ? 'chat-embedded' : ''}`}>
-    <ConversationList rows={rows} selectedId={selected?.id} search={search} setSearch={setSearch} onOpen={setSelected} loading={loading} error={error} onRetry={load} onMore={loadMore} />
+    <ConversationList role={role} rows={rows} selectedId={selected?.id} search={search} setSearch={setSearch} onOpen={setSelected} loading={loading} error={error} onRetry={load} onMore={loadMore} />
     {selected && <Conversation conversation={selected} notify={notify} onBack={() => setSelected(null)} onChanged={load} />}
   </div>;
 }
