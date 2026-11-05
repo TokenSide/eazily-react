@@ -35,10 +35,10 @@ async function component(file) {
     online: false, busy: false, trial: null, setRoute() {}, setSheet() {}, act() {},
     setAvailability() {}, setOnline() {}, total: () => 0, money: value => `INR ${value}`,
   }));
-  assert.match(html, /<strong>1<\/strong><span>Open booking leads<\/span>/);
-  assert.match(html, /<strong>1<\/strong><span>Accepted bookings<\/span>/);
-  assert.match(html, /<strong>1<\/strong><span>Completed jobs<\/span>/);
-  assert.match(html, /INR 250<\/strong><span>Recorded earnings<\/span>/);
+  assert.match(html, /<strong[^>]*>1<\/strong><span[^>]*>Open booking leads<\/span>/);
+  assert.match(html, /<strong[^>]*>1<\/strong><span[^>]*>Accepted bookings<\/span>/);
+  assert.match(html, /<strong[^>]*>1<\/strong><span[^>]*>Completed jobs<\/span>/);
+  assert.match(html, /INR 250<\/strong><span[^>]*>Recorded earnings<\/span>/);
   const requested = renderToStaticMarkup(React.createElement(OrderDetail, { order: orders[0], customer: true, notify() {} }));
   const accepted = renderToStaticMarkup(React.createElement(OrderDetail, { order: orders[2], customer: true, notify() {} }));
   assert.match(requested, /Requested · awaiting professional/);
