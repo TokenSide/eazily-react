@@ -11,6 +11,7 @@ export const authRuntime = {
     if (s === 'new_partner') return { ...BASE, applications: [], roles: [] };
     if (s === 'customer_no_profile') return { ...BASE, profile: null };
     if (s === 'wrong_role') return { ...BASE, applications: [{ id: 'app-prof', role: 'professional', status: 'approved', details: { name: 'Fixture Electricals' } }] };
+    if (s === 'pending_partner') return { ...BASE, applications: [{ id: 'app-prof', role: 'professional', status: 'submitted', details: { name: 'Fixture Electricals', city: 'Bhopal', category: 'Home & Property', services: ['Electrician'] } }] };
     if (s === 'allowed_role') return { ...BASE, applications: [{ id: 'app-prof', role: 'professional', status: 'approved', details: { name: 'Fixture Electricals', city: 'Bhopal', category: 'Home & Property', services: ['Electrician'] } }] };
     if (s === 'admin') return { ...BASE, isAdmin: true, profile: { ...BASE.profile, role: 'admin' } };
     if (s === 'staff_admin') return { ...BASE, staff: { staff_role: 'support', permissions: ['support.manage'] } };

@@ -1,7 +1,7 @@
 // TEST-ONLY bundler for the router authorization harness. Not part of the app build.
 import { build } from 'esbuild';
 import { resolve } from 'node:path';
-import { writeFileSync } from 'node:fs';
+import { copyFileSync, readdirSync, writeFileSync } from 'node:fs';
 const mockPlugin = {
   name: 'test-mocks',
   setup(b) {
@@ -16,5 +16,9 @@ await build({
   define: { 'import.meta.env': JSON.stringify({ DEV: false, VITE_ENABLE_LOCAL_OTP: 'false', VITE_SUPABASE_URL: 'https://fixture.invalid', VITE_SUPABASE_ANON_KEY: 'fixture', VITE_SUPABASE_PUBLISHABLE_KEY: 'fixture' }) },
   plugins: [mockPlugin],
 });
-writeFileSync('.tmp/router-auth.html', '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="ui-fixture.css"></head><body><div id="root"></div><script src="router-auth.js"></script></body></html>');
+// Serve the REAL production stylesheet so full-shell captures are pixel-meaningful; ui-fixture.css is legacy and unused.
+const appCss = readdirSync('dist/assets').find(name => /^index-.*\.css$/.test(name));
+if (!appCss) throw new Error('Build the app first: dist/assets/index-*.css missing');
+copyFileSync('dist/assets/' + appCss, '.tmp/app.css');
+writeFileSync('.tmp/router-auth.html', '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="app.css"></head><body><div id="root"></div><script src="router-auth.js"></script></body></html>');
 console.log('router-auth harness built');

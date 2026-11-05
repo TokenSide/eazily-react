@@ -172,8 +172,8 @@ export default function ServicePartnerOnboarding({ existing, account, notify, on
   }
 
   return <main className="partner-onboarding role-professional service-registration">
-    <header className="partner-simple-header"><button type="button" className="icon-btn" onClick={stage ? () => setStage(stage - 1) : onBack}><Icon name="arrowLeft" /></button><div><span>Service Partner · Step {stage + 1} of 6</span><h1>{titles[stage]}</h1></div><select aria-label="Language" value={values.language} onChange={event => { setLanguage(event.target.value); update('language', event.target.value); }}><option>English</option><option>हिन्दी</option></select></header>
-    <div className="registration-progress" aria-label={`Step ${stage + 1} of 6`}>{titles.map((title, index) => <i key={title} className={index <= stage ? 'done' : ''} />)}</div>
+    <header className="partner-simple-header"><button type="button" className="icon-btn" onClick={stage ? () => setStage(stage - 1) : onBack}><Icon name="arrowLeft" /></button><div><span>Service Partner · Step {stage + 1} of {titles.length}</span><h1>{titles[stage]}</h1></div><select aria-label="Language" value={values.language} onChange={event => { setLanguage(event.target.value); update('language', event.target.value); }}><option>English</option><option>हिन्दी</option></select></header>
+    <div className="registration-progress" aria-label={`Step ${stage + 1} of ${titles.length}`}>{titles.map((title, index) => <i key={title} className={index <= stage ? 'done' : ''} />)}</div>
     <section className="partner-form-card"><span className={`application-state ${application?.status || 'draft'}`}>{(application?.status || 'Draft').replace('_', ' ')}</span>{application?.review_notes && <div className="safety-card"><b>Changes requested</b><p>{application.review_notes}</p></div>}
       {!isSupabaseConfigured && <p className="testing-notice" role="status">Local testing only. Drafts stay in this browser session and are lost on refresh. Complete registration cannot submit without live phone verification and the backend. Demo Mode, when enabled, uses isolated sample data.</p>}
       <form onSubmit={submit} noValidate>
