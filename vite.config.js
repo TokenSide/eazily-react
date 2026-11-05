@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import { buildPolicy } from './scripts/build-policy.mjs';
 
 export default defineConfig({
-  plugins: [react(), buildPolicy()],
+  plugins: [react(), tailwindcss(), buildPolicy()],
   build: { copyPublicDir: false, sourcemap: false, rollupOptions: { output: { manualChunks(id) {
     if(/node_modules\/(react|react-dom|scheduler)\//.test(id.replaceAll('\\','/')))return 'react-runtime';
   } } } },

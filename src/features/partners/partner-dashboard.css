@@ -222,3 +222,11 @@
 /* Reference theme migration: fix copy stacking in the availability card
    (supersedes the earlier flex/nowrap helper). */
 .partner-dashboard-home-view .pd-availability > .pd-availability-copy { display:block; white-space:normal; gap:0; }
+.pd-vendor-identity { display:grid; gap:12px; padding:4px 0 2px; }
+.pd-vendor-identity .pd-identity-actions { display:grid; gap:10px; }
+.pd-vendor-identity .pd-availability { display:flex; align-items:center; gap:12px; background:#E9F9EF; border:1px solid #C9EFD6; border-radius:18px; padding:14px 16px; }
+.pd-vendor-identity .pd-availability-icon { display:grid; place-items:center; width:44px; height:44px; border-radius:50%; background:#D3F1DE; color:#16A34A; flex-shrink:0; }
+.pd-vendor-identity .pd-availability-copy { flex:1; min-width:0; }
+.pd-vendor-identity .pd-availability-copy b { font-size:17px; color:#17102E; display:block; }
+.pd-vendor-identity .pd-availability-copy em { font-style:normal; color:#16A34A; }
+.pd-vendor-identity .pd-availability-copy small { color:#6E7183; font-size:12px; }
