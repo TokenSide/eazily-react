@@ -32,7 +32,7 @@ let browser, socket, server;
   await new Promise(r => server.listen(5201, '127.0.0.1', r));
   const folder = resolve('.tmp', `partner-dashboard-review-${Date.now()}`);
   mkdirSync(folder, {recursive:true});
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9338',`--user-data-dir=${resolve(folder,'browser')}`,'about:blank'], {windowsHide:true,stdio:'ignore'});
+  browser = spawn('/tmp/chrome-shim', ['--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9338',`--user-data-dir=${resolve(folder,'browser')}`,'about:blank'], {windowsHide:true,stdio:'ignore'});
   let tab;
   for (let i=0;i<40;i++) { try { tab=await (await fetch('http://127.0.0.1:9338/json/new?http://127.0.0.1:5173/', {method:'PUT'})).json(); break; } catch { await pause(250); } }
   if (!tab) throw new Error('Edge did not start');
@@ -54,13 +54,13 @@ let browser, socket, server;
   if (navigation.errorText) throw new Error('Local navigation failed: '+navigation.errorText);
   await pause(1800);
   assert.equal(await evaluate('location.origin'),'http://127.0.0.1:5173','Browser reached the local app');
-  const roles=[['professional','service','#15803D'],['influencer','influencer','#C2410C'],['consultant','consultant','#2563EB']];
+  const roles=[['professional','service','#7C3AED'],['influencer','influencer','#7C3AED'],['consultant','consultant','#7C3AED']];
   const account={user:{id:'local-dashboard-review',testing:true},profile:{name:'Local test'},roles:roles.map(r=>r[0]),applications:roles.map(([role])=>({id:'local-'+role,role,status:'draft',details:{name:'Local test',city:'Bhopal',category:'Home & Property',services:['Electrician'],stage:5,registrationComplete:true}}))};
   await evaluate(`sessionStorage.setItem('eazily-testing-account',${JSON.stringify(JSON.stringify(account))});localStorage.setItem('eazily-language','English');`);
   for(const [role,path,colour] of roles){
     await send('Page.navigate',{url:'http://127.0.0.1:5173/seller/'+path+'/dashboard'});await pause(1400);
     assert.ok(await evaluate(`!!document.querySelector('.partner-workspace.role-${role}')`),role+' dashboard renders');
-    assert.equal(await evaluate(`document.querySelector('.partner-workspace').style.getPropertyValue('--role')`),colour);
+    assert.equal(await evaluate(`getComputedStyle(document.querySelector('.partner-workspace')).getPropertyValue('--role').trim()`),colour,role+' chrome uses the unified theme colour');
     assert.ok(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),role+' has no mobile overflow');
     assert.equal(await evaluate(`document.querySelectorAll('.partner-banner-carousel').length`),0,'No fabricated campaigns');
     assert.equal(await evaluate(`document.querySelectorAll('.bottom-nav button').length`),5);
