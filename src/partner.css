@@ -91,7 +91,11 @@
 .registration-progress { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; padding:0 20px 14px; }
 .registration-progress i { height:5px; border-radius:10px; background:#d9dbe3; }
 .registration-progress i.done { background:var(--role); }
-.registration-actions { position:sticky; bottom:0; z-index:5; display:grid; grid-template-columns:auto 1fr 1.3fr; align-items:center; gap:8px; margin:20px -20px -20px; padding:12px 20px calc(12px + env(safe-area-inset-bottom)); background:#fff; border-top:1px solid var(--line); }
+.registration-actions { position:sticky; bottom:0; z-index:5; display:grid; grid-template-columns:1fr 1.4fr; align-items:center; gap:10px; margin:20px -20px -20px; padding:12px 20px calc(12px + env(safe-area-inset-bottom)); background:#fff; border-top:1px solid var(--line); }
+.registration-actions .link { justify-self:start; }
+.wizard-continue { width:100%; min-height:50px; border-radius:14px; font-size:16px; }
+.wizard-header .wizard-brand { display:block; color:var(--role); font-size:15px; font-weight:800; letter-spacing:.01em; }
+.wizard-header .wizard-step { color:var(--role); font-size:11px; font-weight:800; }
 .warm-copy { margin-top:18px; color:var(--role); font-size:12px; font-weight:700; }
 .location-permission { display:grid; gap:10px; margin-top:15px; padding:14px; border-radius:16px; background:var(--role-bg,var(--lav)); }
 .location-permission p,.location-permission small { font-size:11px; line-height:1.5; color:var(--muted); }
@@ -522,3 +526,7 @@ html, body, #root { min-height:100%; background:#f7f7fb; }
 .partner-onboarding .field-wrap { display:grid; gap:6px; margin-bottom:14px; }
 .partner-onboarding .policy-note { display:block; }
 .registration-actions .btn { white-space:nowrap; padding-inline:16px; }
+
+/* Onboarding wizard accents follow the approved influencer/consultant references (pink/gold); scoped to the wizard only, workspaces stay purple. */
+.partner-onboarding.role-influencer { --role:#C2185B; --role-bg:#FDF2F7; }
+.partner-onboarding.role-consultant { --role:#B45309; --role-bg:#FFFBEB; }

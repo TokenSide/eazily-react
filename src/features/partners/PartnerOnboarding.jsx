@@ -4,7 +4,6 @@ import Icon from '../../components/Icon.jsx';
 import { catalog } from '../../data/catalog.js';
 import { influencerCategories, displayInfluencerCategory } from '../../data/influencerCategories.js';
 import { consultantCategories, displayConsultantCategory } from '../../data/consultantCategories.js';
-import { partnerRoles } from '../../data/partners.js';
 import { setLanguage, translate as t } from '../../lib/translate.js';
 import { saveApplication } from '../../services/partners.js';
 import { isSupabaseConfigured } from '../../lib/supabase.js';
@@ -134,7 +133,7 @@ function OtherPartnerOnboarding({ role, existing, account, notify, onDone, onBac
     onPreview(result);
   }
   return <main className={`partner-onboarding role-${role}`}>
-    <header className="partner-simple-header"><button className="icon-btn" onClick={stage ? () => setStage(stage - 1) : onBack}><Icon name="arrowLeft" /></button><div><span>{t('Eazily Partner')} · {stage + 1}/6</span><h1>{t(titles[stage])}</h1></div><select aria-label="Language" value={values.language} onChange={event => { setLanguage(event.target.value); setValues(current => ({ ...current, language: event.target.value })); }}><option>English</option><option>हिन्दी</option></select></header>
+    <header className="partner-simple-header wizard-header"><button className="icon-btn" onClick={stage ? () => setStage(stage - 1) : onBack}><Icon name="arrowLeft" /></button><div className="wizard-head-copy"><span className="wizard-brand">{t('Eazily')}</span><span className="wizard-step">{t('Step')} {stage + 1} {t('of')} 6{savedApplication?.id ? ` · ${t('Draft saved')}` : ''}</span><h1>{t(titles[stage])}</h1></div><select aria-label="Language" value={values.language} onChange={event => { setLanguage(event.target.value); setValues(current => ({ ...current, language: event.target.value })); }}><option>English</option><option>हिन्दी</option></select></header>
     <div className="registration-progress" aria-label={`Step ${stage + 1} of 6`}>{titles.map((title, index) => <i key={title} className={index <= stage ? 'done' : ''} />)}</div>
     <section className="partner-form-card"><span className={`application-state ${existing?.status || 'draft'}`}>{(existing?.status || 'Draft').replace('_', ' ')}</span>{existing?.review_notes && <div className="safety-card"><b>{t('Changes requested')}</b><p>{existing.review_notes}</p></div>}
       {!isSupabaseConfigured && <p className="testing-notice" role="status">Testing mode: drafts stay in this session only and are lost on refresh. Complete registration cannot submit without live phone verification and the backend. Demo Mode, when enabled, uses isolated sample data.</p>}
@@ -142,7 +141,7 @@ function OtherPartnerOnboarding({ role, existing, account, notify, onDone, onBac
         {role === 'consultant' && stage === 5 && <ConsultantLegal application={savedApplication} onEligibilityChange={setConsultantLegalReady} />}
         {canSkip && !(role === 'consultant' && stage === 4) && <button type="button" className="btn btn-outline" disabled={busy} onClick={() => stage === 5 ? previewForTesting() : next(true)}>{stage === 5 && onPreview ? 'Open Demo dashboard' : 'Skip for now'}</button>}
         {role === 'consultant' && consentError && <p role="alert" className="inline-error">{consentError}</p>}<p className="warm-copy">{stage < 5 ? 'बहुत बढ़िया! अगला छोटा कदम।' : 'Review each answer before sending it for human verification.'}</p>
-        <div className="registration-actions"><button type="button" className="link" disabled={busy} onClick={() => persist(false, true)}>{t('Save & exit')}</button>{stage > 0 && <button type="button" className="btn btn-outline" disabled={busy} onClick={() => setStage(stage - 1)}>{t('Back')}</button>}{stage < 5 ? <button type="button" className="btn btn-primary" disabled={busy} onClick={next}>{t('Next')} / आगे</button> : <button className="btn btn-primary" disabled={busy || (role === 'consultant' && isSupabaseConfigured && !consultantLegalReady)}>{busy ? 'Submitting…' : 'Complete registration'}</button>}</div>
+        <div className="registration-actions"><button type="button" className="link" disabled={busy} onClick={() => persist(false, true)}>{t('Save & exit')}</button>{stage < 5 ? <button type="button" className="btn btn-primary wizard-continue" disabled={busy} onClick={next}>{t('Continue')}</button> : <button className="btn btn-primary wizard-continue" disabled={busy || (role === 'consultant' && isSupabaseConfigured && !consultantLegalReady)}>{busy ? 'Submitting…' : t('Submit for review')}</button>}</div>
       </form>
     </section>
     {legalDocument && <InfluencerLegalModal documentKey={legalDocument} onClose={() => setLegalDocument(null)} />}

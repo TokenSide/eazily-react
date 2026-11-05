@@ -23,6 +23,7 @@ const ServicePartnerArea = lazy(() => import('./pages/ServicePartnerArea.jsx'));
 const InfluencerArea = lazy(() => import('./pages/InfluencerArea.jsx'));
 const ConsultantArea = lazy(() => import('./pages/ConsultantArea.jsx'));
 const AdminApp = lazy(() => import('./pages/AdminApp.jsx'));
+const PartnerOnboarding = lazy(() => import('./features/partners/PartnerOnboarding.jsx'));
 const partnerAreas = { professional: ServicePartnerArea, influencer: InfluencerArea, consultant: ConsultantArea };
 const guest = { user: null, profile: null, roles: [], applications: [], isAdmin: false };
 const offlineRealtime = { available: false, connectionState: 'Offline', networkOnline: true, revision: 0, scopes: [], lastSyncedAt: null, setPublicAudience: () => {}, retry: () => {} };
@@ -113,8 +114,12 @@ export default function App() {
     // Sample builds have no accounts or client at all, so partner URLs keep the explicit sample workspace.
     if (!isSupabaseConfigured) content = <DemoWorkspace initialRole={view.role} onExit={enterWelcome} />;
     else if (auth.status === 'initialising') content = <Loading />;
-    else if (Area && routeAccess(account, view.role) === 'allowed') content = <Area account={account} notify={notify} onWorkspace={enterPartner} onAddRole={() => setView({ stage: 'partner-choice', role: 'customer' })} onEditRegistration={() => notify(translate('Editing registration is not available in this build yet.'))} />;
-    else content = <Welcome onCustomer={enterCustomer} onService={enterCustomer} onPartner={() => setView({ stage: 'partner-choice', role: 'customer' })} onEnterDemo={() => setView({ stage: 'demo', role: 'customer' })} />;
+    else {
+      const access = routeAccess(account, view.role);
+      if (Area && access === 'allowed') content = <Area account={account} notify={notify} onWorkspace={enterPartner} onAddRole={() => setView({ stage: 'partner-choice', role: 'customer' })} onEditRegistration={() => notify(translate('Editing registration is not available in this build yet.'))} />;
+      else if (access === 'registration') content = <PartnerOnboarding role={view.role} existing={account.applications.find(item => item.role === view.role) || null} account={account} notify={notify} onBack={enterWelcome} onDone={() => context.refresh()} onPreview={() => setView({ stage: 'demo', role: view.role })} />;
+      else content = <Welcome onCustomer={enterCustomer} onService={enterCustomer} onPartner={() => setView({ stage: 'partner-choice', role: 'customer' })} onEnterDemo={() => setView({ stage: 'demo', role: 'customer' })} />;
+    }
   }
   else if (view.stage === 'admin') {
     if (!isSupabaseConfigured) content = <Welcome onCustomer={enterCustomer} onService={enterCustomer} onPartner={() => setView({ stage: 'partner-choice', role: 'customer' })} onEnterDemo={() => setView({ stage: 'demo', role: 'customer' })} />;
