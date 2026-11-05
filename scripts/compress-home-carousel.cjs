@@ -6,7 +6,7 @@ const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));let server,browser,
   server=http.createServer((request,response)=>{if(request.url.startsWith('/source/')){response.setHeader('Content-Type','image/png');return response.end(fs.readFileSync(path.join(input,path.basename(request.url))));}response.end('<!doctype html><body>carousel encoder</body>');});
   await new Promise(resolve=>server.listen(5218,'127.0.0.1',resolve));
   const profile=path.resolve('.tmp','carousel-compression-'+Date.now());fs.mkdirSync(profile,{recursive:true});
-  browser=spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--remote-debugging-port=9358',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:'ignore'});
+  browser=spawn('/tmp/chrome-shim',['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--remote-debugging-port=9358',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:'ignore'});
   let tab;for(let attempt=0;attempt<50;attempt++){try{tab=await(await fetch('http://127.0.0.1:9358/json/new?http://127.0.0.1:5218/',{method:'PUT'})).json();break;}catch{await pause(200);}}assert.ok(tab,'Edge started');
   socket=new WebSocket(tab.webSocketDebuggerUrl);await new Promise(resolve=>socket.addEventListener('open',resolve,{once:true}));let id=0;const pending=new Map();
   socket.addEventListener('message',({data})=>{const event=JSON.parse(data);if(event.id){const handler=pending.get(event.id);pending.delete(event.id);event.error?handler.reject(event.error):handler.resolve(event.result);}});

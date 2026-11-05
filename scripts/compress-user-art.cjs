@@ -9,7 +9,7 @@ let server,browser,socket;
  server=http.createServer((req,res)=>{if(req.url.startsWith('/source/')){const file=path.basename(req.url);res.setHeader('Content-Type','image/png');return res.end(fs.readFileSync(path.join(input,file)));}res.setHeader('Content-Type','text/html');res.end('<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>Draft asset review</title><body></body>');});
  await new Promise(r=>server.listen(5214,'127.0.0.1',r));
  const profile=path.resolve('.tmp','art-compression-'+Date.now());fs.mkdirSync(profile,{recursive:true});
- browser=spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--remote-debugging-port=9354',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:'ignore'});
+ browser=spawn('/tmp/chrome-shim',['--headless=new','--disable-gpu','--disable-background-networking','--no-first-run','--remote-debugging-port=9354',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:'ignore'});
  let tab;for(let i=0;i<50;i++){try{tab=await(await fetch('http://127.0.0.1:9354/json/new?http://127.0.0.1:5214/',{method:'PUT'})).json();break;}catch{await pause(200);}}
  assert.ok(tab);socket=new WebSocket(tab.webSocketDebuggerUrl);await new Promise(r=>socket.addEventListener('open',r,{once:true}));
  let id=0;const pending=new Map();socket.addEventListener('message',({data})=>{const e=JSON.parse(data);if(e.id){const p=pending.get(e.id);pending.delete(e.id);e.error?p.reject(e.error):p.resolve(e.result);}});

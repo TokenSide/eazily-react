@@ -11,7 +11,7 @@ let browser, socket;
   const folder = resolve('.tmp', `service-registration-review-${Date.now()}`);
   mkdirSync(folder, { recursive: true });
   const profile = resolve(folder, 'browser');
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', [
+  browser = spawn('/tmp/chrome-shim', [
     '--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9341', `--user-data-dir=${profile}`, 'about:blank',
   ], { windowsHide: true, stdio: 'ignore' });
   let tab;

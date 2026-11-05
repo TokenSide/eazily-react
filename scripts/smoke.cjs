@@ -5,7 +5,7 @@ const { resolve, extname } = require('node:path');
 const { spawn } = require('node:child_process');
 const assert = require('node:assert/strict');
 const { build } = require('esbuild');
-const edgePath = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
+const edgePath = '/tmp/chrome-shim';
 const pause = ms => new Promise(r => setTimeout(r, ms));
 const root = resolve(process.env.EAZILY_SMOKE_DIST || 'dist');
 const server = createServer((req, res) => {

@@ -27,7 +27,7 @@ const heroRequests=new Set();
   await new Promise(r => server.listen(5204, '127.0.0.1', r));
   const folder=resolve(before?'docs/user-illustrations/before':process.env.EAZILY_USER_ART_SHOTS || 'docs/user-illustrations/after');mkdirSync(folder,{recursive:true});
   const profile=resolve('.tmp','user-art-browser-'+Date.now());mkdirSync(profile,{recursive:true});
-  browser=spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',['--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9364',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:'ignore'});
+  browser=spawn('/tmp/chrome-shim',['--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9364',`--user-data-dir=${profile}`,'about:blank'],{windowsHide:true,stdio:'ignore'});
   let tab;for(let i=0;i<40;i++){try{tab=await(await fetch('http://127.0.0.1:9364/json/new?http://127.0.0.1:5204/',{method:'PUT'})).json();break;}catch{await pause(250);}}
   assert.ok(tab,'Edge started');socket=new WebSocket(tab.webSocketDebuggerUrl);await new Promise(r=>socket.addEventListener('open',r,{once:true}));
   let id=0;const pending=new Map(),errors=[];

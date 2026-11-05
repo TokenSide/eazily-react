@@ -28,7 +28,7 @@ let socket;
 
   const profile = path.resolve('.tmp', `catalog-compression-${Date.now()}`);
   fs.mkdirSync(profile, { recursive: true });
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', [
+  browser = spawn('/tmp/chrome-shim', [
     '--headless=new', '--disable-gpu', '--disable-background-networking', '--no-first-run',
     '--remote-debugging-port=9355', `--user-data-dir=${profile}`, 'about:blank',
   ], { windowsHide: true, stdio: 'ignore' });

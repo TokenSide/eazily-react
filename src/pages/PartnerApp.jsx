@@ -38,7 +38,7 @@ function ActualPartnerApp({ role, account, notify, onWorkspace, onAddRole, onEdi
   const {logout}=useAccount();
   const {revision: realtimeRevision}=useRealtime();
   const application = account.applications.find(a=>a.role===role), profile=application?.details||{}, info=partnerRoles[role];
-  const cache = 'eazily-posts:'+account.user.id+':'+role;
+  const cache = 'eazily-posts:'+account.user?.id+':'+role;
   const [route,updateRoute]=useState(()=>history.state?.eazilyPartnerRole===role?history.state?.eazilyPartnerRoute||'home':'home'), [sheet,setSheet]=useState(null), [data,setData]=useState({posts:[],orders:[],earnings:[],leads:[],notifications:[],reviews:[],training:[],progress:[]});
   const [online,setOnline]=useState(false),[loading,setLoading]=useState(true),[error,setError]=useState(''),[busy,setBusy]=useState(false),[search,setSearch]=useState(''),[filter,setFilter]=useState('all'),[language,changeLanguage]=useState(localStorage.getItem('eazily-language')||'English'),[trial,setTrial]=useState(null),[banners,setBanners]=useState([]);
   const [assessmentEligibility,setAssessmentEligibility]=useState(role==='consultant'?null:{eligible:true,fields:[]});

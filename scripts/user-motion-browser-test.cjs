@@ -83,7 +83,7 @@ let server, browser, socket;
 
   const profile = resolve('.tmp', `user-motion-browser-${Date.now()}`);
   mkdirSync(profile, { recursive: true });
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', [
+  browser = spawn('/tmp/chrome-shim', [
     '--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9345', `--user-data-dir=${profile}`, 'about:blank'
   ], { windowsHide: true, stdio: 'ignore' });
   let tab;

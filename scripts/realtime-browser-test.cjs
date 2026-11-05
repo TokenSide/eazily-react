@@ -10,7 +10,7 @@ let browser, socket;
   assert.equal((await fetch('http://127.0.0.1:5173/')).status, 200, 'Start the local Vite server first');
   const profile = resolve('.tmp', `realtime-browser-${Date.now()}`);
   mkdirSync(profile, { recursive: true });
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', [
+  browser = spawn('/tmp/chrome-shim', [
     '--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9348', `--user-data-dir=${profile}`, 'about:blank'
   ], { windowsHide: true, stdio: 'ignore' });
   let tab;

@@ -27,7 +27,10 @@ const manifest = require('../supabase/migration-manifest.json');
     // This fixture exercises the upgrade from the pre-legal schema; the manifest
     // now also contains the later legal and Smart Match migrations.
     for (const entry of manifest.migrations) {
-      if (['consultant_legal.sql','consumer_legal.sql','consumer_legal_transactions.sql','service_partner_smart_match.sql'].includes(entry.file)) continue;
+      // Fixture predates the Smart Match era: stop at the legal migrations this
+      // test applies itself; later migrations assume Smart Match objects exist.
+      if (entry.file === 'consumer_legal.sql') break;
+      if (['consultant_legal.sql','consumer_legal_transactions.sql'].includes(entry.file)) continue;
       await db.exec(readFileSync(`supabase/${entry.file}`, 'utf8'));
     }
     for (const file of ['consultant_legal', 'consultant_legal_drafts_2026_09_20']) await db.exec(readFileSync(`supabase/${file}.sql`, 'utf8'));

@@ -38,7 +38,7 @@ let browser, socket, server;
     response.end('<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/fixture.css"></head><body><div class="partner-dashboard-home-view"><div id="root"></div></div><script src="/fixture.js"></script></body></html>');
   });
   await new Promise(resolve => server.listen(5202, '127.0.0.1', resolve));
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9342', `--user-data-dir=${require('node:path').resolve('.tmp', `registration-flow-${Date.now()}`)}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
+  browser = spawn('/tmp/chrome-shim', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9342', `--user-data-dir=${require('node:path').resolve('.tmp', `registration-flow-${Date.now()}`)}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
   let tab;
   for (let attempt = 0; attempt < 40; attempt += 1) {
     try { tab = await (await fetch('http://127.0.0.1:9342/json/new?http://127.0.0.1:5202/', { method: 'PUT' })).json(); break; } catch { await pause(250); }

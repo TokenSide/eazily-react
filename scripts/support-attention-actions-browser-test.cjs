@@ -31,7 +31,7 @@ let server, browser, socket;
     response.end('<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/fixture.css"></head><body><div id="root"></div><script src="/fixture.js"></script></body></html>');
   });
   await new Promise(done => server.listen(5214, '127.0.0.1', done));
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9374', `--user-data-dir=${resolve(folder, 'browser')}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
+  browser = spawn('/tmp/chrome-shim', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9374', `--user-data-dir=${resolve(folder, 'browser')}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
   let tab;
   for (let attempt = 0; attempt < 40 && !tab; attempt += 1) { try { tab = await (await fetch('http://127.0.0.1:9374/json/new?about:blank', { method: 'PUT' })).json(); } catch { await pause(250); } }
   assert.ok(tab, 'Edge started');

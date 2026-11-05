@@ -40,7 +40,7 @@ let server, browser, socket;
     response.end('<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/fixture.css"></head><body><div id="root"></div><script src="/fixture.js"></script></body></html>');
   });
   await new Promise(done => server.listen(5211, '127.0.0.1', done));
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9371', `--user-data-dir=${resolve('.tmp', `professional-discovery-browser-${Date.now()}`)}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
+  browser = spawn('/tmp/chrome-shim', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9371', `--user-data-dir=${resolve('.tmp', `professional-discovery-browser-${Date.now()}`)}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
   let tab;
   for (let attempt = 0; attempt < 40; attempt += 1) {
     try { tab = await (await fetch('http://127.0.0.1:9371/json/new?http://127.0.0.1:5211/', { method: 'PUT' })).json(); break; }

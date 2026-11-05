@@ -27,7 +27,7 @@ let browser, socket, server;
     res.end(readFileSync(target));
   });
   await new Promise(r => server.listen(5201, '127.0.0.1', r));
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9343', `--user-data-dir=${resolve(output, 'browser')}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
+  browser = spawn('/tmp/chrome-shim', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9343', `--user-data-dir=${resolve(output, 'browser')}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
   let tab;
   for (let i = 0; i < 40; i++) { try { tab = await (await fetch('http://127.0.0.1:9343/json/new?http://127.0.0.1:5201/', { method: 'PUT' })).json(); break; } catch { await pause(250); } }
   assert.ok(tab, 'Browser started'); socket = new WebSocket(tab.webSocketDebuggerUrl);

@@ -10,7 +10,7 @@ let browser, socket;
   assert.equal((await fetch('http://127.0.0.1:5173/')).status, 200, 'Start Vite before this check');
   const output = resolve('.tmp', `legal-assessment-browser-${Date.now()}`);
   mkdirSync(output, { recursive: true });
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9341', `--user-data-dir=${resolve(output, 'browser')}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
+  browser = spawn('/tmp/chrome-shim', ['--headless=new', '--disable-gpu', '--no-first-run', '--remote-debugging-port=9341', `--user-data-dir=${resolve(output, 'browser')}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
   let tab;
   for (let count = 0; count < 40; count += 1) {
     try { tab = await (await fetch('http://127.0.0.1:9341/json/new?http://127.0.0.1:5173/', { method: 'PUT' })).json(); break; } catch { await pause(250); }

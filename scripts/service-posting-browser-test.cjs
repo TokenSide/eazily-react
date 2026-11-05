@@ -9,7 +9,7 @@ let browser, socket;
 (async () => {
   assert.equal((await fetch('http://127.0.0.1:5173/')).status, 200);
   const folder = resolve('.tmp', `service-posting-review-${Date.now()}`); mkdirSync(folder, { recursive: true });
-  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9344',`--user-data-dir=${resolve(folder,'browser')}`,'about:blank'], { windowsHide: true, stdio: 'ignore' });
+  browser = spawn('/tmp/chrome-shim', ['--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9344',`--user-data-dir=${resolve(folder,'browser')}`,'about:blank'], { windowsHide: true, stdio: 'ignore' });
   let tab; for (let attempt=0; attempt<40; attempt+=1) { try { tab=await (await fetch('http://127.0.0.1:9344/json/new?http://127.0.0.1:5173/', {method:'PUT'})).json(); break; } catch { await pause(250); } }
   if (!tab) throw new Error('Edge did not start');
   socket = new WebSocket(tab.webSocketDebuggerUrl); await new Promise(resolveOpen => socket.addEventListener('open',resolveOpen,{once:true}));

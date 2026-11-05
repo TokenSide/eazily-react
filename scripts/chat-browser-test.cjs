@@ -4,7 +4,7 @@ const { readFileSync, writeFileSync, existsSync, mkdirSync } = require('node:fs'
 const { resolve, extname, sep } = require('node:path');
 const { spawn } = require('node:child_process');
 const assert = require('node:assert/strict');
-const edgePath = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
+const edgePath = '/tmp/chrome-shim';
 const pause = ms => new Promise(resolvePromise => setTimeout(resolvePromise, ms));
 const root = resolve('dist');
 const server = createServer((request, response) => {
