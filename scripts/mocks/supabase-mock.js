@@ -1,16 +1,16 @@
 // TEST-ONLY mock of src/lib/supabase.js for the router authorization harness.
 // No network: every query chain resolves empty.
-const chainable = () => new Proxy(function () {}, {
+const chainable = table => new Proxy(function () {}, {
   get(_t, p) {
-    if (p === 'then') return resolve => resolve({ data: [], error: null, count: 0 });
+    if (p === 'then') return resolve => resolve({ data: (typeof window !== 'undefined' && window.__fixtureRows?.[table]) || [], error: null, count: 0 });
     if (p === Symbol.toPrimitive) return () => 0;
-    return chainable();
+    return chainable(table);
   },
-  apply() { return chainable(); },
+  apply() { return chainable(table); },
 });
 export const isSupabaseConfigured = true;
 export const supabase = {
-  from: () => chainable(),
+  from: table => chainable(table),
   rpc: name => (name === 'admin_dashboard_summary' && typeof window !== 'undefined' && window.__adminSummary !== undefined
     ? Promise.resolve({ data: window.__adminSummary, error: null })
     : chainable()),
