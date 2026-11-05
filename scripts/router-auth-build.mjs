@@ -1,7 +1,7 @@
 // TEST-ONLY bundler for the router authorization harness. Not part of the app build.
 import { build } from 'esbuild';
 import { resolve } from 'node:path';
-import { copyFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { copyFileSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 const mockPlugin = {
   name: 'test-mocks',
   setup(b) {
@@ -17,8 +17,10 @@ await build({
   plugins: [mockPlugin],
 });
 // Serve the REAL production stylesheet so full-shell captures are pixel-meaningful; ui-fixture.css is legacy and unused.
-const appCss = readdirSync('dist/assets').find(name => /^index-.*\.css$/.test(name));
-if (!appCss) throw new Error('Build the app first: dist/assets/index-*.css missing');
-copyFileSync('dist/assets/' + appCss, '.tmp/app.css');
+const cssChunks = readdirSync('dist/assets').filter(name => name.endsWith('.css')).sort((a, b) => /^index-/.test(a) ? -1 : /^index-/.test(b) ? 1 : a.localeCompare(b));
+if (!cssChunks.length || !/^index-/.test(cssChunks[0])) throw new Error('Build the app first: dist/assets/index-*.css missing');
+// Lazy route chunks ship their own CSS (Vite injects it at runtime; esbuild cannot). Concatenate all production chunks in entry-first order so full-shell captures are pixel-meaningful for every workspace state.
+writeFileSync('.tmp/app.css', cssChunks.map(name => readFileSync('dist/assets/' + name, 'utf8')).join('\n'));
+void copyFileSync;
 writeFileSync('.tmp/router-auth.html', '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="app.css"></head><body><div id="root"></div><script src="router-auth.js"></script></body></html>');
 console.log('router-auth harness built');
