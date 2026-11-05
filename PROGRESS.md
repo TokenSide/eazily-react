@@ -184,3 +184,8 @@ Upload-set implications: whole rebuilt tree; chrome-shim lines in 23 scripts MUS
 - Demo controls collapsible; truthful demo labeling via demo prop.
 - Admin NaN metric fixed. main=41ea0e1+this.
 OPEN: native installed crash (build mismatch lead); staging/live-auth gap; 4 manifest checksum drift (owner); demo-gate default + sample routing (owner, preserved); phases 6 detail/7 admin theme/8 cleanup.
+
+## 2026-11-05 run 3 (admin KPI truthfulness + suite audit)
+- Admin overview: null RPC values now render "Not recorded" (never blank, never invented zero); Orders & requests sums only when BOTH count(*) operands are present - one missing is an incomplete total. Source contract: admin_dashboard_summary uses count(*)/coalesce, so absent keys mean a non-contract response. All four cases executed in harness: both-missing/one-missing => "Not recorded", 0+0 => 0, 12+7 => 19. Pushed as 8c847091.
+- Suite audit: partner-registration-flow PASS, seller PASS, chat-test.cjs (service suite) PASS. chat-browser-test.cjs FAILS at setup: it injects a fixture account into sessionStorage 'eazily-testing-account', but NO product source reads that key (verified across full git history AND pristine 5at4am HEAD) - pre-existing upstream test/product contradiction, not a regression. Recorded, not rebased: product behavior (Messages requires a signed-in account, else sign-in request) is the intended contract.
+- Housekeeping: .tmp/dist/node_modules gitignored in working tree after .tmp artifacts were swept into a local commit (never reached the push mirror; mirror history stays clean).
