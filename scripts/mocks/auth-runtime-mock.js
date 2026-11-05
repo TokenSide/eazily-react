@@ -2,7 +2,7 @@
 const BASE = { user: { id: 'fixture-user', phone: '+919876543210', phone_confirmed_at: 'fixture' }, profile: { id: 'fixture-user', full_name: 'Fixture User', phone: '+919876543210', city: 'Bhopal', role: 'customer', account_status: 'active' }, applications: [], roles: [], assessments: {}, staff: null, isAdmin: false };
 const EMPTY = { user: null, profile: null, applications: [], roles: [], assessments: {}, staff: null, isAdmin: false };
 export const authRuntime = {
-  client: { auth: { developmentOtp: false, onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }) } },
+  client: { auth: { developmentOtp: false, onAuthStateChange: cb => { window.__authEmit = (event, session) => cb(event, session); return { data: { subscription: { unsubscribe() {} } } }; } } },
   loadAccount: async () => {
     const s = window.__scenario || 'signed_out';
     if (s === 'loading') return new Promise(() => {});
