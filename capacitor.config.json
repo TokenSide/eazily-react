@@ -1,0 +1,14 @@
+{
+  "appId": "com.eazily.app",
+  "appName": "Eazily",
+  "webDir": "dist",
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "css",
+      "initialViewportFitValueHint": "cover",
+      "style": "DARK",
+      "hidden": false,
+      "animation": "NONE"
+    }
+  }
+}

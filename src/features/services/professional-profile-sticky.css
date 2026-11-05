@@ -1,0 +1,17 @@
+.professional-profile-sheet {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden !important;
+}
+
+.professional-profile {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.professional-booking-footer {
+  position: static;
+  flex: 0 0 auto;
+}

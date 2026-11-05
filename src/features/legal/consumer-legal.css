@@ -1,0 +1,15 @@
+.consumer-policy-sheet { max-height: 92dvh; overflow-y: auto; overflow-wrap: anywhere; }
+.consumer-policy-sheet h1 { font-size: 21px; line-height: 1.35; padding-right: 44px; }
+.consumer-policy-sheet .legal-version { max-width: 100%; overflow-wrap: anywhere; }
+.consumer-legal-links { display: grid; gap: 8px; margin: 18px 0; }
+.consumer-legal-links button { min-height: 44px; text-align: left; }
+.consumer-legal-center { min-width: 0; }
+.consumer-legal-center .consent { align-items: flex-start; margin: 16px 0; line-height: 1.55; font-size: 14px; }
+.consumer-legal-center .consent input { flex-shrink: 0; }
+.consumer-consent-record { overflow-wrap: anywhere; line-height: 1.5; }
+.consumer-consent-banner { padding: 16px; background: #f3eeff; border-bottom: 1px solid #d6c7f6; }
+.consumer-consent-banner p { margin: 8px 0; }
+.consumer-policy-page { padding: 20px 16px; overflow-wrap: anywhere; }
+.consumer-policy-page h1 { font-size: 24px; line-height: 1.35; }
+.consumer-policy-page > .btn { display: inline-flex; min-height: 44px; align-items: center; padding: 10px 16px; margin-bottom: 12px; }
+.consumer-policy-page .legal-version { max-width: 100%; overflow-wrap: anywhere; }

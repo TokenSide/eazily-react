@@ -1,0 +1,39 @@
+/* Dedicated demo scope: no changes to actual-account screens. */
+.demo-workspace .demo-controls { display:grid; gap:12px; padding:16px; margin-bottom:16px; background:#fff; border:2px solid var(--role); border-radius:16px; }
+.demo-workspace .demo-controls strong { font-size:15px; line-height:1.5; color:var(--role); }
+.demo-workspace .demo-controls strong svg { vertical-align:middle; margin-right:6px; }
+.demo-workspace .demo-control-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.demo-workspace .demo-controls p,.demo-workspace .demo-content > .demo-stack p { margin:0; font-size:14px; line-height:1.6; }
+.demo-workspace .demo-stack { display:grid; gap:14px; min-width:0; }
+.demo-workspace .demo-content { outline:none; }
+.demo-workspace .demo-content > .demo-stack h2 { font-size:21px; line-height:1.35; }
+.demo-workspace .demo-content > .demo-stack h3 { font-size:16px; line-height:1.4; }
+.demo-workspace .demo-content,.demo-workspace .demo-controls { overflow-wrap:anywhere; }
+.demo-workspace .demo-controls button,.demo-workspace .demo-content > .demo-stack button,.demo-workspace .demo-back,.demo-workspace .demo-feedback button { min-width:44px; min-height:44px; padding:10px 12px; border:1px solid var(--pd-border); background:#fff; border-radius:12px; color:#7C3AED; font-family:inherit; font-size:14px; font-weight:650; cursor:pointer; white-space:normal; }
+.demo-workspace button.demo-primary { color:#fff!important; background:var(--role)!important; border-color:var(--role)!important; }
+.demo-workspace .demo-controls button svg,.demo-workspace .demo-stack button svg { vertical-align:middle; margin-right:5px; }
+.demo-workspace label { display:grid; gap:7px; font-size:14px; font-weight:600; min-width:0; }
+.demo-workspace input,.demo-workspace textarea,.demo-workspace select { width:100%; min-width:0; max-width:100%; min-height:44px; font:inherit; font-size:16px; color:var(--pd-ink); background:#fff; border:1px solid var(--pd-border); border-radius:10px; padding:10px; box-sizing:border-box; }
+.demo-workspace textarea { min-height:90px; resize:vertical; }
+.demo-workspace :is(button,select,input,textarea):focus-visible { outline:3px solid var(--role); outline-offset:2px; }
+.demo-workspace .demo-back { margin-bottom:16px; }
+.demo-workspace .demo-feedback { display:flex; align-items:center; gap:8px; padding:12px; margin-bottom:16px; border:1px solid var(--pd-border); border-radius:12px; background:var(--role-bg); font-size:14px; }
+.demo-workspace .demo-feedback p { flex:1; margin:0; overflow-wrap:anywhere; }
+.demo-workspace .demo-error { background:#fff0ed; color:#90291b; }
+.demo-workspace .demo-badge { justify-self:start; padding:5px 9px; font-size:13px; color:var(--role); background:var(--role-bg); border-radius:8px; }
+.demo-workspace .demo-money { display:flex; justify-content:space-between; gap:12px; font-size:14px; padding:8px 0; border-bottom:1px solid var(--pd-border); }
+.demo-workspace .demo-money b { flex-shrink:0; }
+.demo-workspace .demo-limitation,.demo-workspace .demo-success { padding:12px; border-radius:12px; background:var(--role-bg); }
+.demo-workspace .demo-activity,.demo-workspace .demo-content ol { padding-left:22px; font-size:14px; line-height:1.6; }
+.demo-workspace .demo-content li { margin-bottom:10px; }
+.demo-workspace .demo-activity small { display:block; font-size:13px; color:var(--pd-muted); }
+.demo-customer { min-height:100%; padding:16px 16px 80px; background:#f8f7ff; color:#28104e; }
+.demo-customer .demo-content { display:grid; gap:12px; }
+.demo-customer .demo-content h2,.demo-customer .demo-content h3,.demo-customer .demo-content p { margin:0; }
+.demo-customer-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.demo-customer-card { display:grid; gap:5px; min-width:0; padding:8px; text-align:left; background:#fff; border:1px solid #d8c7ff; border-radius:14px; color:inherit; font:inherit; }
+.demo-customer-card img,.demo-customer-grid > img { display:block; width:100%; aspect-ratio:4/3; object-fit:contain; border-radius:9px; background:#f3eeff; }
+.demo-customer-card span,.demo-customer-card small { font-size:12px; overflow-wrap:anywhere; }
+.demo-customer-hero { display:block; width:100%; max-height:240px; object-fit:contain; border-radius:14px; background:#f3eeff; }
+.demo-customer-nav { position:sticky; bottom:0; display:flex; gap:8px; justify-content:space-around; padding:10px 0 max(10px,env(safe-area-inset-bottom)); background:#fff; border-top:1px solid #d8c7ff; }
+.demo-customer-nav button { min-width:44px; min-height:44px; border:0; background:transparent; color:#6d28d9; font:inherit; font-weight:700; }

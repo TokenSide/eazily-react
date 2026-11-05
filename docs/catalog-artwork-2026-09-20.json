@@ -1,0 +1,68 @@
+{
+  "totalBytes": 121912,
+  "assets": [
+    {
+      "name": "facial.webp",
+      "bytes": 11170,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 1079953
+    },
+    {
+      "name": "ironing.webp",
+      "bytes": 14238,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 825621
+    },
+    {
+      "name": "manicure.webp",
+      "bytes": 16288,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 947610
+    },
+    {
+      "name": "microwave-repair.webp",
+      "bytes": 12604,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 876656
+    },
+    {
+      "name": "refrigerator-repair.webp",
+      "bytes": 8140,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 931307
+    },
+    {
+      "name": "spa.webp",
+      "bytes": 15564,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 922674
+    },
+    {
+      "name": "tailor.webp",
+      "bytes": 17796,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 790025
+    },
+    {
+      "name": "tv-repair.webp",
+      "bytes": 10576,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 740435
+    },
+    {
+      "name": "waxing.webp",
+      "bytes": 15536,
+      "width": 216,
+      "height": 216,
+      "transparentSourcePixels": 943589
+    }
+  ]
+}

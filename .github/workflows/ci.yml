@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint, build, credential policy and bundle budget
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      # scripts/build-policy.mjs runs as a Vite plugin on every build and fails it
+      # when a privileged VITE_ var is set, when a staging build is requested,
+      # when a server-only secret value reaches the output, when a remote
+      # Supabase endpoint is bundled, or when scripts/ demo modules are included.
+      - name: Build
+        run: npm run build
+
+      - name: Enforce bundle budgets
+        run: node scripts/bundle-report.cjs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bundle-report
+          path: .tmp/bundle-report.json
+          if-no-files-found: error
+
+  browser:
+    name: Browser checks (advisory)
+    # Headless Edge harnesses need the Windows Edge install path, so this runs on
+    # windows-latest. Advisory only: scripts/smoke.cjs currently fails at
+    # smoke.cjs:72 on main, independent of any change, and must not block merges.
+    needs: verify
+    runs-on: windows-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Error boundary
+        run: npm run test:error-boundary
+
+      - name: Mobile smoke
+        run: npm run test:smoke

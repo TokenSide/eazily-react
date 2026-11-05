@@ -1,0 +1,39 @@
+{
+  "format": "transparent WebP",
+  "quality": 0.86,
+  "totalBytes": 118992,
+  "assets": [
+    {
+      "id": "book-confidence",
+      "path": "/assets/user-carousel/book-confidence.webp",
+      "width": 480,
+      "height": 600,
+      "bytes": 30334,
+      "transparentPixels": 158951
+    },
+    {
+      "id": "home-care",
+      "path": "/assets/user-carousel/home-care.webp",
+      "width": 480,
+      "height": 600,
+      "bytes": 27524,
+      "transparentPixels": 170678
+    },
+    {
+      "id": "moving-help",
+      "path": "/assets/user-carousel/moving-help.webp",
+      "width": 480,
+      "height": 600,
+      "bytes": 30126,
+      "transparentPixels": 163141
+    },
+    {
+      "id": "urgent-repair",
+      "path": "/assets/user-carousel/urgent-repair.webp",
+      "width": 480,
+      "height": 600,
+      "bytes": 31008,
+      "transparentPixels": 163254
+    }
+  ]
+}

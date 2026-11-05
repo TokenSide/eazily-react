@@ -1,0 +1,75 @@
+/* Local-only browser check. Start Vite at 127.0.0.1:5173 first. */
+const { mkdirSync, writeFileSync } = require('node:fs');
+const { resolve } = require('node:path');
+const { spawn } = require('node:child_process');
+const assert = require('node:assert/strict');
+const pause = ms => new Promise(resolvePause => setTimeout(resolvePause, ms));
+let browser, socket;
+
+(async () => {
+  assert.equal((await fetch('http://127.0.0.1:5173/')).status, 200);
+  const folder = resolve('.tmp', `service-posting-review-${Date.now()}`); mkdirSync(folder, { recursive: true });
+  browser = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9344',`--user-data-dir=${resolve(folder,'browser')}`,'about:blank'], { windowsHide: true, stdio: 'ignore' });
+  let tab; for (let attempt=0; attempt<40; attempt+=1) { try { tab=await (await fetch('http://127.0.0.1:9344/json/new?http://127.0.0.1:5173/', {method:'PUT'})).json(); break; } catch { await pause(250); } }
+  if (!tab) throw new Error('Edge did not start');
+  socket = new WebSocket(tab.webSocketDebuggerUrl); await new Promise(resolveOpen => socket.addEventListener('open',resolveOpen,{once:true}));
+  let id=0; const pending=new Map(), errors=[];
+  socket.addEventListener('message',({data})=>{const message=JSON.parse(data);if(message.id){const request=pending.get(message.id);pending.delete(message.id);message.error?request.reject(message.error):request.resolve(message.result);}if(message.method==='Runtime.exceptionThrown')errors.push(message.params.exceptionDetails.exception?.description||message.params.exceptionDetails.text);if(message.method==='Runtime.consoleAPICalled'&&message.params.type==='error')errors.push(message.params.args.map(arg=>arg.value||arg.description).join(' '));});
+  const send=(method,params={})=>new Promise((resolveSend,reject)=>{pending.set(++id,{resolve:resolveSend,reject});socket.send(JSON.stringify({id,method,params}));});
+  const evaluate=async expression=>{const response=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(response.exceptionDetails)throw new Error(response.exceptionDetails.exception?.description||response.exceptionDetails.text);return response.result.value;};
+  const click=async label=>{await evaluate(`(()=>{const button=[...document.querySelectorAll('button,summary')].find(item=>item.textContent.trim()===${JSON.stringify(label)});if(!button)throw new Error('Missing control: '+${JSON.stringify(label)});button.click();})()`);await pause(220);};
+  const setField=async(label,value)=>{await evaluate(`(()=>{const wrap=[...document.querySelectorAll('.partner-post-sheet .field-wrap')].find(item=>item.querySelector(':scope > span,.form-label')?.textContent.trim()===${JSON.stringify(label)});if(!wrap)throw new Error('Missing field: '+${JSON.stringify(label)});const input=wrap.querySelector('input,select,textarea');const proto=input.tagName==='SELECT'?HTMLSelectElement.prototype:input.tagName==='TEXTAREA'?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value').set.call(input,${JSON.stringify(value)});input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true}));})()`);await pause(80);};
+  await send('Runtime.enable');await send('Page.enable');
+  await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  await send('Page.navigate',{url:'http://127.0.0.1:5173/'});await pause(1500);
+  const account={user:{id:'local-service-post-review',testing:true},profile:{name:'Fixture'},roles:['professional'],applications:[{id:'local-service-app',role:'professional',status:'draft',details:{registrationComplete:true,stage:5,name:'Aarav Sample',businessName:'Fictional Bhopal Repairs',city:'Bhopal',locality:'MP Nagar',servicePlace:'Both',serviceAreas:'MP Nagar, Arera Colony',workingDays:['Monday','Saturday'],category:'Home & Property',services:['Electrician','AC Service'],serviceSelections:[{categoryId:'home-property',categoryLabel:'Home & Property',serviceId:'Electrician',serviceName:'Electrician'},{categoryId:'electronics',categoryLabel:'Electronics',serviceId:'AC Service',serviceName:'AC Service'}]}}]};
+  await evaluate(`sessionStorage.clear();sessionStorage.setItem('eazily-testing-account',${JSON.stringify(JSON.stringify(account))});localStorage.setItem('eazily-language','English');location.href='/seller/service/dashboard'`);await pause(1300);
+  assert.ok(await evaluate(`document.body.textContent.includes('Apna kaam yahan add karein')`),'First-service guidance appears');
+  await click('+ Add Service / Service Jodein');
+  assert.equal(await evaluate(`document.querySelector('.service-post-heading span').textContent`),'Step 1 of 3');
+  assert.equal(await evaluate(`document.querySelectorAll('.registered-service-options button').length`),2);
+  await click('ElectricianHome & Property');
+  assert.equal(await evaluate(`document.querySelector('.partner-post-sheet input.field').value`),'');
+  assert.equal(await evaluate(`[...document.querySelectorAll('.partner-post-sheet input')].find(input=>input.value==='Electrician')?.value`),'Electrician','Service title auto-fills');
+  await click('Aage / Continue');
+  assert.equal(await evaluate(`document.querySelector('.service-post-heading span').textContent`),'Step 2 of 3');
+  assert.ok(await evaluate(`document.body.textContent.includes('Visiting charge — ₹')`));
+  assert.ok(await evaluate(`!document.querySelector('.partner-post-sheet').textContent.match(/markup|commission|platform earnings/i)`));
+  assert.ok(await evaluate(`!document.querySelector('.service-own-summary').textContent.match(/total/i)`),'No unconditional total');
+  await setField('Service charge — ₹','200');
+  await click('Aage / Continue');
+  assert.equal(await evaluate(`document.querySelector('.service-post-heading span').textContent`),'Step 3 of 3');
+  assert.ok(await evaluate(`document.body.textContent.includes('Service illustration — add your own work photo anytime.')`));
+  await click('Post Karein / Publish Service');
+  assert.ok(await evaluate(`document.querySelector('.service-post-success').textContent.includes('Verification approve hone ke baad live')`));
+  await click('My Services dekhein');
+  assert.ok(await evaluate(`document.querySelector('.service-management-card').textContent.includes('Fan')===false && document.querySelector('.service-management-card').textContent.includes('Electrician')`));
+  assert.ok(await evaluate(`document.querySelector('.service-management-card').textContent.includes('Draft')`));
+  await send('Page.reload');await pause(1100);
+  await click('Post');
+  assert.ok(await evaluate(`document.querySelectorAll('.service-management-card').length===1`),'Local post survives refresh');
+  await evaluate(`document.querySelector('.service-management-card details').open=true`);await click('Duplicate');
+  assert.ok(await evaluate(`document.querySelector('.partner-post-sheet input[value^="Copy of"]')!==null`),'Duplicate opens an editable draft');
+  await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape'});await pause(180);
+  assert.equal(await evaluate(`document.querySelectorAll('.service-management-card').length`),2,'Duplicate creates one draft');
+  await click('Add Service');await evaluate(`(()=>{const button=[...document.querySelectorAll('.registered-service-options button')].find(item=>item.textContent.includes('AC Service'));if(!button)throw new Error('Missing AC Service option');button.click();})()`);await pause(150);await click('Aage / Continue');await setField('Service charge — ₹','350');
+  await send('Page.reload');await pause(1100);await click('Post');
+  assert.equal(await evaluate(`document.querySelector('.service-post-heading span').textContent`),'Step 2 of 3','An unfinished new-service draft resumes at its saved step');
+  assert.equal(await evaluate(`[...document.querySelectorAll('.partner-post-sheet input[type=number]')][0].value`),'350','Refresh preserves the entered partner fee');
+  await click('Save Draft');
+  for(const width of [360,390,430]){
+    await send('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:true});await pause(160);
+    assert.ok(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),`No overflow at ${width}px`);
+    assert.equal(await evaluate(`Math.round(document.querySelector('.phone-shell').getBoundingClientRect().width)`),width);
+    writeFileSync(resolve(folder,`my-services-${width}.png`),Buffer.from((await send('Page.captureScreenshot',{format:'png'})).data,'base64'));
+  }
+  const shopAccount=structuredClone(account);shopAccount.applications[0].details.servicePlace='At my shop';shopAccount.applications[0].details.serviceAreas='';
+  shopAccount.user.id='local-service-shop-review';shopAccount.applications[0].id='local-service-shop-app';
+  await evaluate(`sessionStorage.setItem('eazily-testing-account',${JSON.stringify(JSON.stringify(shopAccount))});location.href='/seller/service/dashboard'`);await pause(1100);await click('+ Add Service / Service Jodein');await click('ElectricianHome & Property');await click('Aage / Continue');
+  assert.ok(await evaluate(`!document.body.textContent.includes('Visiting charge — ₹')`),'Shop-only form has no visiting charge');
+  assert.ok(await evaluate(`document.body.textContent.includes('Visiting charge apply nahi hoga')`));
+  assert.deepEqual(errors,[],'No browser exceptions or console errors');
+  console.log('PASS: three-step Service Partner posting, registered-service reuse, own-fee-only display, no-photo fallback, unverified draft result, My Services, duplicate draft, shop-only visit behavior, refresh persistence, and mobile widths 360/390/430.');
+  console.log('Screenshots: '+folder);
+  await send('Browser.close');
+})().catch(error=>{console.error(error);process.exitCode=1;}).finally(()=>{socket?.close();browser?.kill();});

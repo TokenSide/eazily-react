@@ -1,0 +1,44 @@
+/* User category browsing only. No Home, partner, posting, registration or shared-header selectors. */
+/* Clip horizontal paint without creating a nested scroll container that disables sticky navigation. */
+html:has(.user-compact-services), body:has(.user-compact-services) { overflow-x:clip; overflow-y:visible; }
+.phone-shell:has(.user-compact-services), .user-art-catalog.user-compact-services { overflow-x:clip!important; overflow-y:visible!important; }
+.user-art-catalog .catalog-header { display:block; padding:12px; }
+.user-art-catalog .catalog-header .search-area { position:relative; width:100%; min-width:0; }
+.user-art-catalog .catalog-header .search-results { position:absolute; top:calc(100% + 6px); left:0; right:0; width:100%; }
+.user-art-catalog .catalog-header .catalog-search { width:100%; min-height:48px; }
+.user-art-catalog .catalog-layout { min-height:0; padding-bottom:12px; }
+.user-art-catalog .catalog-content { margin:0; align-self:start; }
+.user-art-catalog .catalog-welcome,.user-art-catalog .catalog-welcome.compact { padding:16px!important; margin-bottom:12px; border-radius:17px; box-shadow:none; }
+.user-art-catalog .catalog-welcome h1,.user-art-catalog .catalog-welcome.compact h1 { font-size:20px; line-height:1.3; letter-spacing:-.35px; }
+.user-art-catalog .crumb { gap:4px; margin-bottom:8px; font-size:11px; line-height:1.4; }
+.user-art-catalog .crumb button { display:inline-flex; align-items:center; gap:4px; padding:0; font-size:inherit; }
+.user-group-selection .group-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.user-group-selection .group-card { padding:12px!important; gap:7px; }
+.user-group-selection .group-card > i { width:68px; height:57px; }
+.user-group-selection .group-card b { font-size:14px; }
+.user-compact-services .catalog-layout:has(.catalog-side) { grid-template-columns:clamp(76px,21vw,88px) minmax(0,1fr)!important; }
+.user-compact-services .catalog-side { position:sticky; top:12px; align-self:start; display:block; min-width:0; max-width:100%; max-height:calc(100dvh - 180px - env(safe-area-inset-bottom)); padding:6px 4px!important; overflow-y:auto!important; overflow-x:hidden!important; border-right:1px solid var(--line); border-bottom:0; scrollbar-width:thin; }
+.user-compact-services .catalog-side .all-back,
+.user-compact-services .catalog-side .group-nav { display:flex!important; flex-direction:column!important; align-items:center; justify-content:center; gap:5px!important; width:100%!important; min-width:0; min-height:44px; margin:0 0 5px!important; padding:8px 2px!important; font-size:12px!important; line-height:1.4; text-align:center; }
+.user-compact-services .catalog-side .all-back span,
+.user-compact-services .catalog-side .group-nav span { width:100%; white-space:normal; word-break:normal; overflow-wrap:normal; }
+.user-compact-services .catalog-side .group-nav .user-service-art { width:36px; height:30px; }
+.user-compact-services .catalog-side .group-nav { transition:background-color 160ms ease,color 160ms ease; }
+.user-compact-services .catalog-side .group-nav.active { background:var(--lav); color:#6025b7; }
+.user-compact-services .catalog-content { container:user-services / inline-size; padding:10px!important; }
+.user-compact-services .catalog-layout .service-option-grid { grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:8px!important; align-items:stretch; animation:user-services-in 180ms ease-out; }
+.user-compact-services .service-option { display:grid; grid-template-rows:37px auto; justify-items:center; align-content:start; gap:6px; min-height:0!important; height:auto; padding:10px 6px!important; border-radius:14px; text-align:center; }
+.user-compact-services .service-option > i { width:44px!important; height:36.667px!important; margin:0; }
+.user-compact-services .service-option > span { width:100%; min-width:0; font-size:12px!important; font-weight:650; line-height:1.4; white-space:normal; overflow-wrap:normal; word-break:normal; hyphens:none; }
+@media(min-width:390px) {
+  .user-compact-services .service-option > span { font-size:13px!important; }
+}
+/* Three columns only with at least 420px inside the main panel, not the overall screen. */
+@container user-services (min-width:420px) {
+  .user-compact-services .catalog-layout .service-option-grid { grid-template-columns:repeat(3,minmax(0,1fr))!important; }
+}
+@keyframes user-services-in { from { opacity:.9; } to { opacity:1; } }
+@media(prefers-reduced-motion:reduce) {
+  .user-compact-services .service-option-grid { animation:none!important; }
+  .user-compact-services .group-nav { transition:none!important; }
+}

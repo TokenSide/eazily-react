@@ -1,0 +1,11 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { readRows, rpc } from '../../services/experience.js';
+import { translate as t } from '../../lib/translate.js';
+export default function RewardsPanel({application,notify}) {
+ const [data,setData]=useState({ledger:[],rewards:[],redemptions:[],enabled:false}),[selected,setSelected]=useState(null),[busy,setBusy]=useState(false);const key=useRef(crypto.randomUUID());
+ const load=useCallback(async()=>{const [config,ledger,rewards,redemptions]=await Promise.all([readRows('seller_reward_config'),readRows('seller_reward_ledger',q=>q.eq('partner_id',application.id)),readRows('seller_rewards_catalog'),readRows('seller_redemptions',q=>q.eq('partner_id',application.id))]);setData({enabled:config[0]?.enabled,ledger,rewards,redemptions});},[application.id]);
+ useEffect(()=>{load().catch(e=>notify(e.message));},[load,notify]);
+ const balance=data.ledger.filter(r=>r.points<0||!r.expires_at||Date.parse(r.expires_at)>Date.now()).reduce((sum,r)=>sum+r.points,0);
+ return <section><h2>{t('Rewards')}</h2><p>{t('Your business earns you more than money.')}</p>{!data.enabled?<p>{t('Rewards coming soon. Earning rules and the redemption catalogue must be enabled first.')}</p>:<><h3>{Math.max(0,balance)} {t('available points')}</h3><p>{t('Reward points are not withdrawable money.')}</p>{data.rewards.map(r=><button className="choice" key={r.id} onClick={()=>{key.current=crypto.randomUUID();setSelected(r);}}>{r.name} · {r.points} {t('points')}</button>)}{selected&&<section className="policy-note"><b>{selected.name}</b><p>{selected.terms}</p><p>{t('Points remaining')}: {balance-selected.points}</p><button className="btn btn-primary" disabled={busy||balance<selected.points} onClick={async()=>{setBusy(true);try{await rpc('redeem_seller_reward',{p_partner:application.id,p_reward:selected.id,p_key:key.current});notify('Redemption requested');setSelected(null);await load();}catch(e){notify(e.message);}finally{setBusy(false);}}}>{t('Confirm redemption')}</button></section>}</>}
+ <h3>{t('Reward history')}</h3>{data.ledger.map(r=><p key={r.id}>{r.points} · {new Date(r.created_at).toLocaleDateString('en-IN')}{r.expires_at&&<> · {t('Expires')}: {new Date(r.expires_at).toLocaleDateString('en-IN')}</>}</p>)}{data.redemptions.map(r=><p key={r.id}>{r.points} · {t(r.status)}</p>)}</section>;
+}

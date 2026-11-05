@@ -1,0 +1,121 @@
+/* Customer-only dark palette. Partner and Admin workspaces keep their own colors. */
+html[data-customer-theme="dark"]:has(.customer-workspace) body { background:#0E0B1A; }
+html[data-customer-theme="dark"] .customer-workspace {
+  --purple:#B794FF;
+  --violet:#B794FF;
+  --navy:#F7F4FF;
+  --muted:#C5BCD8;
+  --line:#3A2E55;
+  --bg:#0E0B1A;
+  --white:#191329;
+  --lav:#31214D;
+  --customer-card:#191329;
+  --customer-raised:#231A36;
+  --shadow:0 12px 38px rgba(0,0,0,.24);
+  background:#0E0B1A;
+  color:#F7F4FF;
+  color-scheme:dark;
+}
+html[data-customer-theme="dark"] .customer-workspace :is(.screen,.home-v3,.catalog-screen,.video-page,.bulk-orders,.setup,.welcome-screen) { background:#0E0B1A; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.topbar,.catalog-header,.simple-head,.page-title,.user-home-header,.home-search,.search-row,.search-cart-row,.bulk-header) { background:#191329; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .hero-header .user-home-header,
+html[data-customer-theme="dark"] .customer-workspace .hero-header .search-cart-row { background:transparent; color:#fff; }
+html[data-customer-theme="dark"] .customer-workspace :is(.catalog-side,.category-side,.menu,.profile-list .choice,.choice,.account-shortcuts button,.workspace-switch button,.service-card,.pro-card,.category-icon,.sub-card,.main-category-card,.group-card,.service-option,.flow-card,.booking-card,.vendor-card,.conversation,.service-experience .experience-section,.professional-alternatives button,.pricing-preview,.customer-payment) {
+  background:#191329;
+  color:#F7F4FF;
+  border-color:#3A2E55;
+}
+html[data-customer-theme="dark"] .customer-workspace :is(.choice.selected,.profile-hero,.home-note,.booking-link,.payment-breakdown,.policy-note,.professional-details-grid>div,.professional-service-list>div) { background:#31214D; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(.bottom-nav,.customer-nav,.sheet,.sheet-bottom,.vendor-booking-footer) { background:#231A36; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .customer-nav .nav-item { color:#C5BCD8; }
+html[data-customer-theme="dark"] .customer-workspace .customer-nav .nav-item.active { color:#B794FF; }
+html[data-customer-theme="dark"] .customer-workspace .customer-nav .nav-item.active .nav-icon { background:#31214D; color:#B794FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.catalog-search,.search,.chat-search,.field,.bulk-page-card input,.bulk-page-card textarea,.bulk-callback input,.bulk-callback textarea,.vendor-filters select,.chat-composer textarea) { background:#191329; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .hero-header .catalog-search { background:#191329; color:#C5BCD8; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(input,textarea,select) { color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(input,textarea)::placeholder { color:#C5BCD8; opacity:1; }
+html[data-customer-theme="dark"] .customer-workspace :is(.catalog-search input,.search input,.chat-search input,.chat-composer textarea,.field:read-only) { background:transparent; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.search-results,.search-results button) { background:#231A36; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .search-results button:is(:hover,:focus-visible) { background:#31214D; }
+html[data-customer-theme="dark"] .customer-workspace :is(.btn-primary,.bulk-chip-grid button.active,.chat-send) { background:#6D28D9; color:#FFFFFF; border-color:#6D28D9; }
+html[data-customer-theme="dark"] .customer-workspace :is(.btn-outline,.icon-btn,.rail-controls button,.sheet-close,.home-category-grid button) { background:#231A36; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .btn-white { background:#fff; color:#321568; }
+html[data-customer-theme="dark"] .customer-workspace :is(.eyebrow,.section-head button,.link,.step-label,.main-category-card small,.service-option small) { color:#B794FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.hero-header,.catalog-welcome,.home-hero,.refer-card,.bulk-estimate) { color:#fff; }
+html[data-customer-theme="dark"] .customer-workspace .hero-header .catalog-search input { color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace .consumer-consent-banner { background:#31214D; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .influencer-legal-document { color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace .influencer-legal-document h2 { border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .influencer-legal-document .legal-date { color:#C5BCD8; }
+html[data-customer-theme="dark"] .customer-workspace .legal-version { background:#31214D; color:#B794FF; }
+html[data-customer-theme="dark"]:has(.customer-workspace) body>.sheet-overlay:has(.consumer-policy-sheet) { --purple:#B794FF; --navy:#F7F4FF; --muted:#C5BCD8; --line:#3A2E55; --bg:#0E0B1A; --lav:#31214D; color:#F7F4FF; color-scheme:dark; }
+html[data-customer-theme="dark"]:has(.customer-workspace) body>.sheet-overlay .consumer-policy-sheet { background:#231A36; color:#F7F4FF; }
+html[data-customer-theme="dark"]:has(.customer-workspace) body>.sheet-overlay .consumer-policy-sheet :is(.influencer-legal-document,.consumer-legal-center) { color:#F7F4FF; }
+html[data-customer-theme="dark"]:has(.customer-workspace) body>.sheet-overlay .consumer-policy-sheet .influencer-legal-document h2 { border-color:#3A2E55; }
+html[data-customer-theme="dark"]:has(.customer-workspace) body>.sheet-overlay .consumer-policy-sheet .influencer-legal-document .legal-date { color:#C5BCD8; }
+html[data-customer-theme="dark"]:has(.customer-workspace) body>.sheet-overlay .consumer-policy-sheet .legal-version { background:#31214D; color:#B794FF; }
+html[data-customer-theme="dark"]:has(.customer-workspace) body>.sheet-overlay .consumer-policy-sheet .btn-outline { background:#191329; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"]:has(.customer-workspace) body>.sheet-overlay .consumer-policy-sheet .testing-notice { background:#31214D; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(.payment-warning,.chat-privacy) { background:#31214D; color:#F7F4FF; border:1px solid #3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(.privacy-note,.credential-note,.loan-disclaimer) { background:#31214D; color:#C5BCD8; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .safety-card { background:#3A1B32; color:#FFD4DE; border-color:#70445B; }
+
+/* Home cards and illustration surfaces retain their images without filters. */
+html[data-customer-theme="dark"] .customer-workspace :is(.home-service-showcase,.home-service-showcase.more-service-showcase,.promise-section,.user-art-home .promise-section) { background:#191329; border-color:#3A2E55; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.home-service-showcase .market-card,.more-service-card,.home-provider-card,.market-card) { background:#231A36; border-color:#3A2E55; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.home-service-showcase .service-card-visual,.more-service-card>i,.home-provider-photo,.market-card>img,.market-card>.image-fallback) { background:#191329; color:#B794FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .home-service-showcase .market-card { --service-tint:color-mix(in srgb,var(--service-accent) 15%,#191329); }
+html[data-customer-theme="dark"] .customer-workspace .home-service-showcase .market-card h3 { color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace .home-service-showcase .service-showcase-heading span { color:#B794FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.user-art-home .explore-grid i,.user-art-home .explore-grid button:nth-child(n) i) { background:#231A36; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .user-art-catalog .main-category-card>.main-category-image { background:#231A36; }
+html[data-customer-theme="dark"] .customer-workspace :is(.home-provider-facts span,.home-provider-photo span,.home-service-showcase .service-card-visual>span,.promise-section>small) { background:#31214D; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .home-bulk-orders-strip { background:#24183A; color:#F7F4FF; border-color:#8B5CF6; box-shadow:0 0 12px rgba(139,92,246,.20); }
+html[data-customer-theme="dark"] .customer-workspace .home-bulk-orders-label h2 { color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace .home-bulk-orders-icon { background:#31214D; color:#B794FF; }
+html[data-customer-theme="dark"] .customer-workspace .home-bulk-orders-ticker-window { background:#31214D; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace .home-bulk-orders-ticker-window::before { background:linear-gradient(90deg,#31214D,transparent); }
+html[data-customer-theme="dark"] .customer-workspace .home-bulk-orders-ticker-window::after { background:linear-gradient(270deg,#31214D,transparent); }
+html[data-customer-theme="dark"] .customer-workspace .home-bulk-orders-cta { background:#6D28D9; color:#FFFFFF; }
+
+/* Service, professional, and booking details. */
+html[data-customer-theme="dark"] .customer-workspace :is(.professional-stat,.service-summary-card,.service-experience .share-card) { background:#231A36; border-color:#3A2E55; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace .service-price-line { border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(.professional-stat small,.professional-facts small,.professional-profile-section>p,.profile-empty-copy) { color:#C5BCD8; }
+html[data-customer-theme="dark"] .customer-workspace .home-provider-details .btn-outline { background:#191329; }
+
+/* Bulk Orders uses the same customer palette in its full form and sheets. */
+html[data-customer-theme="dark"] .customer-workspace :is(.bulk-header,.bulk-help,.bulk-history,.bulk-page-card,.bulk-service-card,.bulk-success,.bulk-callback,.bulk-chip-grid button,.bulk-quantity-row button) { background:#191329; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(.bulk-service-card.selected,.bulk-rate,.bulk-review-total,.bulk-account,.bulk-success>div,.bulk-demo-note) { background:#31214D; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(.bulk-rate strong,.bulk-review-total strong,.bulk-demo-note) { color:#F7F4FF!important; }
+html[data-customer-theme="dark"] .customer-workspace :is(.bulk-rate b,.bulk-unlocked,.bulk-sticky small,.bulk-review-total b) { color:#A7F3D0; }
+html[data-customer-theme="dark"] .customer-workspace .bulk-sticky { background:#231A36; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .bulk-sticky .btn { background:#6D28D9; color:#fff; }
+html[data-customer-theme="dark"] .customer-workspace .bulk-error { background:#3A1B32; color:#FFD4DE!important; }
+html[data-customer-theme="dark"] .customer-workspace .bulk-chip-grid button.active { background:#6D28D9; color:#fff; border-color:#6D28D9; }
+
+/* Messages, forms, notices, and loading states. */
+html[data-customer-theme="dark"] .customer-workspace :is(.chat-workspace,.chat-search,.chat-list-item,.chat-thread-head,.chat-bubble,.chat-composer,.chat-safety,.chat-safety>button) { background:#191329; color:#F7F4FF; border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(.chat-thread,.chat-image,.chat-system) { background:#231A36; color:#C5BCD8; }
+html[data-customer-theme="dark"] .customer-workspace .chat-bubble.you { background:#31214D; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.chat-privacy,.chat-safety,.chat-closed) { background:#31214D; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace :is(.chat-skeleton i,.user-skeleton-block,.user-skeleton-choice) { background:linear-gradient(90deg,#231A36,#31214D,#231A36); }
+html[data-customer-theme="dark"] .customer-workspace :is(.user-button-spinner,.testing-notice,.consumer-consent-banner) { border-color:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace .testing-notice { background:#31214D; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace .auth-development-note { background:#31214D; color:#F7F4FF; }
+html[data-customer-theme="dark"] .customer-workspace .auth-environment-note { background:#3A2A27; color:#FFE1BC; }
+html[data-customer-theme="dark"] .customer-workspace :is(.auth-demo-preview p,.auth-test-note,.auth-divider,.auth-legal-consent) { color:#C5BCD8; }
+html[data-customer-theme="dark"] .customer-workspace .auth-legal-consent a { color:#B794FF; }
+html[data-customer-theme="dark"] .customer-workspace .auth-legal-error { color:#FFD4DE; }
+html[data-customer-theme="dark"] .customer-workspace .auth-divider::before,
+html[data-customer-theme="dark"] .customer-workspace .auth-divider::after { background:#3A2E55; }
+html[data-customer-theme="dark"] .customer-workspace :is(.field:focus,.catalog-search:focus-within,.search:focus-within,.chat-search:focus-within) { border-color:#B794FF; box-shadow:0 0 0 3px #31214D; }
+html[data-customer-theme="dark"] .customer-workspace :is(.preference-row input[type="checkbox"],input[type="checkbox"],input[type="radio"]) { accent-color:#B794FF; }
+.customer-theme-preference span { display:grid; gap:4px; }
+.customer-theme-preference small { color:var(--muted); font-size:11px; }
+.customer-theme-preference input[role="switch"] { appearance:none;flex:none;width:44px;height:26px;margin:0;border:1px solid var(--line);border-radius:99px;background:var(--lav);cursor:pointer;transition:background-color 150ms ease; }
+.customer-theme-preference input[role="switch"]::before { content:"";display:block;width:18px;height:18px;margin:3px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.24);transition:transform 150ms ease; }
+.customer-theme-preference input[role="switch"]:checked { background:#6D28D9;border-color:#6D28D9; }
+.customer-theme-preference input[role="switch"]:checked::before { transform:translateX(18px); }
+.customer-theme-preference input[role="switch"]:focus-visible { outline:2px solid var(--purple);outline-offset:3px; }
+.customer-theme-device { min-height:44px; margin:8px 0 18px; padding:0 10px; border:0; background:transparent; color:var(--purple); font-weight:700; cursor:pointer; }

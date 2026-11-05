@@ -1,0 +1,847 @@
+{
+  "status": "Complete optimized source set; installed under public/assets/user-services",
+  "quality": 0.86,
+  "totalBytes": 1207102,
+  "assets": [
+    {
+      "id": "ac",
+      "file": "ac.webp",
+      "bytes": 5212,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28139
+    },
+    {
+      "id": "adviser",
+      "file": "adviser.webp",
+      "bytes": 10206,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20346
+    },
+    {
+      "id": "agriculture",
+      "file": "agriculture.webp",
+      "bytes": 13450,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 31171
+    },
+    {
+      "id": "architect",
+      "file": "architect.webp",
+      "bytes": 13238,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 23463
+    },
+    {
+      "id": "assorted",
+      "file": "assorted.webp",
+      "bytes": 8378,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 30577
+    },
+    {
+      "id": "balloons",
+      "file": "balloons.webp",
+      "bytes": 12292,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 25244
+    },
+    {
+      "id": "basin",
+      "file": "basin.webp",
+      "bytes": 5348,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 24192
+    },
+    {
+      "id": "battery",
+      "file": "battery.webp",
+      "bytes": 8906,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 17240
+    },
+    {
+      "id": "blood-bank",
+      "file": "blood-bank.webp",
+      "bytes": 12440,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 17265
+    },
+    {
+      "id": "blood",
+      "file": "blood.webp",
+      "bytes": 12018,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26876
+    },
+    {
+      "id": "books",
+      "file": "books.webp",
+      "bytes": 11532,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22826
+    },
+    {
+      "id": "boxes",
+      "file": "boxes.webp",
+      "bytes": 8568,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26528
+    },
+    {
+      "id": "bridal",
+      "file": "bridal.webp",
+      "bytes": 15150,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20611
+    },
+    {
+      "id": "business-finance",
+      "file": "business-finance.webp",
+      "bytes": 12106,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20876
+    },
+    {
+      "id": "business-loan",
+      "file": "business-loan.webp",
+      "bytes": 16980,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 15858
+    },
+    {
+      "id": "calendar",
+      "file": "calendar.webp",
+      "bytes": 10890,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22157
+    },
+    {
+      "id": "camera",
+      "file": "camera.webp",
+      "bytes": 11766,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 16725
+    },
+    {
+      "id": "car-mechanic",
+      "file": "car-mechanic.webp",
+      "bytes": 14600,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 21075
+    },
+    {
+      "id": "car-wash",
+      "file": "car-wash.webp",
+      "bytes": 12214,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 24966
+    },
+    {
+      "id": "car",
+      "file": "car.webp",
+      "bytes": 9222,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 29578
+    },
+    {
+      "id": "career",
+      "file": "career.webp",
+      "bytes": 8738,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22777
+    },
+    {
+      "id": "carpenter",
+      "file": "carpenter.webp",
+      "bytes": 9372,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28306
+    },
+    {
+      "id": "caterer",
+      "file": "caterer.webp",
+      "bytes": 12558,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 21653
+    },
+    {
+      "id": "cctv",
+      "file": "cctv.webp",
+      "bytes": 8716,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26207
+    },
+    {
+      "id": "ceiling",
+      "file": "ceiling.webp",
+      "bytes": 5856,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 30104
+    },
+    {
+      "id": "circuit",
+      "file": "circuit.webp",
+      "bytes": 13126,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 30096
+    },
+    {
+      "id": "cleaning",
+      "file": "cleaning.webp",
+      "bytes": 9828,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 32125
+    },
+    {
+      "id": "computer-repair",
+      "file": "computer-repair.webp",
+      "bytes": 11060,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22880
+    },
+    {
+      "id": "cooking",
+      "file": "cooking.webp",
+      "bytes": 8862,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26012
+    },
+    {
+      "id": "creator",
+      "file": "creator.webp",
+      "bytes": 12778,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 19219
+    },
+    {
+      "id": "cybersecurity",
+      "file": "cybersecurity.webp",
+      "bytes": 9046,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26806
+    },
+    {
+      "id": "deep-cleaning",
+      "file": "deep-cleaning.webp",
+      "bytes": 10736,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26044
+    },
+    {
+      "id": "devices",
+      "file": "devices.webp",
+      "bytes": 11814,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 18502
+    },
+    {
+      "id": "diy",
+      "file": "diy.webp",
+      "bytes": 12950,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20955
+    },
+    {
+      "id": "donor",
+      "file": "donor.webp",
+      "bytes": 9072,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28508
+    },
+    {
+      "id": "drain",
+      "file": "drain.webp",
+      "bytes": 10978,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28984
+    },
+    {
+      "id": "education-loan",
+      "file": "education-loan.webp",
+      "bytes": 11196,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 21071
+    },
+    {
+      "id": "education",
+      "file": "education.webp",
+      "bytes": 8110,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 29081
+    },
+    {
+      "id": "electrician",
+      "file": "electrician.webp",
+      "bytes": 9018,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 31037
+    },
+    {
+      "id": "essentials",
+      "file": "essentials.webp",
+      "bytes": 10072,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26718
+    },
+    {
+      "id": "fashion",
+      "file": "fashion.webp",
+      "bytes": 10956,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22284
+    },
+    {
+      "id": "financial",
+      "file": "financial.webp",
+      "bytes": 13602,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 17352
+    },
+    {
+      "id": "fitness",
+      "file": "fitness.webp",
+      "bytes": 9806,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26606
+    },
+    {
+      "id": "food-travel",
+      "file": "food-travel.webp",
+      "bytes": 16722,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22154
+    },
+    {
+      "id": "gaming",
+      "file": "gaming.webp",
+      "bytes": 8944,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 23598
+    },
+    {
+      "id": "glass",
+      "file": "glass.webp",
+      "bytes": 8480,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 29639
+    },
+    {
+      "id": "hair",
+      "file": "hair.webp",
+      "bytes": 11298,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 29426
+    },
+    {
+      "id": "hanger",
+      "file": "hanger.webp",
+      "bytes": 6324,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 25443
+    },
+    {
+      "id": "health",
+      "file": "health.webp",
+      "bytes": 10298,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 35985
+    },
+    {
+      "id": "heavy-mechanic",
+      "file": "heavy-mechanic.webp",
+      "bytes": 17706,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 16768
+    },
+    {
+      "id": "henna",
+      "file": "henna.webp",
+      "bytes": 12690,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28491
+    },
+    {
+      "id": "home-loan",
+      "file": "home-loan.webp",
+      "bytes": 11790,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22253
+    },
+    {
+      "id": "house",
+      "file": "house.webp",
+      "bytes": 11214,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 21384
+    },
+    {
+      "id": "investment",
+      "file": "investment.webp",
+      "bytes": 9670,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26166
+    },
+    {
+      "id": "keys",
+      "file": "keys.webp",
+      "bytes": 15978,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 17747
+    },
+    {
+      "id": "laundry",
+      "file": "laundry.webp",
+      "bytes": 12774,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 21311
+    },
+    {
+      "id": "legal",
+      "file": "legal.webp",
+      "bytes": 14400,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 35391
+    },
+    {
+      "id": "lifestyle",
+      "file": "lifestyle.webp",
+      "bytes": 9378,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 29615
+    },
+    {
+      "id": "loan",
+      "file": "loan.webp",
+      "bytes": 10126,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 11325
+    },
+    {
+      "id": "local",
+      "file": "local.webp",
+      "bytes": 15130,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 18481
+    },
+    {
+      "id": "makeup",
+      "file": "makeup.webp",
+      "bytes": 11442,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20754
+    },
+    {
+      "id": "medical",
+      "file": "medical.webp",
+      "bytes": 11624,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 19796
+    },
+    {
+      "id": "modification",
+      "file": "modification.webp",
+      "bytes": 15612,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 17618
+    },
+    {
+      "id": "motorbike",
+      "file": "motorbike.webp",
+      "bytes": 16542,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22697
+    },
+    {
+      "id": "moving",
+      "file": "moving.webp",
+      "bytes": 11518,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20780
+    },
+    {
+      "id": "music",
+      "file": "music.webp",
+      "bytes": 8632,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 30605
+    },
+    {
+      "id": "painting",
+      "file": "painting.webp",
+      "bytes": 7300,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28921
+    },
+    {
+      "id": "parcel",
+      "file": "parcel.webp",
+      "bytes": 7864,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 17480
+    },
+    {
+      "id": "personal-loan",
+      "file": "personal-loan.webp",
+      "bytes": 12552,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 15345
+    },
+    {
+      "id": "pet-boarding",
+      "file": "pet-boarding.webp",
+      "bytes": 9404,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 19644
+    },
+    {
+      "id": "pet-grooming",
+      "file": "pet-grooming.webp",
+      "bytes": 10230,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 27558
+    },
+    {
+      "id": "pet-medical",
+      "file": "pet-medical.webp",
+      "bytes": 13826,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 18841
+    },
+    {
+      "id": "pet-rescue",
+      "file": "pet-rescue.webp",
+      "bytes": 11762,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 18977
+    },
+    {
+      "id": "pet-training",
+      "file": "pet-training.webp",
+      "bytes": 8536,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 38830
+    },
+    {
+      "id": "pet-walker",
+      "file": "pet-walker.webp",
+      "bytes": 15394,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 23677
+    },
+    {
+      "id": "pet",
+      "file": "pet.webp",
+      "bytes": 10520,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28328
+    },
+    {
+      "id": "phone",
+      "file": "phone.webp",
+      "bytes": 10446,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 29177
+    },
+    {
+      "id": "pipe",
+      "file": "pipe.webp",
+      "bytes": 14006,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 21917
+    },
+    {
+      "id": "plumber",
+      "file": "plumber.webp",
+      "bytes": 12822,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28420
+    },
+    {
+      "id": "property-loan",
+      "file": "property-loan.webp",
+      "bytes": 14250,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20815
+    },
+    {
+      "id": "purifier",
+      "file": "purifier.webp",
+      "bytes": 7606,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20687
+    },
+    {
+      "id": "salon",
+      "file": "salon.webp",
+      "bytes": 15502,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 33735
+    },
+    {
+      "id": "shoe",
+      "file": "shoe.webp",
+      "bytes": 11176,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26331
+    },
+    {
+      "id": "sprayer",
+      "file": "sprayer.webp",
+      "bytes": 10060,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 29726
+    },
+    {
+      "id": "stage",
+      "file": "stage.webp",
+      "bytes": 22694,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 24767
+    },
+    {
+      "id": "strategy",
+      "file": "strategy.webp",
+      "bytes": 8594,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26951
+    },
+    {
+      "id": "tax",
+      "file": "tax.webp",
+      "bytes": 10354,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20414
+    },
+    {
+      "id": "tech",
+      "file": "tech.webp",
+      "bytes": 11730,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 19763
+    },
+    {
+      "id": "tempo-driver",
+      "file": "tempo-driver.webp",
+      "bytes": 15074,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 20572
+    },
+    {
+      "id": "tent",
+      "file": "tent.webp",
+      "bytes": 9620,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28328
+    },
+    {
+      "id": "tiles",
+      "file": "tiles.webp",
+      "bytes": 9400,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 21010
+    },
+    {
+      "id": "toolkit",
+      "file": "toolkit.webp",
+      "bytes": 14982,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 17012
+    },
+    {
+      "id": "tow",
+      "file": "tow.webp",
+      "bytes": 13320,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 26405
+    },
+    {
+      "id": "travel",
+      "file": "travel.webp",
+      "bytes": 9164,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28102
+    },
+    {
+      "id": "truck",
+      "file": "truck.webp",
+      "bytes": 15590,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 21665
+    },
+    {
+      "id": "trumpet",
+      "file": "trumpet.webp",
+      "bytes": 11194,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 36167
+    },
+    {
+      "id": "vehicle-loan",
+      "file": "vehicle-loan.webp",
+      "bytes": 10940,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 23310
+    },
+    {
+      "id": "vehicle-transport",
+      "file": "vehicle-transport.webp",
+      "bytes": 12728,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 27132
+    },
+    {
+      "id": "video",
+      "file": "video.webp",
+      "bytes": 9638,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 24819
+    },
+    {
+      "id": "washer",
+      "file": "washer.webp",
+      "bytes": 13282,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 13400
+    },
+    {
+      "id": "wedding",
+      "file": "wedding.webp",
+      "bytes": 19396,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28967
+    },
+    {
+      "id": "weights",
+      "file": "weights.webp",
+      "bytes": 9376,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 28059
+    },
+    {
+      "id": "wheel",
+      "file": "wheel.webp",
+      "bytes": 12446,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 22035
+    },
+    {
+      "id": "window",
+      "file": "window.webp",
+      "bytes": 13746,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 17202
+    },
+    {
+      "id": "yoga",
+      "file": "yoga.webp",
+      "bytes": 9520,
+      "width": 216,
+      "height": 216,
+      "transparentPixels": 27024
+    }
+  ]
+}

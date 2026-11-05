@@ -1,0 +1,80 @@
+/* Admin: compact no-show / urgent-ticket alert list. */
+.attention-alerts ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.attention-count {
+  min-width: 26px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #DC2626;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.attention-alert {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid #F59E0B;
+  border-radius: 12px;
+  background: var(--white, #fff);
+  color: var(--navy);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.attention-alert.urgent_ticket_attention {
+  border-left-color: #DC2626;
+}
+
+.attention-alert span,
+.attention-alert small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.attention-item {
+  display: grid;
+  gap: 6px;
+}
+
+.attention-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.attention-resolve {
+  display: grid;
+  gap: 6px;
+}
+
+.attention-resolve textarea {
+  min-height: 64px;
+}
+
+.attention-ok {
+  color: var(--green, #16A46B);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.attention-badge {
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 99px;
+  background: #FEE2E2;
+  color: #B91C1C;
+  font-size: 11px;
+}

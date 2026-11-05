@@ -1,0 +1,745 @@
+EASILY
+CONSULTANT SERVICE PROVIDER PRIVACY POLICY
+
+Platform: Easily
+Operated By: United Crew
+Effective Date: 20 September 2026
+Last Updated: 20 September 2026
+
+1. INTRODUCTION
+
+Welcome to Easily, a technology-enabled marketplace and service platform operated by United Crew (“United Crew”, “Easily”, “we”, “us”, or “our”).
+
+Easily enables independent Consultants and other Service Providers to create profiles, list Services, communicate with Consumers, receive Bookings, manage appointments, and provide Services through the Platform.
+
+This Consultant Service Provider Privacy Policy (“Privacy Policy”) explains how United Crew may collect, use, disclose, store, protect, and otherwise process personal information relating to Consultants and Consultant Service Providers (“Consultant”, “you”, or “your”).
+
+This Privacy Policy applies when you:
+
+Register as a Consultant;
+Create or maintain a Consultant profile;
+Apply to become a Consultant
+Submit verification documents;
+List Consultant Services;
+Receive or manage Bookings;
+Communicate with Consumers;
+Receive payments;
+Contact Easily support;
+Use Consultant tools; or
+Otherwise use Consultant functionality on Easily.
+
+By registering for or using Consultant functionality, you acknowledge that you have read and understood this Privacy Policy.
+
+2. DEFINITIONS
+“Consultant”
+
+means an individual, professional, business, organization, or other Service Provider offering Consultant Services through Easily.
+
+“Consumer”
+
+means a user who searches for, requests, books, or purchases Services through Easily.
+
+“Platform”
+
+means the Easily application, website, software, systems, communication tools, and related services.
+
+“Personal Information”
+
+means information relating to an identified or identifiable individual, to the extent defined as personal information under applicable law.
+
+“Service”
+
+means the consulting, advisory, educational, mentoring, professional, or other Service offered by a Consultant through Easily.
+
+“Booking”
+
+means a confirmed request for a Service.
+
+3. INFORMATION WE COLLECT FROM CONSULTANTS
+
+Depending on your use of Easily, we may collect the following categories of information.
+
+3.1 Identity Information
+
+This may include:
+
+Full legal name;
+Display name;
+Profile name;
+Date of birth or age where required;
+Photograph;
+Gender where voluntarily provided or legally required;
+Government-issued identification information where required;
+Identity verification information; and
+Other information necessary to verify your identity.
+4. CONTACT INFORMATION
+
+We may collect:
+
+Mobile telephone number;
+Email address;
+Business contact information;
+Residential or business address;
+City;
+State;
+Country;
+Emergency contact information where voluntarily provided; and
+Communication preferences.
+5. PROFESSIONAL INFORMATION
+
+Because Easily provides a marketplace for Consultants, we may collect information relating to your professional background.
+
+This may include:
+
+Professional title;
+Areas of expertise;
+Industry;
+Professional biography;
+Qualifications;
+Education;
+Certifications;
+Licenses;
+Professional memberships;
+Work experience;
+Portfolio information;
+Years of experience;
+Skills;
+Languages;
+Areas of consultation;
+Professional achievements; and
+Other information you choose to provide.
+
+You are responsible for ensuring that professional information submitted to Easily is accurate and not misleading.
+
+6. CONSULTANT PROFILE INFORMATION
+
+Information displayed on your Consultant profile may include:
+
+Name or professional name;
+Profile photograph;
+Biography;
+Professional qualifications;
+Experience;
+Areas of expertise;
+Services offered;
+Service descriptions;
+Pricing;
+Availability;
+Location or service area;
+Ratings;
+Reviews;
+Languages; and
+Other information you choose to make available.
+
+Some profile information may be visible to Consumers.
+
+You should therefore avoid publishing confidential or unnecessary personal information in your public profile.
+
+7. VERIFICATION INFORMATION
+
+Easily may conduct verification procedures before or during your participation as a Consultant.
+
+Depending on the Service and applicable requirements, verification information may include:
+
+Government-issued identification;
+Professional certificates;
+Educational documents;
+Licenses;
+Registrations;
+Business documents;
+Tax-related information;
+Address verification;
+Professional credentials;
+Bank-account verification; and
+Other documents reasonably necessary for verification.
+
+Verification requirements may vary by Consultant category.
+
+8. BUSINESS INFORMATION
+
+If you provide Services as a business or organization, we may collect:
+
+Business name;
+Business address;
+Business registration information;
+Tax information;
+Business contact information;
+Authorized representative information;
+Business documents;
+Service information; and
+Payment information.
+9. CONSULTANT SERVICES INFORMATION
+
+We may collect information about the Services you provide, including:
+
+Service category;
+Service title;
+Description;
+Pricing;
+Duration;
+Availability;
+Service location;
+Online/offline availability;
+Service requirements;
+Cancellation terms;
+Consumer requirements; and
+Other Service-related information.
+10. BOOKING INFORMATION
+
+When Consumers book your Services, we may process:
+
+Consumer name;
+Booking date;
+Booking time;
+Service selected;
+Appointment information;
+Consumer requirements;
+Booking status;
+Cancellation information;
+Payment status;
+Communication records; and
+Other information reasonably necessary to facilitate the Booking.
+11. COMMUNICATION INFORMATION
+
+When you communicate with Consumers or Easily through the Platform, we may process:
+
+Messages;
+Booking-related communications;
+Customer-support requests;
+Complaints;
+Feedback;
+Service-related communications;
+Attachments submitted through supported functionality; and
+Other communication information.
+
+You should not request or collect unnecessary sensitive personal information from Consumers.
+
+12. PAYMENT AND FINANCIAL INFORMATION
+
+To facilitate Consultant payments, we may process:
+
+Bank account information;
+Account-holder name;
+Payment identifiers;
+Transaction information;
+Payment status;
+Tax-related information;
+Payout information;
+Refund information; and
+Other information necessary to process Consultant payments.
+
+Where possible, sensitive payment credentials may be processed by authorized payment providers rather than directly stored by Easily.
+
+Third-party payment providers may process your information under their own privacy policies.
+
+13. TAX INFORMATION
+
+Where required for legal, tax, accounting, reporting, or payment purposes, Easily may collect information such as:
+
+Tax identification information;
+PAN or equivalent information where applicable;
+GST-related information where applicable;
+Invoicing information;
+Business classification; and
+Other legally required tax information.
+
+You are responsible for providing accurate tax information and complying with your own applicable tax obligations.
+
+14. LOCATION INFORMATION
+
+Depending on the Consultant Services you provide, Easily may process location-related information.
+
+This may include:
+
+Service location;
+Business address;
+Service area;
+Location associated with an appointment;
+Approximate location; and
+Device location where you have enabled applicable permissions.
+
+Location information may be used to:
+
+Show Consumers available Consultants;
+Facilitate appointments;
+Support Service delivery;
+Improve search functionality;
+Provide location-based Services; and
+Maintain Platform security.
+
+You may control certain device location permissions through your device settings.
+
+15. DEVICE AND TECHNICAL INFORMATION
+
+When you use Easily, we may automatically collect technical information such as:
+
+Device type;
+Operating system;
+App version;
+Browser;
+IP address;
+Device identifiers;
+Network information;
+Language;
+Time zone;
+Crash information;
+Performance information; and
+Log information.
+
+This information may be used to maintain and secure the Platform.
+
+16. USAGE INFORMATION
+
+We may collect information regarding your use of Consultant functionality, including:
+
+Login activity;
+Profile activity;
+Service listings;
+Bookings;
+Consumer interactions;
+Messages;
+Searches;
+Feature usage;
+Appointment management;
+Reviews;
+Ratings;
+Support requests; and
+Other Platform activity.
+17. REVIEWS AND RATINGS
+
+Consumers may submit ratings and reviews relating to your Services.
+
+Reviews and ratings may be displayed through the Platform.
+
+Easily may process reviews and ratings for:
+
+Platform functionality;
+Consumer information;
+Service quality monitoring;
+Fraud prevention;
+Dispute resolution; and
+Platform improvement.
+
+Easily may take action concerning reviews that violate applicable Platform policies or law.
+
+18. HOW WE USE CONSULTANT INFORMATION
+
+We may use Consultant information for the following purposes.
+
+18.1 Account Management
+
+To:
+
+Create Accounts;
+Verify identity;
+Manage profiles;
+Maintain account security;
+Provide access to Consultant functionality; and
+Communicate with you.
+18.2 Service Marketplace
+
+To:
+
+Publish Consultant profiles;
+Display Services;
+Match Consumers with Consultants;
+Facilitate Bookings;
+Manage appointments; and
+Support Service delivery.
+18.3 Payments
+
+To:
+
+Process Consumer payments;
+Calculate Consultant payouts;
+Process refunds;
+Maintain transaction records;
+Prevent payment fraud; and
+Meet financial and accounting obligations.
+18.4 Verification
+
+To:
+
+Verify identity;
+Verify qualifications;
+Confirm documents;
+Conduct fraud checks;
+Support Platform safety; and
+Meet legal requirements.
+18.5 Safety and Security
+
+To:
+
+Detect fraud;
+Prevent misuse;
+Investigate complaints;
+Investigate suspicious activity;
+Protect Consumers and Consultants;
+Secure Platform systems; and
+Enforce Platform policies.
+18.6 Customer Support
+
+To:
+
+Respond to questions;
+Resolve Booking problems;
+Investigate complaints;
+Resolve payment issues;
+Handle disputes; and
+Provide technical support.
+19. LEGAL BASES FOR PROCESSING
+
+Depending on applicable law, United Crew may process Consultant information based on:
+
+Consent;
+Performance of a contract;
+Steps taken before entering into a contract;
+Compliance with legal obligations;
+Protection of vital interests where legally applicable;
+Legitimate interests where recognized by applicable law; and
+Other lawful bases permitted under applicable law.
+
+The applicable legal basis may vary depending on the information and purpose.
+
+20. INFORMATION SHARED WITH CONSUMERS
+
+To facilitate Consultant Services, certain information may be made available to Consumers.
+
+This may include:
+
+Consultant name;
+Professional profile;
+Photograph;
+Qualifications;
+Experience;
+Service description;
+Pricing;
+Availability;
+Service area;
+Ratings;
+Reviews; and
+Other information intentionally provided for public or Consumer-facing display.
+
+Easily will not intentionally publish confidential verification information such as government identification documents through a public Consultant profile.
+
+21. INFORMATION SHARED WITH CONSUMERS AFTER BOOKING
+
+Where reasonably necessary to facilitate a confirmed Booking, additional information may be shared between the Consultant and Consumer.
+
+This may include:
+
+Name;
+Contact information;
+Appointment details;
+Service location;
+Booking details;
+Relevant Service requirements; and
+Other information necessary to provide the Service.
+
+The information shared should be limited to what is reasonably necessary for the Service.
+
+22. INFORMATION SHARED WITH SERVICE PROVIDERS
+
+Where required to operate the Platform, information may be shared with third-party providers supporting:
+
+Payment processing;
+Identity verification;
+Hosting;
+Communication;
+Analytics;
+Customer support;
+Security;
+Fraud prevention;
+Scheduling;
+Notifications; and
+Other Platform functionality.
+
+Such providers may process information according to applicable contractual and legal requirements.
+
+23. INFORMATION SHARED WITH AUTHORITIES
+
+United Crew may disclose Consultant information where reasonably necessary to:
+
+Comply with applicable law;
+Respond to lawful requests;
+Comply with court orders;
+Meet regulatory requirements;
+Investigate fraud;
+Prevent serious harm;
+Protect rights; or
+Respond to legal proceedings.
+24. BUSINESS TRANSFERS
+
+If United Crew undergoes:
+
+Merger;
+Acquisition;
+Restructuring;
+Financing;
+Sale of assets;
+Corporate reorganization; or
+Similar transaction,
+
+Consultant information may be transferred as part of the transaction, subject to applicable law.
+
+25. CONSULTANT RESPONSIBILITY FOR CONSUMER INFORMATION
+
+As a Consultant, you may receive information about Consumers through Easily.
+
+You agree to:
+
+Use Consumer information only for legitimate Service-related purposes;
+Keep Consumer information confidential;
+Avoid unnecessary collection;
+Not sell Consumer information;
+Not misuse Consumer information;
+Not disclose Consumer information to unauthorized persons;
+Take reasonable security precautions; and
+Comply with applicable privacy and data-protection laws.
+
+You must not use Consumer contact information obtained through Easily for unrelated marketing or other unauthorized purposes.
+
+26. SENSITIVE PERSONAL INFORMATION
+
+Consultants may encounter sensitive information during the provision of Services.
+
+Depending on the nature of the consultation, Consumers may voluntarily provide information relating to:
+
+Health;
+Finances;
+Employment;
+Family;
+Personal circumstances;
+Business information; or
+Other sensitive matters.
+
+Consultants should only collect, use, retain, or disclose such information where reasonably necessary, authorized, and legally permitted.
+
+Consultants should implement appropriate safeguards for any sensitive information they receive.
+
+27. CONSULTANT CONTENT
+
+Consultants may upload:
+
+Profile photographs;
+Service descriptions;
+Professional biographies;
+Qualifications;
+Portfolio material;
+Videos;
+Documents;
+Marketing content; and
+Other Content.
+
+You are responsible for ensuring that you have the necessary rights to upload such Content.
+
+By uploading Content to Easily, you grant United Crew a non-exclusive, worldwide, royalty-free license to host, reproduce, display, distribute, and process the Content as reasonably necessary to operate, improve, secure, and promote the Platform, subject to applicable law.
+
+28. PUBLIC PROFILE INFORMATION
+
+Information intentionally included in a public Consultant profile may be visible to:
+
+Consumers;
+Platform users;
+Search functionality;
+Other users where the applicable feature permits; and
+Persons accessing publicly available Platform pages.
+
+You should carefully consider what information you publish publicly.
+
+Do not publish:
+
+Passwords;
+OTPs;
+Banking credentials;
+Government identification numbers unless specifically requested through a secure verification process;
+Private contact information unnecessarily; or
+Other confidential information.
+29. COOKIES AND SIMILAR TECHNOLOGIES
+
+Easily may use:
+
+Cookies;
+SDKs;
+Pixels;
+Local storage;
+Analytics technologies; and
+Similar technologies.
+
+These may be used for:
+
+Login;
+Security;
+Preferences;
+Analytics;
+Performance;
+Fraud prevention; and
+Marketing where legally permitted.
+30. MARKETING COMMUNICATIONS
+
+Where permitted by applicable law, Easily may send Consultants communications regarding:
+
+New Platform features;
+Consultant opportunities;
+Service updates;
+Promotions;
+Educational resources;
+Platform announcements; and
+Other relevant information.
+
+You may opt out of promotional communications where applicable.
+
+Essential Service, Account, security, legal, and transaction-related communications may continue.
+
+31. DATA RETENTION
+
+United Crew may retain Consultant information for as long as reasonably necessary for:
+
+Account management;
+Service delivery;
+Payment processing;
+Tax and accounting;
+Legal compliance;
+Fraud prevention;
+Dispute resolution;
+Security;
+Contract enforcement; and
+Legitimate business purposes.
+
+Retention periods may vary depending on the type of information.
+
+When information is no longer reasonably required, it may be deleted, anonymized, or securely disposed of subject to applicable law.
+
+32. DATA SECURITY
+
+United Crew uses reasonable technical and organizational measures intended to protect Consultant information.
+
+These measures may include:
+
+Access controls;
+Authentication;
+Encryption where appropriate;
+Monitoring;
+Secure infrastructure;
+Security testing; and
+Other reasonable safeguards.
+
+However, no electronic system can be guaranteed to be completely secure.
+
+33. CONSULTANT ACCOUNT SECURITY
+
+You are responsible for maintaining the security of your Consultant Account.
+
+You should:
+
+Keep passwords confidential;
+Protect authentication credentials;
+Avoid sharing your Account;
+Use secure devices;
+Report unauthorized access promptly; and
+Follow Platform security instructions.
+
+Easily will not ask you to disclose passwords, PINs, or OTPs through unauthorized channels.
+
+34. THIRD-PARTY SERVICES
+
+Easily may use third-party services including:
+
+Payment processors;
+Identity verification providers;
+Cloud providers;
+Analytics providers;
+Communication providers;
+Security providers;
+Scheduling systems;
+Maps and location services; and
+Other technology providers.
+
+Third parties may process information under their own privacy policies and applicable contractual requirements.
+
+35. INTERNATIONAL DATA PROCESSING
+
+Depending on the Platform's technology providers and infrastructure, Consultant information may be processed or stored outside your state or country.
+
+Where applicable law requires safeguards for cross-border processing, United Crew will take appropriate measures required by applicable law.
+
+36. YOUR PRIVACY RIGHTS
+
+Depending on applicable law, you may have rights relating to your personal information, including rights to:
+
+Request access;
+Request correction;
+Request deletion where legally available;
+Withdraw consent where processing is based on consent;
+Object to certain processing;
+Request restriction where legally applicable;
+Request portability where legally applicable; and
+Lodge a complaint with an appropriate authority.
+
+These rights may be subject to applicable legal exceptions.
+
+37. CORRECTING YOUR INFORMATION
+
+Consultants should keep their information accurate and up to date.
+
+You may be able to update certain information through your Consultant Account.
+
+Where information cannot be updated through the Platform, you may contact Easily.
+
+38. ACCOUNT DELETION
+
+You may request deletion of your Consultant Account subject to:
+
+Pending Bookings;
+Outstanding payments;
+Legal requirements;
+Tax and accounting obligations;
+Dispute resolution;
+Fraud prevention;
+Contractual obligations; and
+Other legitimate retention requirements.
+
+Deleting your Account may not immediately delete information that United Crew is legally required or reasonably entitled to retain.
+
+39. WITHDRAWAL OF CONSENT
+
+Where processing is based on your consent, you may withdraw that consent where permitted by applicable law.
+
+Withdrawal may not affect:
+
+Processing that occurred before withdrawal;
+Processing required by law;
+Processing necessary to perform a contract; or
+Processing based on another lawful basis.
+
+Certain Platform functionality may become unavailable if required information or permissions are withdrawn.
+
+40. FRAUD AND SECURITY MONITORING
+
+Easily may monitor Platform activity to identify and prevent:
+
+Fraud;
+Fake Accounts;
+Identity misuse;
+Payment abuse;
+Account takeover;
+Manipulation of reviews;
+Unauthorized access;
+Platform abuse; and
+Other security threats.
+
+Where legally permitted, automated systems may be used to identify suspicious activity.
+
+41. DATA BREACHES AND SECURITY INCIDENTS
+
+If United Crew becomes aware of a security incident affecting Consultant information, we may take reasonable steps required by applicable law to:
+
+Investigate;
+Contain;
+Mitigate;
+Secure affected systems;
+Assess potential impact; and
+Notify affected parties or authorities where legally required.
+42. CONSULTANT'S PROFESSIONAL OBLIGATIONS
+
+Consultants are independently responsible for complying with laws and profes

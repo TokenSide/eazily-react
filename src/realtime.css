@@ -1,0 +1,27 @@
+.realtime-status {
+  align-items: center;
+  background: color-mix(in srgb, var(--surface, #fff) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink, #182033) 14%, transparent);
+  border-radius: 999px;
+  bottom: calc(82px + env(safe-area-inset-bottom));
+  box-shadow: 0 4px 14px rgb(15 23 42 / 10%);
+  color: var(--muted, #667085);
+  display: flex;
+  font-size: 11px;
+  gap: 6px;
+  line-height: 1;
+  min-height: 28px;
+  padding: 5px 9px;
+  position: fixed;
+  right: max(10px, calc((100vw - 430px) / 2 + 10px));
+  z-index: 45;
+}
+.realtime-status > span { background: #94a3b8; border-radius: 50%; height: 7px; width: 7px; }
+.realtime-status.realtime-live > span { background: #16a34a; }
+.realtime-status.realtime-connecting > span,
+.realtime-status.realtime-reconnecting > span { background: #d97706; }
+.realtime-status.realtime-offline > span { background: #dc2626; }
+.realtime-status button { background: none; border: 0; color: inherit; font: inherit; font-weight: 700; min-height: 18px; padding: 0 1px; text-decoration: underline; }
+@media (prefers-reduced-motion: reduce) {
+  .realtime-status, .realtime-status * { animation: none !important; transition: none !important; }
+}

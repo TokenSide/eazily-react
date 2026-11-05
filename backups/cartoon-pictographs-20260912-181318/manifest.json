@@ -1,0 +1,39 @@
+{
+  "label": "Exact pre-realistic Eazily user-app cartoon pictographs",
+  "createdAt": "2026-09-12T18:13:18+05:30",
+  "source": "Recovered from workspace change history and verified against the pre-replacement SHA-256 snapshot",
+  "files": [
+    {
+      "file": "artwork.js",
+      "sha256": "0DB63609C236D34E4135705E9D852922258CC8873D9EAA164D8BCF1CFAC5ED76",
+      "bytes": 4509,
+      "purpose": "Original cartoon name-to-subject mapping"
+    },
+    {
+      "file": "ServiceIllustration.jsx",
+      "sha256": "0607946149EAB0EFEFAC82D0D78B2BDA441998D3CFA7DEE2E77EAE731E384096",
+      "bytes": 26135,
+      "purpose": "Original inline SVG cartoon renderer"
+    },
+    {
+      "file": "user-art.css.reference",
+      "sha256": "4FA78C96A1AD7CF9899FC6825E95F02DE8B27213EE864A83390B8211F9AB442E",
+      "bytes": 4958,
+      "purpose": "Reference only; restore script intentionally leaves current layout CSS untouched"
+    }
+  ],
+  "realisticFiles": [
+    {
+      "file": "realistic/artwork.js",
+      "sha256": "902F99B459C54337958D379693E1265CACC3C7CD323948982C1FB58DF950B79D",
+      "bytes": 5538,
+      "purpose": "Reversible realistic name-to-WebP mapping"
+    },
+    {
+      "file": "realistic/ServiceIllustration.jsx",
+      "sha256": "BD5A8FEB0049B46786A56C1D224DCAC5DF4940A79843701AEE29F2E0B02D55A0",
+      "bytes": 427,
+      "purpose": "Reversible realistic WebP renderer"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+supabase/.temp/
+*.dump
+*.backup
+staging-backups/
+.DS_Store
+npm-debug.log*
+.tmp/
+*.log
+
+# Android signing material and local SDK config
+*.jks
+*.keystore
+local.properties
+*.hprof
+.idea/
+.vscode/
+
+# Empty snapshot directories from earlier tooling runs
+dashboard-checkpoint-*/
+subscription-checkpoint-*/

@@ -1,0 +1,566 @@
+CONSULTANT SERVICE PROVIDER TERMS & CONDITIONS
+
+Platform: Easily
+Operated By: United Crew
+Effective Date: 20 September 2026
+Last Updated: 20 September 2026
+
+1. INTRODUCTION
+
+Welcome to Easily, a technology-enabled service marketplace operated by United Crew.
+
+These Consultant Service Provider Terms & Conditions (“Consultant Terms”, “Terms”, or “Agreement”) govern your registration, verification, listing, promotion, booking, and provision of consulting services through the Easily platform, including the Easily mobile application, website, software, communication systems, dashboards, and related services (collectively, the “Platform”).
+
+In these Terms:
+
+“Easily”, “Platform”, “we”, “us”, or “our” means Easily and/or United Crew.
+“Consultant”, “you”, or “your” means an individual, professional, organization, or business approved to provide consulting services through Easily.
+“Consumer” means a person who discovers, requests, books, or purchases your consulting services through Easily.
+“Service” means a consulting service listed and offered by you through Easily.
+“Booking” means a confirmed request by a Consumer to receive your Service.
+“Account” means your Consultant account on Easily.
+
+By registering as a Consultant, completing onboarding, submitting verification documents, publishing a Service, accepting a Booking, communicating with a Consumer, or providing a Service through Easily, you agree to be legally bound by these Terms.
+
+If you do not agree to these Terms, you must not register or provide consulting services through Easily.
+
+2. ROLE OF EASILY
+2.1 Marketplace Platform
+
+Easily provides a technology platform that allows Consumers to discover and connect with Consultants and request or book consulting services.
+
+2.2 Independent Service Provider
+
+Unless expressly agreed otherwise in writing, you provide your Services as an independent Service Provider and not as an employee, agent, partner, or representative of United Crew.
+
+2.3 No Guaranteed Business
+
+Easily does not guarantee:
+
+A minimum number of Consumers;
+A minimum number of Bookings;
+A minimum income;
+A minimum number of consultations;
+Any particular business result; or
+Any particular level of Consumer demand.
+2.4 Platform Facilitation
+
+Depending on the Service, Easily may facilitate:
+
+Consultant discovery;
+Profile creation;
+Service listings;
+Booking and scheduling;
+Consumer communication;
+Payment collection;
+Refund processing;
+Reviews and ratings;
+Notifications;
+Customer support; and
+Consultant payouts.
+3. CONSULTANT ELIGIBILITY
+
+To become a Consultant on Easily, you must:
+
+Be legally capable of entering into a binding agreement;
+Provide accurate identity and professional information;
+Have the legal right to provide the Services you list;
+Possess qualifications, licenses, registrations, certifications, or approvals required for your Services;
+Comply with all applicable laws and regulations; and
+Complete the verification process required by Easily.
+
+Certain categories of consulting may have additional eligibility requirements.
+
+4. CONSULTANT ONBOARDING
+
+During onboarding, Easily may request information including:
+
+Full legal name;
+Mobile number;
+Email address;
+Residential/business address;
+Profile photograph;
+Date of birth or age verification where required;
+Identity documents;
+Educational qualifications;
+Professional qualifications;
+Certifications;
+Licenses and registrations;
+Professional experience;
+Areas of expertise;
+Portfolio or work samples;
+Bank/payout information;
+Tax-related information; and
+Other information reasonably necessary for onboarding and verification.
+
+You agree that all information submitted during onboarding must be truthful, complete, accurate, and current.
+
+5. IDENTITY AND PROFESSIONAL VERIFICATION
+
+5.1 Easily may verify your identity, qualifications, professional experience, licenses, registrations, or other information.
+
+5.2 Verification may be performed by Easily or an authorized third-party verification provider.
+
+5.3 Easily may request additional documents or information at any time where reasonably necessary.
+
+5.4 You must not submit:
+
+Fake documents;
+Forged certificates;
+Altered documents;
+False professional information;
+Another person's identity documents; or
+Misleading information.
+
+5.5 If information provided by you is found to be false, misleading, fraudulent, or materially incomplete, Easily may suspend or terminate your Account.
+
+5.6 Verification by Easily does not constitute a guarantee, certification, professional endorsement, or warranty of your Services.
+
+6. PROFESSIONAL QUALIFICATIONS AND LICENSES
+
+6.1 You are solely responsible for determining whether your Service requires a professional qualification, registration, license, certification, approval, or other authorization.
+
+6.2 Where required by applicable law, you must obtain and maintain the relevant authorization before offering the Service.
+
+6.3 You must not claim to be:
+
+A licensed professional;
+A registered professional;
+A certified expert;
+An authorized advisor; or
+A member of a professional body
+
+unless you actually hold the relevant qualification, registration, certification, or authorization.
+
+6.4 If a required license, registration, or certification expires, is suspended, cancelled, or revoked, you must immediately stop offering the affected Service and inform Easily.
+
+6.5 Easily may remove or suspend a Service where required documentation is missing or cannot be verified.
+
+7. CONSULTANT PROFILE
+
+You are responsible for maintaining an accurate Consultant profile.
+
+Your profile may contain:
+
+Name;
+Professional title;
+Profile photograph;
+Biography;
+Qualifications;
+Experience;
+Areas of expertise;
+Languages;
+Certifications;
+Professional registrations;
+Service descriptions;
+Prices;
+Availability;
+Portfolio;
+Reviews and ratings; and
+Other relevant information.
+
+You must not make false, exaggerated, deceptive, or unverifiable claims.
+
+You must promptly update information that becomes inaccurate.
+
+Easily may format, moderate, edit, restrict, or remove profile content where reasonably necessary to maintain Platform quality, safety, compliance, or consistency.
+
+8. SERVICE LISTINGS
+
+Each Service listed by you should clearly state, where applicable:
+
+Service name;
+Service description;
+Scope of Service;
+Duration;
+Price;
+Number of sessions;
+Delivery method;
+Online/offline availability;
+Service location;
+Consumer requirements;
+Deliverables;
+Cancellation terms;
+Rescheduling conditions; and
+Any material limitations.
+
+You must provide Services substantially in accordance with the published description and confirmed Booking.
+
+You must not advertise a Service in a way that is misleading or likely to create an incorrect expectation regarding the Service.
+
+9. CONSULTING CATEGORIES
+
+Easily may permit Consultants to provide services in categories including, but not limited to:
+
+Business consulting;
+Career consulting;
+Marketing consulting;
+Social-media consulting;
+Education consulting;
+Technology consulting;
+Professional mentoring;
+Personal development consulting;
+Financial-related consulting where legally permitted;
+Loan-related assistance where legally permitted;
+Industry-specific consulting; and
+Other approved consulting services.
+
+Easily may introduce, modify, restrict, or discontinue categories from time to time.
+
+Certain categories may require additional verification, qualifications, licenses, or approvals.
+
+10. REGULATED PROFESSIONAL SERVICES
+
+10.1 If you provide services involving financial, investment, lending, insurance, medical, legal, tax, accounting, psychological, or other regulated matters, you must comply with all applicable laws and regulatory requirements.
+
+10.2 You must hold all licenses, registrations, qualifications, or permissions required for the relevant Service.
+
+10.3 You must not use Easily to provide a regulated service for which you are not legally authorized.
+
+10.4 You must not make unauthorized guarantees concerning:
+
+Investment returns;
+Loan approval;
+Loan disbursement;
+Medical outcomes;
+Legal outcomes;
+Financial outcomes; or
+Other regulated results.
+
+10.5 Easily may require additional documentation before allowing you to list or provide certain regulated Services.
+
+11. FINANCIAL AND LOAN-RELATED CONSULTING
+
+If you provide loan or financial-service-related assistance through Easily:
+
+11.1 You must accurately represent your role.
+
+11.2 You must not falsely represent yourself as a bank, lender, financial institution, or regulated entity.
+
+11.3 You must not guarantee loan approval, loan amount, interest rate, disbursement, or any other lending outcome unless legally authorized and expressly permitted.
+
+11.4 You must not request a Consumer's:
+
+Banking password;
+Card PIN;
+OTP;
+Authentication password; or
+Other confidential authentication credential.
+
+11.5 You must handle financial and personal information securely and only for legitimate purposes.
+
+11.6 You must comply with all applicable laws and regulatory requirements relating to your particular financial service.
+
+12. SERVICE PRICING
+
+12.1 Where pricing is controlled by the Consultant, you may set the price of your Services subject to Easily's applicable policies.
+
+12.2 Prices must be accurate and transparent.
+
+12.3 You must not charge Consumers undisclosed fees.
+
+12.4 Any additional charge must be clearly disclosed and permitted by the applicable Service terms.
+
+12.5 Easily may require changes to pricing information where necessary to comply with applicable law or Platform policies.
+
+13. PLATFORM FEES AND COMMISSION
+
+13.1 Easily may charge a Platform commission, service fee, subscription fee, payment-processing fee, or other applicable fee.
+
+13.2 The applicable commercial terms will be communicated during onboarding, through the Consultant dashboard, or through another authorized Platform communication.
+
+13.3 Easily may deduct applicable fees from amounts payable to you.
+
+13.4 Deductions may include, where applicable:
+
+Platform commission;
+Payment-processing charges;
+Refund adjustments;
+Chargebacks;
+Taxes or statutory deductions;
+Promotional adjustments; and
+Other amounts permitted under the applicable commercial arrangement.
+
+13.5 Easily may modify its fee structure by providing appropriate notice.
+
+14. PAYMENTS FROM CONSUMERS
+
+14.1 Where payment functionality is provided by Easily, Consumers may pay through Platform-supported payment methods.
+
+14.2 Payments may be processed through authorized third-party payment providers.
+
+14.3 Consultants must not interfere with or manipulate Platform payment systems.
+
+14.4 You must not request that Consumers make payments through unauthorized channels for the purpose of avoiding Platform fees.
+
+15. CONSULTANT PAYOUTS
+
+15.1 Eligible Consultant earnings will generally be paid according to the applicable payout schedule.
+
+15.2 Payouts may be delayed, held, adjusted, or reviewed in circumstances including:
+
+Refund requests;
+Chargebacks;
+Payment disputes;
+Suspected fraud;
+Account verification issues;
+Incorrect payout information;
+Legal or regulatory requirements; or
+Other legitimate Platform-security or payment concerns.
+
+15.3 You are responsible for providing accurate bank and payout information.
+
+15.4 Easily is not responsible for delays caused by incorrect information provided by you or by third-party financial institutions.
+
+16. TAXES
+
+16.1 You are responsible for determining and fulfilling your tax obligations arising from your activities as a Consultant.
+
+16.2 Where required by applicable law, Easily may collect, deduct, withhold, report, or provide information concerning applicable taxes or transactions.
+
+16.3 You must provide accurate tax-related information requested by Easily.
+
+17. BOOKING MANAGEMENT
+
+17.1 You are responsible for keeping your availability accurate.
+
+17.2 You should accept or decline Booking requests within the applicable time period where such functionality is provided.
+
+17.3 Once a Booking is accepted and confirmed, you are expected to provide the Service at the agreed date and time.
+
+17.4 Repeatedly accepting Bookings and failing to provide the Services may result in account restrictions.
+
+18. SERVICE DELIVERY
+
+18.1 You must provide your Service professionally, honestly, and substantially in accordance with the confirmed Booking.
+
+18.2 You must attend scheduled sessions on time.
+
+18.3 You must communicate material changes to the Consumer and Platform as soon as reasonably possible.
+
+18.4 You must not knowingly provide false, misleading, or fabricated information to Consumers.
+
+18.5 You must not guarantee results that you cannot reasonably guarantee.
+
+19. CANCELLATION BY CONSULTANT
+
+19.1 Consultants should avoid cancelling confirmed Bookings except where reasonably necessary.
+
+19.2 If you need to cancel, you should notify the Consumer and Easily as soon as reasonably possible.
+
+19.3 Repeated cancellations may result in:
+
+Reduced Platform visibility;
+Booking restrictions;
+Temporary suspension;
+Payout adjustments where applicable; or
+Termination.
+
+19.4 Where applicable, the Consumer may receive a refund or alternative arrangement.
+
+20. RESCHEDULING
+
+20.1 Rescheduling may be permitted depending on the Service.
+
+20.2 Requests should be made through the Platform where the relevant functionality is available.
+
+20.3 A new date or time is not confirmed until it is accepted through the applicable Platform process.
+
+20.4 Repeated or unreasonable rescheduling may be treated as a Service-quality issue.
+
+21. CONSUMER NO-SHOW
+
+21.1 If a Consumer fails to attend a confirmed appointment, you should use the applicable Platform no-show procedure.
+
+21.2 You should not independently impose charges that are not disclosed or permitted by the applicable Service policy.
+
+21.3 Payment treatment for a no-show will be determined according to the applicable cancellation and payout policy.
+
+22. CONSULTANT-CONSUMER COMMUNICATION
+
+22.1 You may communicate with Consumers through Platform-supported communication features.
+
+22.2 Communications must remain professional and relevant to the requested Service.
+
+22.3 You must not:
+
+Harass Consumers;
+Threaten Consumers;
+Intimidate Consumers;
+Discriminate against Consumers;
+Send unauthorized promotional messages;
+Pressure Consumers to purchase unrelated Services; or
+Misuse Consumer contact information.
+
+22.4 You must not request confidential authentication information from Consumers.
+
+23. OFF-PLATFORM TRANSACTIONS
+
+23.1 Consultants must not deliberately move Platform-generated transactions off-platform for the purpose of avoiding applicable Platform fees or safeguards.
+
+23.2 You must not encourage Consumers to cancel a Platform Booking and pay you privately solely to circumvent Platform processes.
+
+23.3 Repeated attempts to circumvent the Platform may result in suspension or termination.
+
+23.4 Transactions independently arranged outside Easily may not receive Platform payment, refund, dispute-resolution, or customer-support protections.
+
+24. CONSUMER PERSONAL INFORMATION
+
+24.1 Consultants may receive Consumer information necessary to provide a Service.
+
+24.2 You must use such information only for legitimate purposes connected with the Service.
+
+24.3 You must:
+
+Keep Consumer information confidential;
+Protect information from unauthorized access;
+Not sell Consumer information;
+Not disclose information without authorization or legal basis;
+Not use information for unrelated marketing; and
+Take reasonable security measures.
+
+24.4 If you become aware of unauthorized access, loss, disclosure, or misuse of Consumer information, you must notify Easily promptly.
+
+24.5 You must comply with applicable privacy and data-protection requirements.
+
+25. CONFIDENTIALITY
+
+25.1 During the provision of Services, you may receive confidential information belonging to Consumers.
+
+25.2 Confidential information may include:
+
+Personal information;
+Business information;
+Financial information;
+Professional information;
+Documents;
+Strategies;
+Communications;
+Personal circumstances; and
+Other non-public information.
+
+25.3 You must not disclose or misuse confidential information except where:
+
+Necessary to provide the Service;
+Authorized by the Consumer;
+Required by law; or
+Otherwise legally permitted.
+
+25.4 Your confidentiality obligations continue after your Consultant Account is terminated where legally applicable.
+
+26. INTELLECTUAL PROPERTY
+
+26.1 You retain ownership of intellectual property that you owned before using Easily.
+
+26.2 You represent that you have the necessary rights to upload photographs, videos, documents, logos, portfolio materials, testimonials, and other content.
+
+26.3 You grant United Crew a limited, non-exclusive, worldwide, royalty-free license to use your submitted profile information, name, photograph, Service descriptions, portfolio materials, and related content for purposes including:
+
+Operating the Platform;
+Displaying your profile;
+Promoting your Services;
+Marketing Easily;
+Improving Platform functionality; and
+Communicating Platform offerings.
+
+26.4 This license does not transfer ownership of your underlying intellectual property.
+
+27. RECORDING OF CONSULTATIONS
+
+27.1 You must not record audio, video, screen activity, or other private Consumer interactions without appropriate notice, consent, and legal authorization.
+
+27.2 Where recording is permitted, you must use the recording only for the purpose for which appropriate permission was obtained.
+
+27.3 You must not publicly publish, sell, distribute, or commercially exploit recordings without appropriate authorization.
+
+28. REVIEWS AND RATINGS
+
+28.1 Consumers may rate and review your Services.
+
+28.2 You must not:
+
+Create fake reviews;
+Purchase reviews;
+Manipulate ratings;
+Threaten Consumers because of reviews;
+Offer improper incentives for positive reviews; or
+Ask others to create misleading reviews.
+
+28.3 You may report reviews that you reasonably believe violate Platform policies or applicable law.
+
+29. PROFESSIONAL CONDUCT
+
+You agree to maintain appropriate professional standards when interacting with Consumers.
+
+You must not engage in:
+
+Harassment;
+Threats;
+Abuse;
+Discrimination;
+Sexual misconduct;
+Exploitation;
+Intimidation;
+Fraud;
+Deceptive conduct; or
+Other unlawful behavior.
+30. PROHIBITED SERVICES
+
+You must not use Easily to offer services that are unlawful or prohibited by Platform policy.
+
+Easily may restrict or prohibit Services involving:
+
+Illegal activities;
+Fraudulent schemes;
+Unauthorized financial services;
+Unlicensed professional services;
+Misleading investment schemes;
+Harmful activities;
+Services that violate applicable law; or
+Other categories determined by Easily to present unacceptable legal, safety, or Platform risks.
+31. CONSUMER SAFETY
+
+31.1 Consultants must take reasonable steps to maintain a safe and professional environment.
+
+31.2 For in-person consultations, Consultants should follow applicable safety requirements.
+
+31.3 Any serious safety concern involving a Consumer should be reported to Easily.
+
+31.4 Consultants must not use the Platform to arrange unlawful or unsafe activities.
+
+32. MONITORING AND QUALITY CONTROL
+
+32.1 Easily may monitor Platform activity for purposes including:
+
+Safety;
+Fraud prevention;
+Quality control;
+Compliance;
+Security;
+Customer support; and
+Enforcement of Platform policies.
+
+32.2 Monitoring will be conducted subject to applicable law and the Platform's Privacy Policy.
+
+32.3 Easily may request information or documents relating to a complaint, Booking, Service, or Account.
+
+32.4 You agree to cooperate reasonably with legitimate Platform investigations.
+
+33. CONSUMER COMPLAINTS
+
+33.1 A Consumer may submit a complaint regarding your Service.
+
+33.2 Easily may request information from you regarding the complaint.
+
+33.3 You agree to cooperate reasonably in the investigation.
+
+33.4 Depending on the circumstances, Easily may:
+
+Facilitate communication;
+Request additional information;
+Process an eligible refund;
+Restrict a Service;
+Suspend an Account; or
+Take other appropriate Platform action.
+
+33.5 Platform administrative actio

@@ -1,0 +1,73 @@
+{
+  "totalBytes": 3842141,
+  "fileCount": 115,
+  "javascript": [
+    {
+      "path": "dist/assets/index-C513t74n.js",
+      "bytes": 773155,
+      "gzip": 221965
+    }
+  ],
+  "largestAssets": [
+    {
+      "path": "dist/assets/eazily-logo.png",
+      "bytes": 957714
+    },
+    {
+      "path": "dist/assets/eazily-partner-logo.png",
+      "bytes": 615914
+    },
+    {
+      "path": "dist/assets/index-C-bVvc-u.css",
+      "bytes": 161731
+    },
+    {
+      "path": "dist/assets/user-carousel/book-confidence.webp",
+      "bytes": 36436
+    },
+    {
+      "path": "dist/assets/user-carousel/urgent-repair.webp",
+      "bytes": 31008
+    },
+    {
+      "path": "dist/assets/user-carousel/moving-help.webp",
+      "bytes": 30126
+    },
+    {
+      "path": "dist/assets/user-carousel/home-care.webp",
+      "bytes": 27524
+    },
+    {
+      "path": "dist/assets/user-services/stage.webp",
+      "bytes": 22694
+    },
+    {
+      "path": "dist/assets/user-services/wedding.webp",
+      "bytes": 19396
+    },
+    {
+      "path": "dist/assets/user-services/heavy-mechanic.webp",
+      "bytes": 17706
+    },
+    {
+      "path": "dist/assets/user-services/business-loan.webp",
+      "bytes": 16980
+    },
+    {
+      "path": "dist/assets/user-services/food-travel.webp",
+      "bytes": 16722
+    },
+    {
+      "path": "dist/assets/user-services/motorbike.webp",
+      "bytes": 16542
+    },
+    {
+      "path": "dist/assets/user-services/keys.webp",
+      "bytes": 15978
+    },
+    {
+      "path": "dist/assets/user-services/modification.webp",
+      "bytes": 15612
+    }
+  ]
+}

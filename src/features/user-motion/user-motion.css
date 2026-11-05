@@ -1,0 +1,111 @@
+/* Customer/user application motion and loading feedback only. */
+.user-app-root { display:contents; }
+
+.user-app-root > .screen {
+  animation:user-page-fade 220ms cubic-bezier(.2,.7,.3,1) both;
+}
+
+.user-app-root :where(button:not(:disabled),a.btn,[role="button"]) {
+  -webkit-tap-highlight-color:transparent;
+  transform-origin:center;
+  transition-property:transform,background-color,color,border-color,box-shadow,opacity;
+  transition-duration:150ms;
+  transition-timing-function:cubic-bezier(.2,.7,.3,1);
+}
+
+.user-app-root :where(button:not(:disabled),a.btn,[role="button"]):active,
+.user-app-root .conversation:active {
+  transform:scale(.98);
+}
+
+.user-app-root .conversation {
+  transform-origin:center;
+  transition:transform 150ms cubic-bezier(.2,.7,.3,1),background-color 160ms ease,opacity 160ms ease;
+}
+
+.user-app-root :where(.nav-item,.nav-icon,.tab,.filter-chips button,.transport-tabs button,.group-nav,.saved-location,.choice,.package-option) {
+  transition-property:background-color,color,border-color,box-shadow,opacity,transform;
+  transition-duration:160ms;
+  transition-timing-function:ease;
+}
+
+.user-app-root :where(.field,.catalog-search,.search,.auth-input,textarea,select,input) {
+  transition:border-color 160ms ease,box-shadow 160ms ease,background-color 160ms ease,opacity 160ms ease;
+}
+
+.user-app-root :where(input[type="checkbox"],input[type="radio"]) {
+  accent-color:var(--purple);
+}
+
+.user-app-root :where(button,a,input,textarea,select,summary):focus-visible {
+  outline:3px solid #9b72eb;
+  outline-offset:3px;
+}
+
+.user-button-progress {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:0;
+  line-height:1;
+}
+
+.user-button-spinner {
+  width:14px;
+  height:14px;
+  flex:0 0 14px;
+  border:2px solid currentColor;
+  border-right-color:transparent;
+  border-radius:50%;
+  opacity:.9;
+  animation:user-spinner 700ms linear infinite;
+}
+
+.user-sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+.user-skeleton-list { min-width:0; }
+.user-skeleton-card { min-height:190px; align-content:start; }
+.user-skeleton-head { display:flex; align-items:center; gap:12px; }
+.user-skeleton-head > span { display:grid; flex:1; gap:8px; }
+.user-skeleton-block { display:block; border-radius:8px; background:linear-gradient(105deg,#ececf3,#f6f5fa); }
+.user-skeleton-avatar { width:58px; height:58px; flex:0 0 58px; border-radius:18px; }
+.user-skeleton-title { width:62%; height:14px; }
+.user-skeleton-short { width:42%; height:10px; }
+.user-skeleton-line { width:100%; height:10px; }
+.user-skeleton-line.short { width:74%; }
+.user-skeleton-button { width:100%; height:42px; margin-top:3px; border-radius:14px; }
+.user-skeleton-choice { min-height:76px; background:#fff; }
+.user-skeleton-choice > span { display:grid; flex:1; gap:9px; }
+.user-skeleton-choice > .user-skeleton-short { width:20%; }
+.user-panel-skeleton { display:grid; gap:12px; min-height:116px; align-content:start; padding:8px 0; }
+
+@keyframes user-page-fade { from { opacity:0; } to { opacity:1; } }
+@keyframes user-spinner { to { transform:rotate(360deg); } }
+
+@media(prefers-reduced-motion:reduce) {
+  .user-app-root > .screen,
+  .user-app-root *,
+  .user-app-root *::before,
+  .user-app-root *::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+
+  .user-app-root :where(button:not(:disabled),a.btn,[role="button"]):active,
+  .user-app-root .conversation:active { transform:none; }
+
+  .user-app-root .user-button-spinner { animation:none!important; }
+}

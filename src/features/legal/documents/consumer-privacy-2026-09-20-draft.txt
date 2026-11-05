@@ -1,0 +1,666 @@
+EASILY
+CONSUMER PRIVACY POLICY
+
+Platform: Easily
+Operated By: United Crew
+Effective Date: 20 September 2026
+Last Updated: 20 September 2026
+
+1. INTRODUCTION
+
+Welcome to Easily, a technology-enabled marketplace and service platform operated by United Crew (“United Crew”, “Easily”, “we”, “us”, or “our”).
+
+Easily allows Consumers to discover, request, communicate about, book, and/or purchase services from independent Service Providers and participating businesses through the Easily Platform.
+
+This Consumer Privacy Policy (“Privacy Policy”) explains how we may collect, use, disclose, store, protect, and otherwise process information relating to Consumers who access or use:
+
+The Easily mobile application;
+The Easily website;
+Easily's digital Platform;
+Booking and scheduling functionality;
+Payment functionality;
+Customer-support functionality;
+Communication functionality; and
+Other services or features made available by Easily.
+
+This Privacy Policy should be read together with the Easily Consumer Terms & Conditions and other applicable Platform policies.
+
+By using Easily, you acknowledge that you have read and understood this Privacy Policy.
+
+2. SCOPE OF THIS PRIVACY POLICY
+
+This Privacy Policy applies to information relating to Consumers who:
+
+Create an Easily Account;
+Browse the Platform;
+Search for Services;
+Request Services;
+Make Bookings;
+Communicate with Service Providers;
+Make or receive payments through the Platform;
+Submit reviews or feedback;
+Contact customer support; or
+Otherwise interact with Easily.
+
+This Privacy Policy may apply to information collected through the App, website, communications, customer support, and other Platform functionality.
+
+3. INFORMATION WE COLLECT
+
+Depending on how you use Easily, we may collect different categories of information.
+
+3.1 Account and Identity Information
+
+This may include:
+
+Full name;
+Username;
+Profile photograph;
+Date of birth or age where required;
+Gender where voluntarily provided or legally required;
+Email address;
+Mobile telephone number;
+Address;
+City and state;
+Country;
+Account credentials;
+Verification information; and
+Other information necessary to establish or maintain your Account.
+3.2 Contact Information
+
+We may collect contact information such as:
+
+Mobile number;
+Email address;
+Communication preferences;
+Emergency contact information where you voluntarily provide it; and
+Other contact information required to provide or support a Service.
+3.3 Booking Information
+
+When you request or book a Service, we may collect information such as:
+
+Service selected;
+Service Provider selected;
+Booking date;
+Booking time;
+Service location;
+Pickup location;
+Destination;
+Number of passengers;
+Service requirements;
+Booking status;
+Cancellation information;
+Payment status; and
+Other information necessary to complete the Booking.
+4. LOCATION INFORMATION
+
+Depending on your device settings and the functionality you use, Easily may collect location information.
+
+Location information may be used for purposes including:
+
+Showing nearby Services;
+Finding Transportation Services;
+Determining pickup locations;
+Providing directions or location-related functionality;
+Improving Service availability;
+Supporting emergency or safety functionality;
+Preventing fraud; and
+Improving Platform functionality.
+
+You may be able to control location permissions through your device settings.
+
+Certain features may not function properly if location access is disabled.
+
+5. TRANSPORTATION SERVICE INFORMATION
+
+When you use Transportation Services, we may process information necessary to facilitate the Service.
+
+This may include:
+
+Pickup location;
+Destination;
+Travel date and time;
+Number of passengers;
+Vehicle or Service type;
+Driver/Provider information;
+Trip status;
+Route-related information;
+Booking information;
+Cancellation information;
+Payment information;
+Safety reports;
+Accident or incident information; and
+Customer-support communications.
+
+Location and trip information may be shared with the relevant Transportation Service Provider where reasonably necessary to provide the requested Service.
+
+6. INFLUENCER SERVICE INFORMATION
+
+When you use Influencer Services, we may collect information necessary to facilitate the Service, such as:
+
+Booking details;
+Session date and time;
+Service preferences;
+Communications;
+Payment status;
+Reviews and ratings; and
+Information voluntarily provided during the Service.
+
+Consumers should avoid sharing unnecessary sensitive personal information with Influencers.
+
+7. CONSULTANT SERVICE INFORMATION
+
+When using Consultant Services, we may process:
+
+Booking information;
+Service requirements;
+Communications;
+Documents or information voluntarily submitted for the Service;
+Payment information;
+Reviews and ratings; and
+Customer-support information.
+
+Consumers should only provide information reasonably necessary for the particular consultation.
+
+8. BLOOD DONATION-RELATED INFORMATION
+
+Easily may facilitate blood donation-related connections between Consumers, donors, hospitals, blood banks, organizations, or other relevant parties.
+
+Depending on the feature used, information may include:
+
+Blood group information;
+Donation-related requirements;
+Location;
+Hospital or blood-bank information;
+Contact information;
+Request details;
+Availability information; and
+Other information voluntarily provided for donation-related purposes.
+Important
+
+Blood-group information and other health-related information may be sensitive personal information under applicable law.
+
+Consumers should only provide such information where reasonably necessary.
+
+Easily does not independently determine:
+
+Medical suitability;
+Donor eligibility;
+Blood compatibility;
+Medical treatment;
+Transfusion suitability; or
+Clinical outcomes.
+
+Medical screening, testing, collection, storage, and transfusion are handled by appropriately authorized medical professionals, hospitals, blood banks, or other legally authorized organizations.
+
+9. LOAN AND FINANCIAL-SERVICE-RELATED INFORMATION
+
+Where Easily provides loan-related assistance, referrals, applications, or connections with third-party financial institutions or lenders, we may process information required for those Services.
+
+Depending on the applicable Service, this may include:
+
+Identity information;
+Contact information;
+Address;
+Employment information;
+Income information;
+Financial information;
+Loan requirements;
+Application information;
+Credit-related information where legally permitted;
+Documents submitted by the Consumer;
+Application status; and
+Communications with relevant financial-service providers.
+
+Consumers should carefully review the privacy practices and terms of the relevant lender or financial institution.
+
+Where legally required, separate consent or disclosures may be provided for specific financial information processing.
+
+Easily does not guarantee loan approval or any particular financial outcome.
+
+10. GENERAL SERVICE INFORMATION
+
+When using General Services, we may collect information necessary to:
+
+Identify you;
+Process your Booking;
+Communicate with the Service Provider;
+Process payments;
+Provide customer support;
+Handle cancellations;
+Resolve disputes; and
+Improve the Platform.
+
+The specific information collected may vary depending on the Service.
+
+11. PAYMENT INFORMATION
+
+When you make a payment through Easily, we may process information relating to the transaction.
+
+Depending on the payment method, this may include:
+
+Transaction amount;
+Payment status;
+Transaction identifier;
+Payment method;
+Billing information;
+Refund information; and
+Other transaction-related information.
+
+Payment card or banking information may be processed by authorized third-party payment providers.
+
+Where appropriate, Easily may not directly store complete payment-card credentials.
+
+Payment providers may process information under their own privacy policies and terms.
+
+12. DEVICE AND TECHNICAL INFORMATION
+
+When you use Easily, we may automatically collect certain technical information, including:
+
+Device type;
+Operating system;
+App version;
+Browser type;
+IP address;
+Device identifiers;
+Language settings;
+Time zone;
+Network information;
+Crash information;
+Performance information; and
+Log information.
+
+This information may be used to operate, secure, troubleshoot, and improve the Platform.
+
+13. USAGE INFORMATION
+
+We may collect information about how you interact with Easily, including:
+
+Pages or screens viewed;
+Features used;
+Searches;
+Services viewed;
+Bookings;
+Clicks;
+Session information;
+Errors;
+Preferences; and
+Other interaction information.
+
+This helps us understand Platform usage and improve the Consumer experience.
+
+14. COMMUNICATIONS
+
+If you communicate with Easily or Service Providers through Platform functionality, we may process information contained in those communications.
+
+This may include:
+
+Messages;
+Support requests;
+Complaints;
+Feedback;
+Booking-related communications;
+Service-related communications; and
+Other information necessary to provide or support the Platform.
+
+Consumers should avoid sending unnecessary sensitive personal information through ordinary chat or communication features.
+
+15. REVIEWS AND RATINGS
+
+If you submit:
+
+Reviews;
+Ratings;
+Feedback;
+Photographs;
+Comments; or
+Other Content,
+
+we may process and display that information according to the applicable Platform functionality.
+
+Certain reviews or ratings may be visible to other Platform users.
+
+Consumers should consider carefully whether they want to include personal information in publicly visible reviews.
+
+16. HOW WE USE INFORMATION
+
+We may use Consumer information for purposes including:
+
+16.1 Providing Services
+
+To:
+
+Create and manage Accounts;
+Process Bookings;
+Connect Consumers with Service Providers;
+Facilitate Services;
+Process payments;
+Provide customer support; and
+Manage Service-related communications.
+16.2 Platform Operations
+
+To:
+
+Operate the App and website;
+Maintain Platform functionality;
+Troubleshoot technical problems;
+Improve features;
+Monitor performance; and
+Develop new services.
+16.3 Safety and Security
+
+To:
+
+Verify Accounts;
+Verify Service Providers where applicable;
+Detect fraud;
+Prevent abuse;
+Investigate suspicious activity;
+Protect users;
+Investigate safety complaints; and
+Maintain Platform security.
+16.4 Communications
+
+To send:
+
+Booking confirmations;
+Service notifications;
+Cancellation notifications;
+Security alerts;
+Account messages;
+Support communications;
+Important Platform updates; and
+Other service-related communications.
+16.5 Marketing
+
+Where permitted by applicable law, we may use information to send information about:
+
+Easily Services;
+Offers;
+Promotions;
+New features; and
+Other relevant communications.
+
+Where required, you may be provided with an option to opt out of promotional communications.
+
+Service-related and legally required communications may continue even if you opt out of marketing communications.
+
+17. LEGAL BASES FOR PROCESSING
+
+Depending on applicable law, Easily may process personal information on one or more lawful bases, including:
+
+Your consent;
+Performance of a contract;
+Taking steps at your request before entering into a contract;
+Compliance with legal obligations;
+Protection of vital interests where legally applicable;
+Legitimate interests where recognized by applicable law; and
+Other lawful bases permitted under applicable law.
+
+The applicable legal basis may vary depending on the information and purpose.
+
+18. WHEN WE SHARE INFORMATION
+
+We may share Consumer information with:
+
+18.1 Service Providers
+
+Information may be shared with relevant Service Providers when reasonably necessary to provide a requested Service.
+
+For example:
+
+Transportation Providers may receive pickup and destination information;
+Consultants may receive Booking and consultation-related information;
+Influencers may receive information necessary to provide booked Services; and
+Other Service Providers may receive information necessary to complete their Services.
+18.2 Payment Providers
+
+We may share transaction-related information with authorized payment processors and financial-service providers.
+
+18.3 Technology Providers
+
+Information may be processed by service providers supporting:
+
+Hosting;
+Cloud infrastructure;
+Analytics;
+Communication;
+Customer support;
+Security;
+Fraud prevention;
+Notifications; and
+Other Platform functions.
+18.4 Legal and Regulatory Authorities
+
+We may disclose information where reasonably necessary to:
+
+Comply with applicable law;
+Respond to lawful requests;
+Protect rights;
+Investigate fraud;
+Prevent serious harm;
+Respond to legal proceedings; or
+Meet regulatory requirements.
+18.5 Business Transfers
+
+If United Crew undergoes a merger, acquisition, restructuring, financing, sale of assets, or similar transaction, personal information may be transferred as part of that transaction subject to applicable law.
+
+19. DATA RETENTION
+
+We retain personal information for as long as reasonably necessary for the purposes described in this Privacy Policy, including:
+
+Providing Services;
+Maintaining Accounts;
+Meeting legal obligations;
+Resolving disputes;
+Enforcing agreements;
+Preventing fraud;
+Maintaining security; and
+Legitimate business purposes.
+
+Retention periods may vary depending on the type of information and applicable legal requirements.
+
+When information is no longer reasonably required, it may be deleted, anonymized, or securely disposed of, subject to applicable law.
+
+20. DATA SECURITY
+
+Easily uses reasonable technical and organizational measures designed to protect personal information against unauthorized:
+
+Access;
+Use;
+Disclosure;
+Modification;
+Loss; and
+Destruction.
+
+Security measures may include:
+
+Access controls;
+Authentication;
+Encryption where appropriate;
+Monitoring;
+Secure infrastructure; and
+Other reasonable security measures.
+
+However, no electronic system can be guaranteed to be completely secure.
+
+21. ACCOUNT SECURITY
+
+Consumers are responsible for protecting their Account credentials.
+
+You should:
+
+Keep passwords confidential;
+Avoid sharing authentication information;
+Use secure devices;
+Report unauthorized access; and
+Follow security instructions provided by Easily.
+
+Easily will not request your password, PIN, or OTP through unauthorized channels.
+
+22. COOKIES AND SIMILAR TECHNOLOGIES
+
+Easily may use cookies, SDKs, pixels, local storage, analytics technologies, and similar technologies.
+
+These technologies may be used for:
+
+Essential Platform functionality;
+Login and session management;
+Security;
+Analytics;
+Performance;
+Preferences; and
+Marketing where permitted.
+
+You may be able to manage certain technologies through your browser or device settings.
+
+Disabling certain technologies may affect Platform functionality.
+
+23. LOCATION PERMISSIONS
+
+Consumers may control certain location permissions through their device settings.
+
+If you disable location access:
+
+Nearby Service functionality may be limited;
+Transportation pickup functionality may be affected;
+Location-based search may be unavailable; or
+Certain safety features may not operate as intended.
+24. CHILDREN'S PRIVACY
+
+Easily is not intended for individuals who are not legally permitted to use particular Platform Services.
+
+Where a Service has an age restriction, Consumers must comply with that requirement.
+
+We do not knowingly seek to collect personal information from children in violation of applicable law.
+
+If you believe that a child has provided personal information improperly, please contact Easily using the contact information below.
+
+25. THIRD-PARTY WEBSITES AND SERVICES
+
+Easily may contain links, integrations, or connections to third-party websites and services.
+
+Examples may include:
+
+Payment providers;
+Maps;
+Financial institutions;
+Service-provider websites;
+Healthcare or blood-bank organizations;
+Transportation partners; and
+Other third-party services.
+
+Third parties may have their own privacy policies.
+
+Easily is not responsible for the privacy practices of independent third parties.
+
+Consumers should review applicable third-party privacy policies before providing information directly to those parties.
+
+26. INTERNATIONAL DATA TRANSFERS
+
+Depending on the technology and service providers used by Easily, personal information may be processed or stored in locations outside your state or country, subject to applicable law.
+
+Where applicable law requires safeguards for cross-border transfers, United Crew will take appropriate measures required by law.
+
+27. YOUR PRIVACY RIGHTS
+
+Depending on applicable law, Consumers may have rights relating to their personal information.
+
+These may include the right to:
+
+Request access to personal information;
+Request correction of inaccurate information;
+Request deletion where legally available;
+Withdraw consent where processing is based on consent;
+Request information regarding processing;
+Object to certain processing;
+Request restriction of processing where legally applicable;
+Request portability where legally applicable; and
+Lodge a complaint with an appropriate authority.
+
+These rights may be subject to legal exceptions and limitations.
+
+28. WITHDRAWAL OF CONSENT
+
+Where processing is based on consent, you may withdraw your consent where permitted by applicable law.
+
+Withdrawal of consent will not necessarily affect processing that:
+
+Occurred before withdrawal;
+Is required by law;
+Is necessary to perform a contract; or
+Is otherwise permitted on another lawful basis.
+
+Withdrawing certain permissions may affect your ability to use specific Platform features.
+
+29. CORRECTION OF INFORMATION
+
+Consumers should keep their Account information accurate and current.
+
+You may be able to update certain information through your Account.
+
+Where information cannot be changed directly through the Platform, you may contact Easily for assistance.
+
+30. DELETION OF ACCOUNT
+
+You may request deletion of your Easily Account subject to applicable law and legitimate retention requirements.
+
+Account deletion may result in:
+
+Loss of access to Platform features;
+Cancellation or closure of certain pending Services;
+Loss of Account history; and
+Other consequences communicated at the time of deletion.
+
+Certain information may be retained where legally required or reasonably necessary for legitimate purposes such as fraud prevention, disputes, accounting, or legal compliance.
+
+31. MARKETING COMMUNICATIONS
+
+You may receive promotional communications where permitted by applicable law.
+
+You may opt out of certain promotional communications through:
+
+Unsubscribe functionality;
+Account settings;
+App settings; or
+Contacting Easily.
+
+Opting out of marketing does not necessarily stop essential Service-related communications.
+
+32. BLOOD DONATION PRIVACY AND DISCLOSURE
+
+Where blood donation-related Services are used, certain information may need to be shared with relevant donors, hospitals, blood banks, organizations, or Service Providers to facilitate a request.
+
+Easily will seek to limit such disclosure to information reasonably necessary for the relevant purpose, subject to applicable law and Platform functionality.
+
+Consumers should carefully consider the information they include in publicly visible donation requests.
+
+33. TRANSPORTATION PRIVACY
+
+Transportation Providers may receive information necessary to complete a Booking.
+
+This may include:
+
+Consumer name;
+Pickup location;
+Destination;
+Contact information;
+Booking time;
+Passenger information; and
+Other information reasonably necessary to provide the Transportation Service.
+
+Transportation Providers must use Consumer information only for legitimate Service-related purposes and as otherwise permitted by law.
+
+34. LOAN AND FINANCIAL PRIVACY
+
+Loan-related Services may involve additional information requirements.
+
+Where applicable, information may be shared with:
+
+Lenders;
+Financial institutions;
+Loan-service providers;
+Credit-related service providers;
+Verification providers; and
+Other authorized parties.
+
+The relevant financial institution may independently collect and process additional information under its own privacy policy

@@ -1,0 +1,146 @@
+/* In-memory only: validates Service Partner posting SQL without deployment. */
+const { PGlite } = require('@electric-sql/pglite');
+const { pgcrypto } = require('@electric-sql/pglite/contrib/pgcrypto');
+const { readFileSync } = require('node:fs');
+const { randomUUID } = require('node:crypto');
+const assert = require('node:assert/strict');
+
+(async () => {
+  const db = new PGlite({ extensions: { pgcrypto } });
+  const scalar = async (sql, args = []) => Object.values((await db.query(sql, args)).rows[0])[0];
+  const asUser = async id => { await db.exec('reset role'); await db.query("select set_config('test.uid',$1,false)", [id]); await db.exec('set role authenticated'); };
+  try {
+    await db.exec(`create role anon;create role authenticated;create role service_role;create schema auth;create table auth.users(id uuid primary key,phone text,raw_user_meta_data jsonb default '{}');create schema storage;create table storage.objects(bucket_id text not null,name text not null,owner_id text,metadata jsonb default '{}',primary key(bucket_id,name));create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('test.uid',true),'')::uuid$$;grant usage on schema auth,public to anon,authenticated;alter default privileges in schema public grant all on tables to authenticated,anon;alter default privileges in schema public grant all on sequences to authenticated,anon;`);
+    for (const file of ['schema','experience','wallet','partners','operations','seller_subscriptions','seller_pricing','seller_posting','seller_workspace','seller_finance_extensions','seller_hardening','seller_gateway','seller_subscriptions_v2','influencer_legal_2026_09_12','staging_prelaunch_foundations','consultant_assessments','service_partner_registration','service_partner_posting','service_partner_fast_approval']) await db.exec(readFileSync(`supabase/${file}.sql`, 'utf8'));
+    assert.equal(await scalar('select auto_publish_enabled from service_post_approval_config'), false, 'Automatic publishing starts disabled');
+    await db.exec('update seller_pricing_rules set enabled=true,seller_tax_bps=0,customer_tax_bps=0,fee_tax_bps=0,separate_fee_paise=0,include_visiting=true,include_additional=true');
+    const seller = randomUUID(), shopSeller = randomUUID(), pendingSeller = randomUUID(), other = randomUUID(), customer = randomUUID(), admin = randomUUID();
+    for (const id of [seller, shopSeller, pendingSeller, other, customer, admin]) await db.query('insert into auth.users(id,phone) values($1,$2)', [id, id]);
+    await db.query("update profiles set role='admin' where id=$1", [admin]);
+    const selections = [
+      { categoryId: 'home-property', categoryLabel: 'Home & Property', serviceId: 'Electrician', serviceName: 'Electrician' },
+      { categoryId: 'electronics', categoryLabel: 'Electronics', serviceId: 'AC Service', serviceName: 'AC Service' },
+    ];
+    const app = randomUUID(), shopApp = randomUUID(), pendingApp = randomUUID();
+    // Posting fixtures are inserted directly; registration itself has a separate full migration test.
+    await db.exec('alter table partner_applications disable trigger enforce_current_service_partner_registration; alter table partner_applications disable trigger enforce_service_partner_policy_records');
+    await db.query("insert into partner_applications(id,customer_id,role,status,details,submitted_at,reviewed_at) values($1,$2,'professional','approved',$3,now(),now()),($4,$5,'professional','approved',$6,now(),now()),($7,$8,'professional','submitted',$9,now(),null)", [
+      app, seller, { name: 'Fictional Seller', businessName: 'Bhopal Repairs', serviceSelections: selections, services: ['Electrician','AC Service'], category: 'Home & Property', servicePlace: 'Both', serviceAreas: 'MP Nagar, Arera Colony', city: 'Bhopal', workingDays: ['Monday'] },
+      shopApp, shopSeller, { name: 'Fictional Shop', businessName: 'Shop Repairs', serviceSelections: selections.slice(0,1), services: ['Electrician'], category: 'Home & Property', servicePlace: 'At my shop', locality: 'MP Nagar', city: 'Bhopal', workingDays: ['Monday'] },
+      pendingApp, pendingSeller, { name: 'Pending Seller', businessName: 'Pending Repairs', serviceSelections: selections.slice(0,1), services: ['Electrician'], category: 'Home & Property', servicePlace: 'Both', serviceAreas: 'Bhopal', city: 'Bhopal', workingDays: ['Monday'] },
+    ]);
+    await db.exec('alter table partner_applications enable trigger enforce_current_service_partner_registration; alter table partner_applications enable trigger enforce_service_partner_policy_records');
+    const details = { postType: 'offering', categoryId: 'home-property', category: 'forged label', serviceId: 'Electrician', service: 'forged service', title: 'Fan installation', description: '', pricingType: 'Fixed Price', serviceCharge: '200', visitingCharge: '0', visitTreatment: 'Additional', media: [] };
+    await asUser(seller);
+    const blankDraft = await scalar("select to_jsonb(save_service_partner_post($1,'draft',$2,null))", [{ postType: 'offering', title: '', description: '', pricingType: 'Fixed Price', serviceCharge: '', visitingCharge: '0', visitTreatment: 'Additional', media: [] }, randomUUID()]);
+    assert.equal(blankDraft.status, 'draft', 'An incomplete first step can be saved and resumed');
+    const postId = randomUUID();
+    let post = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [details, postId]);
+    assert.equal(post.status, 'pending_review');
+    assert.equal(post.details.category, 'Home & Property', 'Server derives category label');
+    assert.equal(post.details.service, 'Electrician', 'Server derives service name');
+    assert.equal(post.details.serviceCharge, 200);
+    assert.equal((await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [details, postId])).id, postId, 'Repeated submit reuses post ID');
+    assert.equal(Number(await scalar('select count(*) from partner_posts where partner_id=$1 and id=$2', [app, postId])), 1);
+    const second = await scalar("select to_jsonb(save_service_partner_post($1,'draft',$2,null))", [{ ...details, categoryId: 'electronics', serviceId: 'AC Service', title: 'AC service', serviceCharge: '' }, randomUUID()]);
+    assert.equal(second.details.category, 'Electronics', 'A second registered category is supported');
+    const newCategory = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [{ ...details, categoryId: 'plumbing', category: 'Plumbing', serviceId: 'Plumber', service: 'Plumber' }, randomUUID()]);
+    assert.equal(newCategory.status, 'pending_review', 'Unapproved category is queued, never published');
+    await assert.rejects(db.query("select save_service_partner_post($1,'submit',$2,null)", [{ ...details, serviceCharge: '0' }, randomUUID()]), /valid service charge/);
+    const operation = randomUUID();
+    const duplicate = await scalar("select to_jsonb(save_service_partner_post($1,'duplicate',$2,$3))", [{}, postId, operation]);
+    const duplicateRetry = await scalar("select to_jsonb(save_service_partner_post($1,'duplicate',$2,$3))", [{}, postId, operation]);
+    assert.equal(duplicate.id, duplicateRetry.id);
+    assert.equal(duplicate.status, 'draft');
+    await db.exec('reset role');
+    assert.equal(Number(await scalar('select count(*) from eazily_private.service_post_operations where operation_key=$1', [operation])), 1);
+    await asUser(admin);
+    await scalar("select to_jsonb(admin_review_post($1,'published','First service checked by Admin'))", [postId]);
+    assert.equal(await scalar("select decision from service_post_approval_decisions where post_id=$1 and decision='admin_published'", [postId]), 'admin_published');
+    await db.query('update service_post_approval_config set auto_publish_enabled=true where id=true');
+    await asUser(seller);
+    post = await scalar("select to_jsonb(save_service_partner_post($1,'pause',$2,null))", [{}, postId]); assert.equal(post.status, 'paused');
+    post = await scalar("select to_jsonb(save_service_partner_post($1,'resume',$2,null))", [{}, postId]); assert.equal(post.status, 'published');
+    const trustedDetails = { ...details, title: 'Safe switch repair', description: 'Professional switch repair and installation at your location.' };
+    const trusted = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [trustedDetails, randomUUID()]);
+    assert.equal(trusted.status, 'published', 'Trusted later post auto-publishes');
+    await asUser(admin);
+    assert.equal(await scalar("select decision from service_post_approval_decisions where post_id=$1 and decision='auto_published'", [trusted.id]), 'auto_published');
+    await asUser(seller);
+    const flagged = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [{ ...trustedDetails, title: 'Urgent fan fitting', description: 'Call 9876543210 or pay by QR before the visit.' }, randomUUID()]);
+    assert.equal(flagged.status, 'pending_review', 'Contact and QR text go to review');
+    const duplicatePost = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [trustedDetails, randomUUID()]);
+    assert.equal(duplicatePost.status, 'pending_review', 'Similar repeated post goes to review');
+    const incompleteForAuto = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [{ ...trustedDetails, title: 'New fan inspection', description: '' }, randomUUID()]);
+    assert.equal(incompleteForAuto.status, 'pending_review', 'Incomplete content is reviewed rather than auto-rejected');
+    const mediaPath = `${seller}/professional/qr-payment.jpg`;
+    await db.exec('reset role');
+    await db.query("insert into storage.objects(bucket_id,name,owner_id,metadata) values('partner-media',$1,$2,$3)", [mediaPath, seller, { size: 1000, mimetype: 'image/jpeg' }]);
+    await asUser(seller);
+    const flaggedPhoto = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [{ ...trustedDetails, title: 'Safe wiring visit', media: [{ path: mediaPath, type: 'image/jpeg' }] }, randomUUID()]);
+    assert.equal(flaggedPhoto.status, 'pending_review', 'Flagged photo stays out of live listings');
+    const editedText = 'Professional switch repair with additional safety checks.';
+    const edited = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [{ ...trustedDetails, description: editedText }, trusted.id]);
+    assert.equal(edited.status, 'published', 'Approved post stays live during edit review');
+    assert.equal(await scalar('select details->>\'description\' from partner_posts where id=$1', [trusted.id]), trustedDetails.description);
+    await asUser(customer);
+    assert.equal((await scalar('select to_jsonb(d) from partner_directory d where id=$1', [trusted.id])).details.description, trustedDetails.description, 'Customer listing keeps approved text during edit review');
+    assert.equal((await db.query('select id from partner_directory where id=$1', [newCategory.id])).rows.length, 0, 'Unapproved category never appears in customer listing');
+    await asUser(seller);
+    const revisionId = await scalar("select id from service_post_revisions where post_id=$1 and status='pending_review'", [trusted.id]);
+    await assert.rejects(db.query("update partner_posts set status='published' where id=$1", [flagged.id]), /permission denied/);
+    await assert.rejects(db.query("select service_post_save_legacy($1,'submit',$2,null)", [trustedDetails, randomUUID()]), /permission denied/);
+    await assert.rejects(db.query("select admin_review_post($1,'published','Unauthorized approval')", [flagged.id]), /Admin access required/);
+    await asUser(admin);
+    await assert.rejects(db.query("select admin_review_post($1,'published','Unknown category override')", [newCategory.id]), /Registered category and service required/);
+    await scalar("select to_jsonb(review_service_post_revision($1,true,'Edited details checked by Admin'))", [revisionId]);
+    assert.equal(await scalar('select details->>\'description\' from partner_posts where id=$1', [trusted.id]), editedText);
+    await scalar("select to_jsonb(admin_review_post($1,'paused','Admin hid this auto-approved service'))", [trusted.id]);
+    assert.equal(await scalar('select status from partner_posts where id=$1', [trusted.id]), 'paused');
+    await asUser(seller);
+    await assert.rejects(db.query("select save_service_partner_post($1,'resume',$2,null)", [{}, trusted.id]), /Admin hidden post requires Admin override/);
+    await asUser(admin);
+    await scalar("select to_jsonb(admin_review_post($1,'published','Admin verified and restored this service'))", [trusted.id]);
+    assert.equal(await scalar('select status from partner_posts where id=$1', [trusted.id]), 'published');
+    await asUser(seller);
+    const knowledgeDetails = { postType: 'knowledge', category: 'Home & Property', title: 'Wiring safety tips', description: 'Turn off the main power before inspecting a switch.', media: [] };
+    const knowledge = await scalar("select to_jsonb(save_partner_post('professional',$1,'submit',$2))", [knowledgeDetails, randomUUID()]);
+    assert.equal(knowledge.status, 'pending_review', 'Older Service Partner content editor keeps manual review');
+    await asUser(admin);
+    await scalar("select to_jsonb(admin_review_post($1,'published','Knowledge post reviewed by Admin'))", [knowledge.id]);
+    await asUser(seller);
+    const editedKnowledge = { ...knowledgeDetails, description: 'Turn off the main power and call a qualified electrician.' };
+    const knowledgeEdit = await scalar("select to_jsonb(save_partner_post('professional',$1,'submit',$2))", [editedKnowledge, knowledge.id]);
+    assert.equal(knowledgeEdit.status, 'published');
+    assert.equal(await scalar("select details->>'description' from partner_posts where id=$1", [knowledge.id]), knowledgeDetails.description, 'Legacy content edit cannot replace the live version');
+    const knowledgeRevision = await scalar("select id from service_post_revisions where post_id=$1 and status='pending_review'", [knowledge.id]);
+    await assert.rejects(db.query("select save_partner_post_legacy('professional',$1,'submit',$2)", [knowledgeDetails, knowledge.id]), /permission denied/);
+    await asUser(admin);
+    await scalar("select review_service_post_revision($1,true,'Updated knowledge checked')", [knowledgeRevision]);
+    await db.query("update service_post_approval_config set auto_publish_enabled=false where id=true");
+    await asUser(seller);
+    const disabled = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [{ ...trustedDetails, title: 'Safe outlet testing', description: 'Careful outlet testing and socket inspection for local homes.' }, randomUUID()]);
+    assert.equal(disabled.status, 'pending_review', 'Admin can turn automatic approval off');
+    await asUser(admin);
+    await db.query("update service_post_approval_config set auto_publish_enabled=true where id=true");
+    assert.equal(Number(await scalar("select count(*) from service_post_approval_decisions where post_id=$1 and reason<>'' and decided_at is not null", [trusted.id])) >= 3, true, 'Approval, hide and override retain reason and timestamp');
+    await asUser(seller);
+    await asUser(other);
+    await assert.rejects(db.query("select save_service_partner_post($1,'archive',$2,null)", [{}, postId]), /registration/);
+    await asUser(pendingSeller);
+    const pending = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [details, randomUUID()]);
+    assert.equal(pending.status, 'draft', 'Unapproved submission remains a draft');
+    await asUser(shopSeller);
+    const shop = await scalar("select to_jsonb(save_service_partner_post($1,'submit',$2,null))", [{ ...details, visitingCharge: '500' }, randomUUID()]);
+    assert.equal(shop.details.visitingCharge, 0, 'At-shop posting cannot retain a visiting charge');
+    await asUser(customer);
+    const publicPost = await scalar('select to_jsonb(d) from partner_directory d where id=$1', [postId]);
+    assert.equal(publicPost.details.totalPaise, 25000, 'Existing 25% customer pricing remains connected');
+    const publicText = JSON.stringify(publicPost);
+    for (const hidden of ['serviceCharge','visitingCharge','markupPaise','sellerPayablePaise']) assert.equal(publicText.includes(hidden), false, `Public directory hides ${hidden}`);
+    await asUser(seller);
+    await scalar("select to_jsonb(save_service_partner_post($1,'archive',$2,null))", [{}, postId]);
+    assert.equal(await scalar('select status from partner_posts where id=$1', [postId]), 'archived');
+    console.log('PASS: first post manual review; trusted later post auto-publishes; unapproved category, incomplete content, duplicate, flagged text and photo queue for review; service and legacy content edits retain the live version; unauthorized publish and self-resume after Admin hide are blocked; Admin rules, hide and override are recorded.');
+  } finally { await db.close(); }
+})().catch(error => { console.error(error); process.exitCode = 1; });

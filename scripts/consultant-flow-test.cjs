@@ -1,0 +1,92 @@
+const { PGlite } = require('@electric-sql/pglite');
+const { pgcrypto } = require('@electric-sql/pglite/contrib/pgcrypto');
+const { readFileSync } = require('node:fs');
+const { randomUUID } = require('node:crypto');
+const assert = require('node:assert/strict');
+const manifest = require('../supabase/migration-manifest.json');
+
+(async () => {
+  const db = new PGlite({ extensions: { pgcrypto } });
+  const one = async (sql, args = []) => Object.values((await db.query(sql, args)).rows[0])[0];
+  const root = async () => { await db.exec('reset role'); await db.query("select set_config('test.uid','',false)"); };
+  const user = async id => { await root(); await db.query("select set_config('test.uid',$1,false)", [id]); await db.exec('set role authenticated'); };
+  try {
+    await db.exec(`create role anon; create role authenticated; create role service_role bypassrls;
+      create schema auth; create schema storage;
+      create table auth.users(id uuid primary key,phone text,raw_user_meta_data jsonb default '{}');
+      create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('test.uid',true),'')::uuid$$;
+      create function auth.role() returns text language sql stable as $$select current_user::text$$;
+      create table storage.buckets(id text primary key,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);
+      create table storage.objects(id uuid primary key default gen_random_uuid(),bucket_id text,name text,owner_id text,created_at timestamptz default now());
+      create function storage.foldername(text) returns text[] language sql immutable as $$select string_to_array($1,'/')$$;
+      alter table storage.objects enable row level security;
+      grant usage on schema auth,public,storage to anon,authenticated,service_role;
+      grant all on storage.buckets,storage.objects to authenticated,service_role;
+      alter default privileges in schema public grant all on tables to authenticated,anon;
+      alter default privileges in schema public grant all on sequences to authenticated,anon;`);
+    for (const entry of manifest.migrations) await db.exec(readFileSync(`supabase/${entry.file}`, 'utf8'));
+
+    const [consultant, customer, outsider, admin] = [randomUUID(), randomUUID(), randomUUID(), randomUUID()];
+    for (const id of [consultant, customer, outsider, admin]) await db.query('insert into auth.users(id,phone) values($1,$2)', [id,id]);
+    await db.query("update profiles set role='admin' where id=$1", [admin]);
+    const category = 'Career Consultancy', specialisation = 'Career Guidance';
+    const details = {name:'Test Consultant',city:'Bhopal',pinCode:'462001',category,specialisation,experience:'7',qualificationName:'Self-reported qualification',qualifications:['local/qualification'],aadhaar:['local/aadhaar'],pan:['local/pan'],interviewAnswers:[1,2,3,4,5],accountNumber:'1',accountConfirmation:'1',language:'Hindi,English',assessmentStatus:'skipped_for_testing',consent:{termsAccepted:true,informationAccurate:true,version:'local-fixture',acceptedAt:new Date().toISOString()}};
+    await user(consultant);
+    const application = await one("select to_jsonb(save_partner_application('consultant',$1,false))", [details]);
+    await assert.rejects(db.query("select save_partner_application('consultant',$1,true)", [details]), /passed six-question assessment/);
+
+    await root();
+    const bank = await one("insert into consultant_assessment_banks(field_id,category,specialisation,version,approved,active,reviewed_by,reviewed_at) values(consultant_field_id($1,$2),$1,$2,'local-fixture',true,true,$3,now()) returning id", [category,specialisation,admin]);
+    const options = ['a','b','c','d'].map(id => ({id,label_en:id,label_hi:id}));
+    for (let i=0;i<6;i++) await db.query("insert into consultant_assessment_questions(bank_id,question_code,difficulty,prompt_en,prompt_hi,options,correct_option_id,explanation_en,explanation_hi,approved) values($1,$2,$3,$4,$4,$5,'a','Test explanation','Test explanation',true)",[bank,`question-${i}`,i<2?'foundation':i<5?'standard':'advanced',`Local fixture question ${i+1}`,options]);
+    for (const [kind, key] of [['terms','eazily-consultant-provider-terms'],['privacy_policy','eazily-consultant-provider-privacy-policy']]) {
+      await db.query("insert into legal_documents(kind,language,version,title,content,published,effective_at,document_key,consultant_complete,consultant_approved_by,consultant_approved_at) values($1,'English','local-fixture','LOCAL TEST ONLY','Synthetic complete local fixture',true,'2020-01-01',$2,true,$3,now())",[kind,key,admin]);
+    }
+    await user(consultant);
+    const attempt = await one('select start_or_resume_consultant_assessment($1,$2,$3,$4)',[application.id,category,specialisation,'English']);
+    assert.equal(attempt.questions.length,6);
+    for (let i=0;i<6;i++) await db.query('select save_consultant_assessment_answer($1,$2,$3)',[attempt.attemptId,attempt.questions[i].id,i<4?'a':'b']);
+    assert.equal((await one('select submit_consultant_assessment($1)',[attempt.attemptId])).status,'passed');
+    const legal = await one('select get_consultant_legal_status($1)',[application.id]);
+    await db.query('select accept_consultant_policies($1,$2,true,true)',[application.id,legal.documents.map(doc=>({id:doc.id,version:doc.version}))]);
+    assert.equal((await one("select to_jsonb(save_partner_application('consultant',$1,true))",[details])).status,'submitted');
+    await user(admin);
+    assert.equal((await one("select to_jsonb(admin_review_partner($1,'approved','Assessment and documents reviewed'))",[application.id])).status,'approved');
+    await root();
+    await db.query('insert into consultant_rates(partner_id,category,duration,price) values($1,$2,30,500)',[application.id,category]);
+    await db.exec("update seller_pricing_rules set enabled=true,seller_tax_bps=0,customer_tax_bps=0,fee_tax_bps=0,separate_fee_paise=0,include_visiting=true,include_additional=true where role='consultant'");
+    await user(consultant);
+    const post = await one("select to_jsonb(save_partner_post('consultant',$1,'submit',$2))",[{postType:'offering',category,title:'Career guidance session',description:'Discuss next career steps',duration:30,mode:'Online'},randomUUID()]);
+    assert.equal(post.status,'pending_review');
+    await user(customer);
+    assert.equal(Number(await one("select count(*) from partner_directory where partner_role='consultant'")),0);
+    const slot = new Date(Date.now()+86400000).toISOString();
+    await assert.rejects(db.query('select book_partner_offering($1,$2,$3)',[post.id,slot,randomUUID()]),/eligible published offering/);
+    await user(admin);
+    await db.query("select admin_review_post($1,'published','Offering reviewed')",[post.id]);
+    await user(customer);
+    const listed = await one('select to_jsonb(d) from partner_directory d where id=$1',[post.id]);
+    assert.equal(listed.partner_id,application.id);
+    assert.equal(listed.details.category,category);
+    assert.equal(listed.details.totalPaise,50000);
+    const key = randomUUID();
+    const enquiry = await one('select to_jsonb(book_partner_offering($1,$2,$3))',[post.id,slot,key]);
+    assert.equal(enquiry.role,'consultant');
+    assert.equal(enquiry.partner_id,application.id);
+    assert.equal(enquiry.post_id,post.id);
+    assert.equal(enquiry.status,'requested');
+    assert.equal(enquiry.free_intro,false);
+    assert.equal((await one('select to_jsonb(book_partner_offering($1,$2,$3))',[post.id,slot,key])).id,enquiry.id);
+    await user(consultant);
+    assert.equal(Number(await one('select count(*) from partner_orders where id=$1',[enquiry.id])),1);
+    await db.query("select change_seller_order($1,'accept','')",[enquiry.id]);
+    await user(customer);
+    assert.equal(await one('select status from partner_orders where id=$1',[enquiry.id]),'accepted');
+    await user(outsider);
+    assert.equal(Number(await one('select count(*) from partner_orders where id=$1',[enquiry.id])),0);
+    await root();
+    assert.equal(Number(await one('select count(*) from partner_earnings where order_id=$1',[enquiry.id])),0);
+    assert.equal(Number(await one('select count(*) from cashfree_collaborations where order_id=$1',[enquiry.id])),0);
+    console.log('PASS: consultant six-question gate, local-only legal consent fixture, approved published discovery, correct-party idempotent unpaid enquiry, status/RLS, and no payment or earnings.');
+  } finally { await db.close(); }
+})().catch(error => { console.error(error); process.exitCode = 1; });

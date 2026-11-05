@@ -1,0 +1,103 @@
+/* Partner registration helpers: lookup status, one-tap presets. */
+.registration-lookup {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.registration-lookup.found {
+  color: var(--green, #16A46B);
+  font-weight: 700;
+}
+
+.registration-lookup.not_found,
+.registration-lookup.unavailable {
+  color: #B45309;
+}
+
+.registration-presets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+
+.registration-presets > span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.registration-presets button {
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--white, #fff);
+  color: var(--navy);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.registration-presets button.selected {
+  border-color: var(--role, var(--purple));
+  background: var(--role-bg, var(--lav));
+  color: var(--role, var(--purple));
+}
+
+.verify-mobile .otp-field {
+  margin: 8px 0 12px;
+  padding: 0;
+  border: 0;
+}
+
+.verify-mobile .otp-field legend {
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.verify-mobile .otp-digits {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.verify-mobile .otp-digits input {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white, #fff);
+  color: var(--navy);
+  font: inherit;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.verify-mobile .otp-digits input:focus {
+  border-color: var(--role, var(--purple));
+  outline: 2px solid var(--role-bg, var(--lav));
+}
+
+.verify-mobile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.registration-inline-action {
+  margin-top: 4px;
+  font-size: 12px;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      (() => {
+        const apply = () => {
+          let saved;
+          try { saved = localStorage.getItem('eazily-theme'); } catch { /* A fresh install starts in light mode. */ }
+          document.documentElement.dataset.customerTheme = saved === 'dark' ? 'dark' : 'light';
+        };
+        apply();
+      })();
+    </script>
+    <meta name="theme-color" content="#7b2cf5" />
+    <meta name="description" content="Eazily local services marketplace" />
+    <link rel="preload" href="/assets/eazily-launch-logo.png" as="image" type="image/png" />
+    <style>
+      .eazily-launch-splash{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;overflow:hidden;background:#f7f7f7;opacity:1;transition:opacity 80ms ease-out}
+      html[data-customer-theme="dark"] .eazily-launch-splash{background:#0E0B1A}
+      .eazily-launch-splash.is-leaving{opacity:0}
+      .eazily-launch-logo{display:block;width:min(42vw,156px);height:auto;object-fit:contain;transform-origin:center;animation:eazily-logo-reveal 720ms both}
+      .eazily-launch-logo-dark{display:none}
+      html[data-customer-theme="dark"] .eazily-launch-logo-light{display:none}
+      html[data-customer-theme="dark"] .eazily-launch-logo-dark{display:block;width:min(72vw,260px);animation:eazily-dark-logo-reveal 720ms both}
+      @keyframes eazily-logo-reveal{0%{opacity:0;transform:translateY(9px) scale(.76);animation-timing-function:cubic-bezier(.2,.8,.2,1)}34%{opacity:1;transform:translateY(0) scale(1.025)}50%{opacity:1;transform:scale(1);animation-timing-function:cubic-bezier(.55,.05,.85,.35)}100%{opacity:1;transform:scale(9)}}
+      @keyframes eazily-dark-logo-reveal{0%{opacity:0;transform:translateY(9px) scale(.92)}35%{opacity:1;transform:translateY(0) scale(1)}80%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.04)}}
+      @media(prefers-reduced-motion:reduce){.eazily-launch-splash{transition:none}.eazily-launch-logo,html[data-customer-theme="dark"] .eazily-launch-logo-dark{animation:none}}
+    </style>
+    <title>Eazily — Life Made Easy</title>
+  </head>
+  <body>
+    <div class="eazily-launch-splash" id="eazily-launch-splash" role="status" aria-label="Opening Eazily">
+      <img class="eazily-launch-logo eazily-launch-logo-light" src="/assets/eazily-launch-logo.png" width="494" height="666" alt="Eazily" fetchpriority="high" decoding="sync" />
+      <img class="eazily-launch-logo eazily-launch-logo-dark" src="/assets/eazily-partner-logo.png" width="1942" height="809" alt="Eazily" decoding="sync" />
+    </div>
+    <div id="root"></div>
+    <script>
+      (()=>{const splash=document.getElementById('eazily-launch-splash');const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;setTimeout(()=>{if(reduced){splash.remove();return;}splash.classList.add('is-leaving');setTimeout(()=>splash.remove(),80);},reduced?800:720);})();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
