@@ -176,3 +176,11 @@ Upload-set implications: whole rebuilt tree; chrome-shim lines in 23 scripts MUS
 - Bulk Orders: Get Quote swaps to BulkOrders page (renders "Bulk Orders / Request a bulk quote", demo-estimate disclaimer) - verified, zero errors.
 - Profile bottom-scroll clearance (Main concern): last row "About Eazily" bottom 372 <= bottom-nav top 765 after full scroll - clears fine.
 - Captures: /downloads/book-01-service.png, book-03-vendor.png, book-04-request.png, avatar-fix.png, bulk-sheet.png, prof-bottom2.png.
+
+## 10:35 PM - Unified verification milestone
+- Harness serves concatenated ALL production CSS chunks (entry-first); lazy-chunk CSS gap found+fixed (pending/approved workspaces).
+- Production preview (vite preview, real lazy CSS): welcome/customer/demo paths styled, styleSheets 2->4 lazy load, no CSS 404s, no exceptions.
+- Onboarding wired into App routing (registration branch); pink/gold wizard accents scoped; dynamic step counts; save/exit/continue/back exercised vs mocks.
+- Demo controls collapsible; truthful demo labeling via demo prop.
+- Admin NaN metric fixed. main=41ea0e1+this.
+OPEN: native installed crash (build mismatch lead); staging/live-auth gap; 4 manifest checksum drift (owner); demo-gate default + sample routing (owner, preserved); phases 6 detail/7 admin theme/8 cleanup.
